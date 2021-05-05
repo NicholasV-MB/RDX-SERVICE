@@ -1,0 +1,4248 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PROCESS Id="RDK:0001" Name="OutputDocumenti" Expanded="True">
+	<PROCESSPROPERTY CrUser="nicholas.vittor [LAPT-IT07]" CrDate="2021-04-22T10:43:35" ModUser="nicholas.vittor [LAPT-IT07]" ModDate="2021-05-05T11:59:02" LanguageVersion="2011.1.1.0" />
+	<GROUP Id="RDK:0002" Name="Declarations" SubType="Declarations" Expanded="True">
+		<GROUP Id="RDK:0003" Name="Types" SubType="TypeSet" IncludeDate="0" Expanded="True">
+			<TYPE Id="RDK:41" Name="AnomaliaType" Expanded="True" SubType="structure" HasArrayType="True">
+				<TYPE_VALUES />
+				<FIELD Id="RDK:42" Name="Fila" Type="string" />
+				<FIELD Id="RDK:44" Name="Posizione" Type="string" />
+				<FIELD Id="RDK:46" Name="Anomalia" Type="string" />
+				<FIELD Id="RDK:48" Name="Componente" Type="string" />
+				<FIELD Id="RDK:50" Name="Intervento" Type="string" />
+				<FIELD Id="RDK:52" Name="Colore" Type="string" />
+				<FIELD Id="RDK:321" Name="Immagini" Type="string[]" />
+				<FIELD Id="RDK:391" Name="IMG" Type="string" />
+				<FIELD Id="RDK:1008" Name="Dati_tecnici" Type="string" />
+			</TYPE>
+			<TYPE Id="RDK:200" Name="AnomalieRepartoType" Expanded="True" SubType="structure" HasArrayType="True">
+				<TYPE_VALUES />
+				<FIELD Id="RDK:202" Name="Reparto" Type="string" />
+				<FIELD Id="RDK:204" Name="Anomalie" Type="AnomaliaType[]" />
+				<FIELD Id="RDK:348" Name="Note" Type="string" />
+			</TYPE>
+			<TYPE Id="RDK:1001" Name="VerticalitàPosizioneType" Expanded="True" SubType="structure" HasArrayType="True">
+				<TYPE_VALUES />
+				<FIELD Id="RDK:1002" Name="Posizione" Type="integer" />
+				<FIELD Id="RDK:1004" Name="Long" Type="double" />
+				<FIELD Id="RDK:1006" Name="Front" Type="double" />
+				<FIELD Id="RDK:1017" Name="ColoreFront" Type="string" />
+				<FIELD Id="RDK:1019" Name="ColoreLong" Type="string" />
+			</TYPE>
+			<TYPE Id="RDK:522" Name="VerticalitaType" Expanded="True" SubType="structure" HasArrayType="True">
+				<TYPE_VALUES />
+				<FIELD Id="RDK:523" Name="Fila" Type="string" />
+				<FIELD Id="RDK:1015" Name="Posizioni" Type="VerticalitàPosizioneType[]" />
+			</TYPE>
+			<TYPE Id="RDK:543" Name="VerticalitaRepartoType" Expanded="True" SubType="structure" HasArrayType="True">
+				<TYPE_VALUES />
+				<FIELD Id="RDK:545" Name="Reparto" Type="string" />
+				<FIELD Id="RDK:546" Name="Rilevazioni" Type="VerticalitaType[]" />
+				<FIELD Id="RDK:646" Name="AltezzeSpalle" Type="string" />
+			</TYPE>
+			<TYPE Id="RDK:948" Name="Editor2DShapeType" SubType="structure">
+				<TYPE_VALUES />
+				<FIELD Id="RDK:901" Name="source" Type="string" />
+				<FIELD Id="RDK:902" Name="sourceLibrary" Type="string" />
+				<FIELD Id="RDK:903" Name="signature" Type="string" />
+				<FIELD Id="RDK:904" Name="id" Type="string" />
+				<FIELD Id="RDK:905" Name="name" Type="string" />
+				<FIELD Id="RDK:906" Name="family" Type="string" />
+				<FIELD Id="RDK:907" Name="description" Type="string" />
+				<FIELD Id="RDK:908" Name="x" Type="double" />
+				<FIELD Id="RDK:909" Name="y" Type="double" />
+				<FIELD Id="RDK:910" Name="z" Type="double" />
+				<FIELD Id="RDK:911" Name="width" Type="double" />
+				<FIELD Id="RDK:912" Name="height" Type="double" />
+				<FIELD Id="RDK:913" Name="depth" Type="double" />
+				<FIELD Id="RDK:914" Name="rotation" Type="double" />
+				<FIELD Id="RDK:915" Name="text" Type="string" />
+				<FIELD Id="RDK:916" Name="behaviour" Type="string" DesignTimeNotes="(BACKGROUND)&#xD;&#xA;(CONTAINER)&#xD;&#xA;(NOTE)&#xD;&#xA;(NOCOLLISIONS)&#xD;&#xA;(NOINCLUSIONS)&#xD;&#xA;(NOSELECT)&#xD;&#xA;(NOMOVE)&#xD;&#xA;(NOREMOVE)&#xD;&#xA;(NOSTRETCH)&#xD;&#xA;(NOROTATE)&#xD;&#xA;(NOEDIT)&#xD;&#xA;(COLLISIONCLASS=x,y,z)&#xD;&#xA;(ORIGIN=CENTER|TOPLEFT|TOPRIGHT|BOTTOMLEFT|BOTTOMRIGHT)&#xD;&#xA;(URL=xxx)&#xD;&#xA;(DIMSTACKABSOLUTE)" />
+				<FIELD Id="RDK:917" Name="datadump" Type="string" />
+				<FIELD Id="RDK:918" Name="path" Type="string" />
+				<FIELD Id="RDK:919" Name="ctrl1x" Type="double" />
+				<FIELD Id="RDK:920" Name="ctrl1y" Type="double" />
+				<FIELD Id="RDK:921" Name="ctrl2x" Type="double" />
+				<FIELD Id="RDK:922" Name="ctrl2y" Type="double" />
+				<FIELD Id="RDK:923" Name="shapeFromId" Type="string" />
+				<FIELD Id="RDK:924" Name="shapeFromPointIndex" Type="string" />
+				<FIELD Id="RDK:925" Name="shapeToId" Type="string" />
+				<FIELD Id="RDK:926" Name="shapeToPointIndex" Type="string" />
+				<FIELD Id="RDK:927" Name="dimStack" Type="double" />
+				<FIELD Id="RDK:928" Name="dimType" Type="string" />
+				<FIELD Id="RDK:929" Name="dimDriving" Type="boolean" />
+				<FIELD Id="RDK:930" Name="dimValue" Type="double" />
+				<FIELD Id="RDK:931" Name="color" Type="string" />
+				<FIELD Id="RDK:932" Name="colorOpacity" Type="double" />
+				<FIELD Id="RDK:933" Name="color3D" Type="string" />
+				<FIELD Id="RDK:934" Name="colorOpacity3D" Type="double" />
+				<FIELD Id="RDK:935" Name="lineWidth" Type="string" />
+				<FIELD Id="RDK:936" Name="lineColor" Type="string" />
+				<FIELD Id="RDK:937" Name="lineOpacity" Type="double" />
+				<FIELD Id="RDK:938" Name="lineColor3D" Type="string" />
+				<FIELD Id="RDK:939" Name="lineOpacity3D" Type="double" />
+				<FIELD Id="RDK:940" Name="links" Type="string[]" />
+				<FIELD Id="RDK:941" Name="group" Type="string" />
+				<FIELD Id="RDK:942" Name="layer" Type="string" />
+				<FIELD Id="RDK:943" Name="connectionPoints" Type="string" DesignTimeRemark="List of E2DShapeConnectionPointType" DesignTimeNotes="[ &#xD;&#xA;    {&quot;id&quot;: &quot;s00--cp1&quot;, &quot;shapeId&quot;: &quot;s00&quot;,&#xA; &quot;cpId&quot;: &quot;cp1&quot;, &#xD;&#xA;     &quot;x&quot;: 25, &quot;y&quot;: 37.5, &quot;z&quot;: 0, &quot;noRX&quot;: 25, &quot;noRY&quot;: 37.5, &quot;noRZ&quot;: 0,&#xD;&#xA;&#xA;     &quot;direction&quot;: 270,&#xA; &quot;linkClass&quot;: &quot;&quot;},&#xD;&#xA;    {&quot;id&quot;: &quot;s00--cp2&quot;, &quot;shapeId&quot;: &quot;r00&quot;, &quot;cpId&quot;: &quot;cp2&quot;,&#xA;&#xD;&#xA;     &quot;x&quot;: 37.5, &quot;y&quot;: 25, &quot;z&quot;: 0, &quot;noRX&quot;: 37.5, &quot;noRY&quot;: 25,&#xA; &quot;noRZ&quot;: 0,&#xD;&#xA;&#xA;     &quot;direction&quot;: 0, &quot;linkClass&quot;: &quot;&quot;},&#xD;&#xA;    ...&#xD;&#xA;]" />
+				<FIELD Id="RDK:944" Name="modified" Type="boolean" />
+				<FIELD Id="RDK:945" Name="pinned" Type="boolean" />
+				<FIELD Id="RDK:946" Name="selected" Type="boolean" />
+				<FIELD Id="RDK:947" Name="includeInBOM" Type="boolean" />
+			</TYPE>
+			<TYPE Id="RDK:950" Name="Editor2DShapeTypeList" SubType="list" ItemListTypeName="Editor2DShapeType">
+				<UI_INPUT_TYPE TypeForm="Text" />
+				<UI_INPUT_VALIDATION ValidationType="none" />
+				<UI_INPUT_SUPPORT />
+				<TYPE_VALUES />
+			</TYPE>
+			<TYPE Id="RDK:1087" Name="ServiceType" SubType="structure" HasArrayType="True">
+				<TYPE_VALUES />
+				<FIELD Id="RDK:1054" Name="Tipo" Type="string" />
+				<FIELD Id="RDK:1055" Name="Anomalia" Type="string" />
+				<FIELD Id="RDK:1056" Name="TipoComponente" Type="string" />
+				<FIELD Id="RDK:1057" Name="Fila" Type="string" />
+				<FIELD Id="RDK:1058" Name="Numero" Type="string" />
+				<FIELD Id="RDK:1059" Name="LivDCar" Type="string" />
+				<FIELD Id="RDK:1060" Name="Intervento" Type="string" />
+				<FIELD Id="RDK:1061" Name="Dati_tecnici" Type="string" />
+				<FIELD Id="RDK:1062" Name="Colore_anomalia" Type="string" />
+				<FIELD Id="RDK:1063" Name="Colore" Type="string" />
+				<FIELD Id="RDK:1064" Name="Note" Type="string" />
+				<FIELD Id="RDK:1065" Name="Img" Type="string" />
+				<FIELD Id="RDK:1066" Name="Immagini" Type="string[]" />
+				<FIELD Id="RDK:1067" Name="ImgDoc" Type="string" />
+				<FIELD Id="RDK:1068" Name="Num" Type="string" />
+				<FIELD Id="RDK:1069" Name="ShapeID" Type="string" />
+				<FIELD Id="RDK:1070" Name="Scelta" Type="string" />
+				<FIELD Id="RDK:1071" Name="VertT" Type="integer" />
+				<FIELD Id="RDK:1072" Name="VertL" Type="integer" />
+				<FIELD Id="RDK:1073" Name="I_E" Type="string" />
+				<FIELD Id="RDK:1074" Name="Posizione" Type="string" />
+				<FIELD Id="RDK:1075" Name="Componente" Type="string" />
+				<FIELD Id="RDK:1076" Name="CampataShapeID" Type="string" />
+				<FIELD Id="RDK:1078" Name="AltezzaSpalla">
+					<TYPE Id="RDK:1078" IsInternal="True" Expanded="True" SubType="base" BaseType="integer">
+						<UI_INPUT_TYPE TypeForm="Text" />
+						<UI_INPUT_VALIDATION ValidationType="none" />
+						<UI_INPUT_SUPPORT />
+						<TYPE_VALUES />
+					</TYPE>
+				</FIELD>
+				<FIELD Id="RDK:1080" Name="TipoProfilo">
+					<TYPE Id="RDK:1080" IsInternal="True" Expanded="True" SubType="base" BaseType="string">
+						<UI_INPUT_TYPE TypeForm="Text" />
+						<UI_INPUT_VALIDATION ValidationType="none" />
+						<UI_INPUT_SUPPORT />
+						<TYPE_VALUES />
+					</TYPE>
+				</FIELD>
+				<FIELD Id="RDK:1082" Name="AltezzaComponente">
+					<TYPE Id="RDK:1082" IsInternal="True" Expanded="True" SubType="base" BaseType="integer">
+						<UI_INPUT_TYPE TypeForm="Text" />
+						<UI_INPUT_VALIDATION ValidationType="none" />
+						<UI_INPUT_SUPPORT />
+						<TYPE_VALUES />
+					</TYPE>
+				</FIELD>
+				<FIELD Id="RDK:1084" Name="LunghezzaComponente">
+					<TYPE Id="RDK:1084" IsInternal="True" Expanded="True" SubType="base" BaseType="integer">
+						<UI_INPUT_TYPE TypeForm="Text" />
+						<UI_INPUT_VALIDATION ValidationType="none" />
+						<UI_INPUT_SUPPORT />
+						<TYPE_VALUES />
+					</TYPE>
+				</FIELD>
+				<FIELD Id="RDK:1086" Name="ProfonditàComponente">
+					<TYPE Id="RDK:1086" IsInternal="True" Expanded="True" SubType="base" BaseType="integer">
+						<UI_INPUT_TYPE TypeForm="Text" />
+						<UI_INPUT_VALIDATION ValidationType="none" />
+						<UI_INPUT_SUPPORT />
+						<TYPE_VALUES />
+					</TYPE>
+				</FIELD>
+			</TYPE>
+			<TYPE Id="RDK:1271" Name="VerticalitàMailMergeType" SubType="structure" HasArrayType="True">
+				<TYPE_VALUES />
+				<FIELD Id="RDK:1298" Name="Fila" Type="string" />
+				<FIELD Id="RDK:1296" Name="pos_p1" Type="string" />
+				<FIELD Id="RDK:1272" Name="P1_LC" Type="string" />
+				<FIELD Id="RDK:1274" Name="P1_L" Type="string" />
+				<FIELD Id="RDK:1276" Name="P1_FC" Type="string" />
+				<FIELD Id="RDK:1278" Name="P1_F" Type="string" />
+				<FIELD Id="RDK:1300" Name="pos_p2" Type="string" />
+				<FIELD Id="RDK:1302" Name="P2_LC" Type="string" />
+				<FIELD Id="RDK:1304" Name="P2_L" Type="string" />
+				<FIELD Id="RDK:1306" Name="P2_FC" Type="string" />
+				<FIELD Id="RDK:1308" Name="P2_F" Type="string" />
+				<FIELD Id="RDK:1310" Name="pos_p3" Type="string" />
+				<FIELD Id="RDK:1312" Name="P3_LC" Type="string" />
+				<FIELD Id="RDK:1314" Name="P3_L" Type="string" />
+				<FIELD Id="RDK:1316" Name="P3_FC" Type="string" />
+				<FIELD Id="RDK:1318" Name="P3_F" Type="string" />
+				<FIELD Id="RDK:1320" Name="pos_p4" Type="string" />
+				<FIELD Id="RDK:1322" Name="P4_LC" Type="string" />
+				<FIELD Id="RDK:1324" Name="P4_L" Type="string" />
+				<FIELD Id="RDK:1326" Name="P4_FC" Type="string" />
+				<FIELD Id="RDK:1328" Name="P4_F" Type="string" />
+				<FIELD Id="RDK:1330" Name="pos_p5" Type="string" />
+				<FIELD Id="RDK:1332" Name="P5_LC" Type="string" />
+				<FIELD Id="RDK:1334" Name="P5_L" Type="string" />
+				<FIELD Id="RDK:1336" Name="P5_FC" Type="string" />
+				<FIELD Id="RDK:1338" Name="P5_F" Type="string" />
+			</TYPE>
+		</GROUP>
+		<GROUP Id="RDK:0004" Name="Parameters" SubType="ParameterDefs" Expanded="True">
+			<PAR_DEF Id="RDK:14" Name="Cliente" TypeRD="string" Direction="IN" Panel="Parameters" UseDataFile="False">
+				<LABEL />
+				<DESCRIPTION />
+			</PAR_DEF>
+			<PAR_DEF Id="RDK:16" Name="Indirizzo" TypeRD="string" Direction="IN" Panel="Parameters" UseDataFile="False">
+				<LABEL />
+				<DESCRIPTION />
+			</PAR_DEF>
+			<PAR_DEF Id="RDK:18" Name="CAP" TypeRD="string" Direction="IN" Panel="Parameters" UseDataFile="False">
+				<LABEL />
+				<DESCRIPTION />
+			</PAR_DEF>
+			<PAR_DEF Id="RDK:20" Name="Citta" TypeRD="string" Direction="IN" Panel="Parameters" UseDataFile="False">
+				<LABEL />
+				<DESCRIPTION />
+			</PAR_DEF>
+			<PAR_DEF Id="RDK:22" Name="Provincia" TypeRD="string" Direction="IN" Panel="Parameters" UseDataFile="False">
+				<LABEL />
+				<DESCRIPTION />
+			</PAR_DEF>
+			<PAR_DEF Id="RDK:24" Name="Data" TypeRD="date" Direction="IN" Panel="Parameters" UseDataFile="False">
+				<LABEL />
+				<DESCRIPTION />
+			</PAR_DEF>
+			<PAR_DEF Id="RDK:26" Name="Verificatore" TypeRD="string" Direction="IN" Panel="Parameters" UseDataFile="False">
+				<LABEL />
+				<DESCRIPTION />
+			</PAR_DEF>
+			<PAR_DEF Id="RDK:28" Name="TipoImpianto" TypeRD="string" Direction="IN" Panel="Parameters" UseDataFile="False">
+				<LABEL />
+				<DESCRIPTION />
+			</PAR_DEF>
+			<PAR_DEF Id="RDK:32" Name="nOfferta" TypeRD="string" Direction="IN" Panel="Parameters" UseDataFile="False">
+				<LABEL />
+				<DESCRIPTION />
+			</PAR_DEF>
+			<PAR_DEF Id="RDK:34" Name="ListaRepartiAnomalie" TypeRD="AnomalieRepartoType[]" Direction="IN" Panel="Parameters" UseDataFile="False">
+				<LABEL />
+				<DESCRIPTION />
+			</PAR_DEF>
+			<PAR_DEF Id="RDK:171" Name="WorkingDir" TypeRD="string" Direction="IN" Panel="Parameters" UseDataFile="False">
+				<LABEL />
+				<DESCRIPTION />
+			</PAR_DEF>
+			<PAR_DEF Id="RDK:581" Name="Verticalita" TypeRD="VerticalitaRepartoType[]" Direction="IN" Panel="Parameters" UseDataFile="False">
+				<LABEL />
+				<DESCRIPTION />
+			</PAR_DEF>
+		</GROUP>
+		<GROUP Id="RDK:0005" Name="Global Variables" SubType="VarSet" IncludeDate="0" Expanded="True">
+			<VAR Id="RDK:89" Name="MyAnomalia" Type="AnomaliaType" DesignTimeRemark="Generated by RD" />
+			<VAR Id="RDK:583" Name="MyVerticalitaReparto" Type="VerticalitaRepartoType" DesignTimeRemark="Generated by RD" />
+			<VAR Id="RDK:1096" Name="ListaVerticalitaReparti" Type="VerticalitaRepartoType[]" DesignTimeRemark="Generated by RD" />
+			<VAR Id="RDK:591" Name="MyRilevazione" Type="VerticalitaType" DesignTimeRemark="Generated by RD" />
+			<VAR Id="RDK:610" Name="Rilevazioni" Type="VerticalitaType[]" Expanded="True" DesignTimeRemark="Generated by RD" />
+			<VAR Id="RDK:98" Name="TemplateFile" Type="string" Expanded="True" />
+			<VAR Id="RDK:101" Name="OutFile" Type="string" />
+			<VAR Id="RDK:157" Name="idx" Type="integer" Expanded="True" DesignTimeRemark="Generated by RD" />
+			<VAR Id="RDK:205" Name="AnomalieReparto" Type="AnomaliaType[]" Expanded="True" />
+			<VAR Id="RDK:208" Name="MyReparto" Type="AnomalieRepartoType" />
+			<VAR Id="RDK:279" Name="MyTemplateTabellaFile" Type="string" Expanded="True" DesignTimeRemark="Generated by RD" />
+			<VAR Id="RDK:280" Name="TemplateTabellaFile" Type="string" Expanded="True" DesignTimeRemark="Generated by RD" />
+			<VAR Id="RDK:281" Name="myTabellaReparto" Type="string" Expanded="True" DesignTimeRemark="Generated by RD" />
+			<VAR Id="RDK:426" Name="TemplateRiga" Type="string" DesignTimeRemark="Generated by RD" />
+			<VAR Id="RDK:428" Name="myRiga" Type="string" DesignTimeRemark="Generated by RD" />
+			<VAR Id="RDK:430" Name="myTemplateRiga" Type="string" DesignTimeRemark="Generated by RD" />
+			<VAR Id="RDK:451" Name="IMGPath" Type="string" Expanded="True" DesignTimeRemark="Generated by RD" />
+			<VAR Id="RDK:460" Name="MyIMG" Type="string" Expanded="True" DesignTimeRemark="Generated by RD" />
+			<VAR Id="RDK:461" Name="r" Type="integer" Expanded="True" DesignTimeRemark="Generated by RD" />
+			<VAR Id="RDK:790" Name="myServiceList" Type="ServiceType[]" />
+			<VAR Id="RDK:1092" Name="myServiceVerticalitàList" Type="ServiceType[]" />
+			<VAR Id="RDK:792" Name="myService" Type="ServiceType" />
+			<VAR Id="RDK:797" Name="Anomalie_files" Type="string[]" Expanded="True" DesignTimeRemark="Generated by RD" />
+			<VAR Id="RDK:800" Name="anomalia_file" Type="string" Expanded="True" DesignTimeRemark="Generated by RD" />
+			<VAR Id="RDK:802" Name="anomalie_txt" Type="string" Expanded="True" DesignTimeRemark="Generated by RD" />
+			<VAR Id="RDK:816" Name="ProcessFolder" Type="string" Expanded="True" DesignTimeRemark="Generated by RD" />
+			<VAR Id="RDK:851" Name="Reparti_txt" Type="string" Expanded="True" DesignTimeRemark="Generated by RD" />
+			<VAR Id="RDK:953" Name="myRepartiList" Type="Editor2DShapeTypeList" Expanded="True" DesignTimeRemark="Generated by RD" />
+			<VAR Id="RDK:955" Name="id_reparto" Type="string" Expanded="True" DesignTimeRemark="Generated by RD" />
+			<VAR Id="RDK:957" Name="note_reparto" Type="variant" Expanded="True" DesignTimeRemark="Generated by RD" />
+			<VAR Id="RDK:1103" Name="PosizioniVerticalitàList" Type="VerticalitàPosizioneType[]" DesignTimeRemark="Generated by RD" />
+			<VAR Id="RDK:1105" Name="PosizioneVerticalità" Type="VerticalitàPosizioneType" DesignTimeRemark="Generated by RD" />
+			<VAR Id="RDK:1107" Name="S" Type="double" Expanded="True" DesignTimeRemark="Generated by RD" />
+			<VAR Id="RDK:1111" Name="AltezzeSpalleList" Type="integer[]" DesignTimeRemark="Generated by RD" />
+			<VAR Id="RDK:1154" Name="r_v" Type="integer" Expanded="True" DesignTimeRemark="Generated by RD" />
+			<VAR Id="RDK:1160" Name="p" Type="integer" Expanded="True" DesignTimeRemark="Generated by RD" />
+			<VAR Id="RDK:1174" Name="old_index" Type="integer" Expanded="True" DesignTimeRemark="Generated by RD" />
+			<VAR Id="RDK:1175" Name="index" Type="integer" Expanded="True" DesignTimeRemark="Generated by RD" />
+			<VAR Id="RDK:1178" Name="reminder" Type="integer" Expanded="True" DesignTimeRemark="Generated by RD" />
+		</GROUP>
+		<GROUP Id="RDK:0006" Name="Profiles" SubType="ProfileSet" Expanded="True" />
+		<GROUP Id="RDK:0007" Name="Functions" SubType="FunctionSet" IncludeDate="0" Expanded="True">
+			<FUNCTION Id="RDK:289" Name="SetIntestazione" Expanded="True">
+				<GROUP Id="RDK:313" Name="Set Intestazione" SubType="Generic" Expanded="True">
+					<ACTION_CALL Id="RDK:303" Name="RDEngineering_SearchAndReplace" DesignTimeRemark="{Search For} --&gt; {Replace With}">
+						<PAR Name="RDLibraryName">
+							<EXP><![CDATA[$C$RDEngineering_OFFICE_WORD]]></EXP>
+						</PAR>
+						<PAR Name="FileName">
+							<EXP><![CDATA[$=$OutFile]]></EXP>
+						</PAR>
+						<PAR Name="SearchFor">
+							<EXP><![CDATA[$C$<CLI>]]></EXP>
+						</PAR>
+						<PAR Name="ReplaceWith">
+							<EXP><![CDATA[$=$Cliente]]></EXP>
+						</PAR>
+						<PAR Name="ReplaceWhere">
+							<EXP><![CDATA[$C$3]]></EXP>
+						</PAR>
+						<PAR Name="ReplaceAll">
+							<EXP><![CDATA[$C$True]]></EXP>
+						</PAR>
+						<PAR Name="Options">
+							<EXP><![CDATA[$C$(FILEDIRECT)]]></EXP>
+						</PAR>
+					</ACTION_CALL>
+					<ACTION_CALL Id="RDK:304" Name="RDEngineering_SearchAndReplace" DesignTimeRemark="{Search For} --&gt; {Replace With}">
+						<PAR Name="RDLibraryName">
+							<EXP><![CDATA[$C$RDEngineering_OFFICE_WORD]]></EXP>
+						</PAR>
+						<PAR Name="FileName">
+							<EXP><![CDATA[$=$OutFile]]></EXP>
+						</PAR>
+						<PAR Name="SearchFor">
+							<EXP><![CDATA[$C$<IND>]]></EXP>
+						</PAR>
+						<PAR Name="ReplaceWith">
+							<EXP><![CDATA[$=$Indirizzo]]></EXP>
+						</PAR>
+						<PAR Name="ReplaceWhere">
+							<EXP><![CDATA[$C$3]]></EXP>
+						</PAR>
+						<PAR Name="ReplaceAll">
+							<EXP><![CDATA[$C$True]]></EXP>
+						</PAR>
+						<PAR Name="Options">
+							<EXP><![CDATA[$C$(FILEDIRECT)]]></EXP>
+						</PAR>
+					</ACTION_CALL>
+					<ACTION_CALL Id="RDK:305" Name="RDEngineering_SearchAndReplace" DesignTimeRemark="{Search For} --&gt; {Replace With}">
+						<PAR Name="RDLibraryName">
+							<EXP><![CDATA[$C$RDEngineering_OFFICE_WORD]]></EXP>
+						</PAR>
+						<PAR Name="FileName">
+							<EXP><![CDATA[$=$OutFile]]></EXP>
+						</PAR>
+						<PAR Name="SearchFor">
+							<EXP><![CDATA[$C$<CAP>]]></EXP>
+						</PAR>
+						<PAR Name="ReplaceWith">
+							<EXP><![CDATA[$=$CAP]]></EXP>
+						</PAR>
+						<PAR Name="ReplaceWhere">
+							<EXP><![CDATA[$C$3]]></EXP>
+						</PAR>
+						<PAR Name="ReplaceAll">
+							<EXP><![CDATA[$C$True]]></EXP>
+						</PAR>
+						<PAR Name="Options">
+							<EXP><![CDATA[$C$(FILEDIRECT)]]></EXP>
+						</PAR>
+					</ACTION_CALL>
+					<ACTION_CALL Id="RDK:306" Name="RDEngineering_SearchAndReplace" DesignTimeRemark="{Search For} --&gt; {Replace With}">
+						<PAR Name="RDLibraryName">
+							<EXP><![CDATA[$C$RDEngineering_OFFICE_WORD]]></EXP>
+						</PAR>
+						<PAR Name="FileName">
+							<EXP><![CDATA[$=$OutFile]]></EXP>
+						</PAR>
+						<PAR Name="SearchFor">
+							<EXP><![CDATA[$C$<CITTA>]]></EXP>
+						</PAR>
+						<PAR Name="ReplaceWith">
+							<EXP><![CDATA[$=$Citta]]></EXP>
+						</PAR>
+						<PAR Name="ReplaceWhere">
+							<EXP><![CDATA[$C$3]]></EXP>
+						</PAR>
+						<PAR Name="ReplaceAll">
+							<EXP><![CDATA[$C$True]]></EXP>
+						</PAR>
+						<PAR Name="Options">
+							<EXP><![CDATA[$C$(FILEDIRECT)]]></EXP>
+						</PAR>
+					</ACTION_CALL>
+					<ACTION_CALL Id="RDK:307" Name="RDEngineering_SearchAndReplace" DesignTimeRemark="{Search For} --&gt; {Replace With}">
+						<PAR Name="RDLibraryName">
+							<EXP><![CDATA[$C$RDEngineering_OFFICE_WORD]]></EXP>
+						</PAR>
+						<PAR Name="FileName">
+							<EXP><![CDATA[$=$OutFile]]></EXP>
+						</PAR>
+						<PAR Name="SearchFor">
+							<EXP><![CDATA[$C$<PROV>]]></EXP>
+						</PAR>
+						<PAR Name="ReplaceWith">
+							<EXP><![CDATA[$=$Provincia]]></EXP>
+						</PAR>
+						<PAR Name="ReplaceWhere">
+							<EXP><![CDATA[$C$3]]></EXP>
+						</PAR>
+						<PAR Name="ReplaceAll">
+							<EXP><![CDATA[$C$True]]></EXP>
+						</PAR>
+						<PAR Name="Options">
+							<EXP><![CDATA[$C$(FILEDIRECT)]]></EXP>
+						</PAR>
+					</ACTION_CALL>
+					<ACTION_CALL Id="RDK:308" Name="RDEngineering_SearchAndReplace" DesignTimeRemark="{Search For} --&gt; {Replace With}">
+						<PAR Name="RDLibraryName">
+							<EXP><![CDATA[$C$RDEngineering_OFFICE_WORD]]></EXP>
+						</PAR>
+						<PAR Name="FileName">
+							<EXP><![CDATA[$=$OutFile]]></EXP>
+						</PAR>
+						<PAR Name="SearchFor">
+							<EXP><![CDATA[$C$<DATA>]]></EXP>
+						</PAR>
+						<PAR Name="ReplaceWith">
+							<EXP><![CDATA[$=$DateToStrShort(Data)]]></EXP>
+						</PAR>
+						<PAR Name="ReplaceWhere">
+							<EXP><![CDATA[$C$3]]></EXP>
+						</PAR>
+						<PAR Name="ReplaceAll">
+							<EXP><![CDATA[$C$True]]></EXP>
+						</PAR>
+						<PAR Name="Options">
+							<EXP><![CDATA[$C$(FILEDIRECT)]]></EXP>
+						</PAR>
+					</ACTION_CALL>
+					<ACTION_CALL Id="RDK:309" Name="RDEngineering_SearchAndReplace" DesignTimeRemark="{Search For} --&gt; {Replace With}">
+						<PAR Name="RDLibraryName">
+							<EXP><![CDATA[$C$RDEngineering_OFFICE_WORD]]></EXP>
+						</PAR>
+						<PAR Name="FileName">
+							<EXP><![CDATA[$=$OutFile]]></EXP>
+						</PAR>
+						<PAR Name="SearchFor">
+							<EXP><![CDATA[$C$<verificatore>]]></EXP>
+						</PAR>
+						<PAR Name="ReplaceWith">
+							<EXP><![CDATA[$=$Verificatore]]></EXP>
+						</PAR>
+						<PAR Name="ReplaceWhere">
+							<EXP><![CDATA[$C$3]]></EXP>
+						</PAR>
+						<PAR Name="ReplaceAll">
+							<EXP><![CDATA[$C$True]]></EXP>
+						</PAR>
+						<PAR Name="Options">
+							<EXP><![CDATA[$C$(FILEDIRECT)]]></EXP>
+						</PAR>
+					</ACTION_CALL>
+					<ACTION_CALL Id="RDK:310" Name="RDEngineering_SearchAndReplace" DesignTimeRemark="{Search For} --&gt; {Replace With}">
+						<PAR Name="RDLibraryName">
+							<EXP><![CDATA[$C$RDEngineering_OFFICE_WORD]]></EXP>
+						</PAR>
+						<PAR Name="FileName">
+							<EXP><![CDATA[$=$OutFile]]></EXP>
+						</PAR>
+						<PAR Name="SearchFor">
+							<EXP><![CDATA[$C$<TIPOIMPIANTO>]]></EXP>
+						</PAR>
+						<PAR Name="ReplaceWith">
+							<EXP><![CDATA[$=$TipoImpianto]]></EXP>
+						</PAR>
+						<PAR Name="ReplaceWhere">
+							<EXP><![CDATA[$C$3]]></EXP>
+						</PAR>
+						<PAR Name="ReplaceAll">
+							<EXP><![CDATA[$C$True]]></EXP>
+						</PAR>
+						<PAR Name="Options">
+							<EXP><![CDATA[$C$(FILEDIRECT)]]></EXP>
+						</PAR>
+					</ACTION_CALL>
+					<ACTION_CALL Id="RDK:311" Name="RDEngineering_SearchAndReplace" DesignTimeRemark="{Search For} --&gt; {Replace With}">
+						<PAR Name="RDLibraryName">
+							<EXP><![CDATA[$C$RDEngineering_OFFICE_WORD]]></EXP>
+						</PAR>
+						<PAR Name="FileName">
+							<EXP><![CDATA[$=$OutFile]]></EXP>
+						</PAR>
+						<PAR Name="SearchFor">
+							<EXP><![CDATA[$C$<nOfferta>]]></EXP>
+						</PAR>
+						<PAR Name="ReplaceWith">
+							<EXP><![CDATA[$=$nOfferta]]></EXP>
+						</PAR>
+						<PAR Name="ReplaceWhere">
+							<EXP><![CDATA[$C$3]]></EXP>
+						</PAR>
+						<PAR Name="ReplaceAll">
+							<EXP><![CDATA[$C$True]]></EXP>
+						</PAR>
+						<PAR Name="Options">
+							<EXP><![CDATA[$C$(FILEDIRECT)]]></EXP>
+						</PAR>
+					</ACTION_CALL>
+					<ACTION_CALL Id="RDK:312" Name="RDEngineering_SaveFile" DesignTimeRemark="{FileName}">
+						<PAR Name="RDLibraryName">
+							<EXP><![CDATA[$C$RDEngineering_OFFICE_WORD]]></EXP>
+						</PAR>
+						<PAR Name="FileName">
+							<EXP><![CDATA[$=$OutFile]]></EXP>
+						</PAR>
+						<PAR Name="Options">
+							<EXP><![CDATA[$C$(FILEDIRECT)]]></EXP>
+						</PAR>
+					</ACTION_CALL>
+				</GROUP>
+			</FUNCTION>
+			<FUNCTION Id="RDK:362" Name="SaveWordPDF" Expanded="True">
+				<ACTION_CALL Id="RDK:364" Name="RDEngineering_SaveFile" DesignTimeRemark="{FileName}">
+					<PAR Name="RDLibraryName">
+						<EXP><![CDATA[$C$RDEngineering_OFFICE_WORD]]></EXP>
+					</PAR>
+					<PAR Name="FileName">
+						<EXP><![CDATA[$=$OutFile]]></EXP>
+					</PAR>
+					<PAR Name="Options">
+						<EXP><![CDATA[$C$(FILEDIRECT)]]></EXP>
+					</PAR>
+				</ACTION_CALL>
+				<ACTION_CALL Id="RDK:366" Name="RDEngineering_SaveFileAs" DesignTimeRemark="{Old FileName} --&gt; {New FileName}">
+					<PAR Name="RDLibraryName">
+						<EXP><![CDATA[$C$RDEngineering_OFFICE_WORD]]></EXP>
+					</PAR>
+					<PAR Name="FileName">
+						<EXP><![CDATA[$=$OutFile]]></EXP>
+					</PAR>
+					<PAR Name="NewFileName">
+						<EXP><![CDATA[$=$ChangeExt(OutFile, ".pdf")]]></EXP>
+					</PAR>
+					<PAR Name="Options">
+						<EXP><![CDATA[$C$(FILEDIRECT)]]></EXP>
+					</PAR>
+				</ACTION_CALL>
+			</FUNCTION>
+		</GROUP>
+	</GROUP>
+	<GROUP Id="RDK:0008" Name="Main Group" SubType="Generic" Expanded="True">
+		<GROUP Id="RDK:57" Name="DATI PER DEBUG" SubType="Generic" Expanded="True">
+			<GROUP Id="RDK:703" Name="DATI CLIENTE" SubType="Generic" Expanded="True">
+				<GROUP Id="RDK:1524" Name="Group" SubType="Generic" Expanded="True">
+					<VALUECONDITION Value="true">
+						<EXP><![CDATA[$=$IsEmpty(Cliente)]]></EXP>
+					</VALUECONDITION>
+					<SET Id="RDK:63" VarRef="Cliente">
+						<EXP><![CDATA[$C$ClienteTest0000]]></EXP>
+						<PAR Name="AdvancedOptions" />
+					</SET>
+				</GROUP>
+				<GROUP Id="RDK:1533" Name="Group" SubType="Generic" Expanded="True">
+					<VALUECONDITION Value="true">
+						<EXP><![CDATA[$=$IsEmpty(Indirizzo)]]></EXP>
+					</VALUECONDITION>
+					<SET Id="RDK:65" VarRef="Indirizzo">
+						<EXP><![CDATA[$C$Via Indirizzo Test, 0]]></EXP>
+						<PAR Name="AdvancedOptions" />
+					</SET>
+				</GROUP>
+				<GROUP Id="RDK:1541" Name="Group" SubType="Generic" Expanded="True">
+					<VALUECONDITION Value="true">
+						<EXP><![CDATA[$=$IsEmpty(CAP)]]></EXP>
+					</VALUECONDITION>
+					<SET Id="RDK:67" VarRef="CAP">
+						<EXP><![CDATA[$C$33100]]></EXP>
+						<PAR Name="AdvancedOptions" />
+					</SET>
+				</GROUP>
+				<GROUP Id="RDK:1549" Name="Group" SubType="Generic" Expanded="True">
+					<VALUECONDITION Value="true">
+						<EXP><![CDATA[$=$IsEmpty(Provincia)]]></EXP>
+					</VALUECONDITION>
+					<SET Id="RDK:69" VarRef="Provincia">
+						<EXP><![CDATA[$C$UD]]></EXP>
+						<PAR Name="AdvancedOptions" />
+					</SET>
+				</GROUP>
+				<GROUP Id="RDK:1557" Name="Group" SubType="Generic" Expanded="True">
+					<VALUECONDITION Value="true">
+						<EXP><![CDATA[$=$IsEmpty(Citta)]]></EXP>
+					</VALUECONDITION>
+					<SET Id="RDK:71" VarRef="Citta">
+						<EXP><![CDATA[$C$Udine]]></EXP>
+						<PAR Name="AdvancedOptions" />
+					</SET>
+				</GROUP>
+				<GROUP Id="RDK:1565" Name="Group" SubType="Generic" Expanded="True">
+					<VALUECONDITION Value="true">
+						<EXP><![CDATA[$=$IsEmpty(Data)]]></EXP>
+					</VALUECONDITION>
+					<SET Id="RDK:73" VarRef="Data">
+						<EXP><![CDATA[$=$Today()]]></EXP>
+						<PAR Name="AdvancedOptions" />
+					</SET>
+				</GROUP>
+				<GROUP Id="RDK:1573" Name="Group" SubType="Generic" Expanded="True">
+					<VALUECONDITION Value="true">
+						<EXP><![CDATA[$=$IsEmpty(Verificatore)]]></EXP>
+					</VALUECONDITION>
+					<SET Id="RDK:75" VarRef="Verificatore">
+						<EXP><![CDATA[$C$Ispettore X]]></EXP>
+						<PAR Name="AdvancedOptions" />
+					</SET>
+				</GROUP>
+				<GROUP Id="RDK:1581" Name="Group" SubType="Generic" Expanded="True">
+					<VALUECONDITION Value="true">
+						<EXP><![CDATA[$=$IsEmpty(TipoImpianto)]]></EXP>
+					</VALUECONDITION>
+					<SET Id="RDK:77" VarRef="TipoImpianto">
+						<EXP><![CDATA[$C$Impianto Y]]></EXP>
+						<PAR Name="AdvancedOptions" />
+					</SET>
+				</GROUP>
+				<GROUP Id="RDK:1589" Name="Group" SubType="Generic" Expanded="True">
+					<VALUECONDITION Value="true">
+						<EXP><![CDATA[$=$IsEmpty(nOfferta)]]></EXP>
+					</VALUECONDITION>
+					<SET Id="RDK:148" VarRef="nOfferta">
+						<EXP><![CDATA[$C$OffertaTest0000]]></EXP>
+						<PAR Name="AdvancedOptions" />
+					</SET>
+				</GROUP>
+			</GROUP>
+			<GROUP Id="RDK:707" Name="DATI ANOMALIE" SubType="Generic" Suppressed="True">
+				<GROUP Id="RDK:215" Name="Anomalie Reparto" SubType="Generic">
+					<SET_STRUCT Id="RDK:90" VarRef="MyAnomalia" ClearAll="True" ListRef="AnomalieReparto">
+						<PAR Name="Fila">
+							<EXP><![CDATA[$C$1]]></EXP>
+						</PAR>
+						<PAR Name="Posizione">
+							<EXP><![CDATA[$C$9]]></EXP>
+						</PAR>
+						<PAR Name="Anomalia">
+							<EXP><![CDATA[$C$Urto]]></EXP>
+						</PAR>
+						<PAR Name="Componente">
+							<EXP><![CDATA[$C$Traversino]]></EXP>
+						</PAR>
+						<PAR Name="Intervento">
+							<EXP><![CDATA[$C$Monitorare]]></EXP>
+						</PAR>
+						<PAR Name="Colore">
+							<EXP><![CDATA[$C$Verde]]></EXP>
+						</PAR>
+						<PAR Name="Immagini">
+							<EXP><![CDATA[$=$NewList("IMG_1.jpg")]]></EXP>
+						</PAR>
+						<PAR Name="IMG" />
+					</SET_STRUCT>
+					<SET_STRUCT Id="RDK:92" VarRef="MyAnomalia" ClearAll="True" ListRef="AnomalieReparto">
+						<PAR Name="Fila">
+							<EXP><![CDATA[$C$5]]></EXP>
+						</PAR>
+						<PAR Name="Posizione">
+							<EXP><![CDATA[$C$5-6 Livello 4]]></EXP>
+						</PAR>
+						<PAR Name="Anomalia">
+							<EXP><![CDATA[$C$Rottura]]></EXP>
+						</PAR>
+						<PAR Name="Componente">
+							<EXP><![CDATA[$C$Corrente]]></EXP>
+						</PAR>
+						<PAR Name="Intervento">
+							<EXP><![CDATA[$C$Sostituire]]></EXP>
+						</PAR>
+						<PAR Name="Colore">
+							<EXP><![CDATA[$C$Rosso]]></EXP>
+						</PAR>
+						<PAR Name="Immagini">
+							<EXP><![CDATA[$=$NewList("IMG_2.jpg", "IMG_3.jpg")]]></EXP>
+						</PAR>
+						<PAR Name="Immagini_LIST" />
+						<PAR Name="IMG" />
+					</SET_STRUCT>
+					<SET_STRUCT Id="RDK:206" VarRef="MyReparto" ClearAll="True" ListRef="ListaRepartiAnomalie">
+						<PAR Name="Reparto">
+							<EXP><![CDATA[$C$REPARTO A]]></EXP>
+						</PAR>
+						<PAR Name="Anomalie">
+							<EXP><![CDATA[$=$AnomalieReparto]]></EXP>
+						</PAR>
+						<PAR Name="Note">
+							<EXP><![CDATA[$C$Note Reparto A]]></EXP>
+						</PAR>
+					</SET_STRUCT>
+					<SET Id="RDK:209" VarRef="AnomalieReparto">
+						<EXP><![CDATA[$C$NOTHING]]></EXP>
+						<PAR Name="AdvancedOptions" />
+					</SET>
+				</GROUP>
+				<GROUP Id="RDK:220" Name="Anomalie Reparto" SubType="Generic">
+					<SET_STRUCT Id="RDK:94" VarRef="MyAnomalia" ClearAll="True" ListRef="AnomalieReparto">
+						<PAR Name="Fila">
+							<EXP><![CDATA[$C$8]]></EXP>
+						</PAR>
+						<PAR Name="Posizione">
+							<EXP><![CDATA[$C$3]]></EXP>
+						</PAR>
+						<PAR Name="Anomalia">
+							<EXP><![CDATA[$C$Torsione]]></EXP>
+						</PAR>
+						<PAR Name="Componente">
+							<EXP><![CDATA[$C$Montante]]></EXP>
+						</PAR>
+						<PAR Name="Intervento">
+							<EXP><![CDATA[$C$Monitorare]]></EXP>
+						</PAR>
+						<PAR Name="Colore">
+							<EXP><![CDATA[$C$Giallo]]></EXP>
+						</PAR>
+						<PAR Name="Immagini">
+							<EXP><![CDATA[$=$NewList("IMG_4.jpg")]]></EXP>
+						</PAR>
+					</SET_STRUCT>
+					<SET_STRUCT Id="RDK:211" VarRef="MyReparto" ClearAll="True" ListRef="ListaRepartiAnomalie">
+						<PAR Name="Reparto">
+							<EXP><![CDATA[$C$REPARTO B]]></EXP>
+						</PAR>
+						<PAR Name="Anomalie">
+							<EXP><![CDATA[$=$AnomalieReparto]]></EXP>
+						</PAR>
+						<PAR Name="Note">
+							<EXP><![CDATA[$C$Note Reparto B]]></EXP>
+						</PAR>
+					</SET_STRUCT>
+					<SET Id="RDK:223" VarRef="AnomalieReparto">
+						<EXP><![CDATA[$C$NOTHING]]></EXP>
+						<PAR Name="AdvancedOptions" />
+					</SET>
+				</GROUP>
+				<GROUP Id="RDK:233" Name="Anomalie Reparto" SubType="Generic">
+					<SET_STRUCT Id="RDK:230" VarRef="MyAnomalia" ClearAll="True" ListRef="AnomalieReparto">
+						<PAR Name="Fila">
+							<EXP><![CDATA[$C$14]]></EXP>
+						</PAR>
+						<PAR Name="Posizione">
+							<EXP><![CDATA[$C$2]]></EXP>
+						</PAR>
+						<PAR Name="Anomalia">
+							<EXP><![CDATA[$C$Urto]]></EXP>
+						</PAR>
+						<PAR Name="Componente">
+							<EXP><![CDATA[$C$Montante]]></EXP>
+						</PAR>
+						<PAR Name="Intervento">
+							<EXP><![CDATA[$C$Monitorare]]></EXP>
+						</PAR>
+						<PAR Name="Colore">
+							<EXP><![CDATA[$C$Verde]]></EXP>
+						</PAR>
+						<PAR Name="Immagini">
+							<EXP><![CDATA[$=$NewList("IMG_5.jpg", "IMG_6.jpg")]]></EXP>
+						</PAR>
+						<PAR Name="IMG" />
+					</SET_STRUCT>
+					<SET_STRUCT Id="RDK:231" VarRef="MyReparto" ClearAll="True" ListRef="ListaRepartiAnomalie">
+						<PAR Name="Reparto">
+							<EXP><![CDATA[$C$REPARTO C]]></EXP>
+						</PAR>
+						<PAR Name="Anomalie">
+							<EXP><![CDATA[$=$AnomalieReparto]]></EXP>
+						</PAR>
+						<PAR Name="Note">
+							<EXP><![CDATA[$C$Note Reparto C]]></EXP>
+						</PAR>
+					</SET_STRUCT>
+					<SET Id="RDK:232" VarRef="AnomalieReparto">
+						<EXP><![CDATA[$C$NOTHING]]></EXP>
+						<PAR Name="AdvancedOptions" />
+					</SET>
+				</GROUP>
+				<GROUP Id="RDK:245" Name="Anomalie Reparto" SubType="Generic">
+					<SET_STRUCT Id="RDK:241" VarRef="MyAnomalia" ClearAll="True" ListRef="AnomalieReparto">
+						<PAR Name="Fila">
+							<EXP><![CDATA[$C$2]]></EXP>
+						</PAR>
+						<PAR Name="Posizione">
+							<EXP><![CDATA[$C$8]]></EXP>
+						</PAR>
+						<PAR Name="Anomalia">
+							<EXP><![CDATA[$C$Rottura]]></EXP>
+						</PAR>
+						<PAR Name="Componente">
+							<EXP><![CDATA[$C$Traversino]]></EXP>
+						</PAR>
+						<PAR Name="Intervento">
+							<EXP><![CDATA[$C$Sostituire]]></EXP>
+						</PAR>
+						<PAR Name="Colore">
+							<EXP><![CDATA[$C$Rosso]]></EXP>
+						</PAR>
+						<PAR Name="Immagini">
+							<EXP><![CDATA[$=$NewList("IMG_7.jpg")]]></EXP>
+						</PAR>
+						<PAR Name="IMG" />
+					</SET_STRUCT>
+					<SET_STRUCT Id="RDK:242" VarRef="MyAnomalia" ClearAll="True" ListRef="AnomalieReparto">
+						<PAR Name="Fila">
+							<EXP><![CDATA[$C$7]]></EXP>
+						</PAR>
+						<PAR Name="Posizione">
+							<EXP><![CDATA[$C$1-2 Livello 7]]></EXP>
+						</PAR>
+						<PAR Name="Anomalia">
+							<EXP><![CDATA[$C$Urto]]></EXP>
+						</PAR>
+						<PAR Name="Componente">
+							<EXP><![CDATA[$C$Corrente]]></EXP>
+						</PAR>
+						<PAR Name="Intervento">
+							<EXP><![CDATA[$C$Sostituire]]></EXP>
+						</PAR>
+						<PAR Name="Colore">
+							<EXP><![CDATA[$C$Giallo]]></EXP>
+						</PAR>
+						<PAR Name="Immagini">
+							<EXP><![CDATA[$=$NewList("IMG_8.jpg", "IMG_9.jpg")]]></EXP>
+						</PAR>
+						<PAR Name="IMG" />
+					</SET_STRUCT>
+					<SET_STRUCT Id="RDK:243" VarRef="MyReparto" ClearAll="True" ListRef="ListaRepartiAnomalie">
+						<PAR Name="Reparto">
+							<EXP><![CDATA[$C$REPARTO D]]></EXP>
+						</PAR>
+						<PAR Name="Anomalie">
+							<EXP><![CDATA[$=$AnomalieReparto]]></EXP>
+						</PAR>
+						<PAR Name="Note">
+							<EXP><![CDATA[$C$Note Reparto D]]></EXP>
+						</PAR>
+					</SET_STRUCT>
+					<SET Id="RDK:244" VarRef="AnomalieReparto">
+						<EXP><![CDATA[$C$NOTHING]]></EXP>
+						<PAR Name="AdvancedOptions" />
+					</SET>
+				</GROUP>
+			</GROUP>
+			<GROUP Id="RDK:547" Name="VERTICALITA" SubType="Generic" Suppressed="True">
+				<GROUP Id="RDK:556" Name="reparto A" SubType="Generic">
+					<SET_STRUCT Id="RDK:592" VarRef="MyRilevazione" ClearAll="True" ListRef="Rilevazioni">
+						<PAR Name="Fila">
+							<EXP><![CDATA[$C$A]]></EXP>
+						</PAR>
+						<PAR Name="P1_Long">
+							<EXP><![CDATA[$=$SafeStr(Round(Rnd(), 2))]]></EXP>
+						</PAR>
+						<PAR Name="P1_Front">
+							<EXP><![CDATA[$=$SafeStr(Round(Rnd(), 2))]]></EXP>
+						</PAR>
+						<PAR Name="P2_Long">
+							<EXP><![CDATA[$=$SafeStr(Round(Rnd(), 2))]]></EXP>
+						</PAR>
+						<PAR Name="P2_Front">
+							<EXP><![CDATA[$=$SafeStr(Round(Rnd(), 2))]]></EXP>
+						</PAR>
+						<PAR Name="P3_Long">
+							<EXP><![CDATA[$=$SafeStr(Round(Rnd(), 2))]]></EXP>
+						</PAR>
+						<PAR Name="P3_Front">
+							<EXP><![CDATA[$=$SafeStr(Round(Rnd(), 2))]]></EXP>
+						</PAR>
+						<PAR Name="P4_Long">
+							<EXP><![CDATA[$=$SafeStr(Round(Rnd(), 2))]]></EXP>
+						</PAR>
+						<PAR Name="P4_Front">
+							<EXP><![CDATA[$=$SafeStr(Round(Rnd(), 2))]]></EXP>
+						</PAR>
+						<PAR Name="P5_Long">
+							<EXP><![CDATA[$=$SafeStr(Round(Rnd(), 2))]]></EXP>
+						</PAR>
+						<PAR Name="P5_Front">
+							<EXP><![CDATA[$=$SafeStr(Round(Rnd(), 2))]]></EXP>
+						</PAR>
+					</SET_STRUCT>
+					<SET_STRUCT Id="RDK:594" VarRef="MyRilevazione" ClearAll="True" ListRef="Rilevazioni">
+						<PAR Name="Fila">
+							<EXP><![CDATA[$C$B]]></EXP>
+						</PAR>
+						<PAR Name="P1_Long">
+							<EXP><![CDATA[$=$SafeStr(Round(Rnd(), 2))]]></EXP>
+						</PAR>
+						<PAR Name="P1_Front">
+							<EXP><![CDATA[$=$SafeStr(Round(Rnd(), 2))]]></EXP>
+						</PAR>
+						<PAR Name="P2_Long">
+							<EXP><![CDATA[$=$SafeStr(Round(Rnd(), 2))]]></EXP>
+						</PAR>
+						<PAR Name="P2_Front">
+							<EXP><![CDATA[$=$SafeStr(Round(Rnd(), 2))]]></EXP>
+						</PAR>
+						<PAR Name="P3_Long">
+							<EXP><![CDATA[$=$SafeStr(Round(Rnd(), 2))]]></EXP>
+						</PAR>
+						<PAR Name="P3_Front">
+							<EXP><![CDATA[$=$SafeStr(Round(Rnd(), 2))]]></EXP>
+						</PAR>
+						<PAR Name="P4_Long">
+							<EXP><![CDATA[$=$SafeStr(Round(Rnd(), 2))]]></EXP>
+						</PAR>
+						<PAR Name="P4_Front">
+							<EXP><![CDATA[$=$SafeStr(Round(Rnd(), 2))]]></EXP>
+						</PAR>
+						<PAR Name="P5_Long">
+							<EXP><![CDATA[$=$SafeStr(Round(Rnd(), 2))]]></EXP>
+						</PAR>
+						<PAR Name="P5_Front">
+							<EXP><![CDATA[$=$SafeStr(Round(Rnd(), 2))]]></EXP>
+						</PAR>
+					</SET_STRUCT>
+					<SET_STRUCT Id="RDK:596" VarRef="MyRilevazione" ClearAll="True" ListRef="Rilevazioni">
+						<PAR Name="Fila">
+							<EXP><![CDATA[$C$C]]></EXP>
+						</PAR>
+						<PAR Name="P1_Long">
+							<EXP><![CDATA[$=$SafeStr(Round(Rnd(), 2))]]></EXP>
+						</PAR>
+						<PAR Name="P1_Front">
+							<EXP><![CDATA[$=$SafeStr(Round(Rnd(), 2))]]></EXP>
+						</PAR>
+						<PAR Name="P2_Long">
+							<EXP><![CDATA[$=$SafeStr(Round(Rnd(), 2))]]></EXP>
+						</PAR>
+						<PAR Name="P2_Front">
+							<EXP><![CDATA[$=$SafeStr(Round(Rnd(), 2))]]></EXP>
+						</PAR>
+						<PAR Name="P3_Long">
+							<EXP><![CDATA[$=$SafeStr(Round(Rnd(), 2))]]></EXP>
+						</PAR>
+						<PAR Name="P3_Front">
+							<EXP><![CDATA[$=$SafeStr(Round(Rnd(), 2))]]></EXP>
+						</PAR>
+						<PAR Name="P4_Long">
+							<EXP><![CDATA[$=$SafeStr(Round(Rnd(), 2))]]></EXP>
+						</PAR>
+						<PAR Name="P4_Front">
+							<EXP><![CDATA[$=$SafeStr(Round(Rnd(), 2))]]></EXP>
+						</PAR>
+						<PAR Name="P5_Long">
+							<EXP><![CDATA[$=$SafeStr(Round(Rnd(), 2))]]></EXP>
+						</PAR>
+						<PAR Name="P5_Front">
+							<EXP><![CDATA[$=$SafeStr(Round(Rnd(), 2))]]></EXP>
+						</PAR>
+					</SET_STRUCT>
+					<SET_STRUCT Id="RDK:598" VarRef="MyRilevazione" ClearAll="True" ListRef="Rilevazioni">
+						<PAR Name="Fila">
+							<EXP><![CDATA[$C$D]]></EXP>
+						</PAR>
+						<PAR Name="P1_Long">
+							<EXP><![CDATA[$=$SafeStr(Round(Rnd(), 2))]]></EXP>
+						</PAR>
+						<PAR Name="P1_Front">
+							<EXP><![CDATA[$=$SafeStr(Round(Rnd(), 2))]]></EXP>
+						</PAR>
+						<PAR Name="P2_Long">
+							<EXP><![CDATA[$=$SafeStr(Round(Rnd(), 2))]]></EXP>
+						</PAR>
+						<PAR Name="P2_Front">
+							<EXP><![CDATA[$=$SafeStr(Round(Rnd(), 2))]]></EXP>
+						</PAR>
+						<PAR Name="P3_Long">
+							<EXP><![CDATA[$=$SafeStr(Round(Rnd(), 2))]]></EXP>
+						</PAR>
+						<PAR Name="P3_Front">
+							<EXP><![CDATA[$=$SafeStr(Round(Rnd(), 2))]]></EXP>
+						</PAR>
+						<PAR Name="P4_Long">
+							<EXP><![CDATA[$=$SafeStr(Round(Rnd(), 2))]]></EXP>
+						</PAR>
+						<PAR Name="P4_Front">
+							<EXP><![CDATA[$=$SafeStr(Round(Rnd(), 2))]]></EXP>
+						</PAR>
+						<PAR Name="P5_Long">
+							<EXP><![CDATA[$=$SafeStr(Round(Rnd(), 2))]]></EXP>
+						</PAR>
+						<PAR Name="P5_Front">
+							<EXP><![CDATA[$=$SafeStr(Round(Rnd(), 2))]]></EXP>
+						</PAR>
+					</SET_STRUCT>
+					<SET_STRUCT Id="RDK:600" VarRef="MyRilevazione" ClearAll="True" ListRef="Rilevazioni">
+						<PAR Name="Fila">
+							<EXP><![CDATA[$C$E]]></EXP>
+						</PAR>
+						<PAR Name="P1_Long">
+							<EXP><![CDATA[$=$SafeStr(Round(Rnd(), 2))]]></EXP>
+						</PAR>
+						<PAR Name="P1_Front">
+							<EXP><![CDATA[$=$SafeStr(Round(Rnd(), 2))]]></EXP>
+						</PAR>
+						<PAR Name="P2_Long">
+							<EXP><![CDATA[$=$SafeStr(Round(Rnd(), 2))]]></EXP>
+						</PAR>
+						<PAR Name="P2_Front">
+							<EXP><![CDATA[$=$SafeStr(Round(Rnd(), 2))]]></EXP>
+						</PAR>
+						<PAR Name="P3_Long">
+							<EXP><![CDATA[$=$SafeStr(Round(Rnd(), 2))]]></EXP>
+						</PAR>
+						<PAR Name="P3_Front">
+							<EXP><![CDATA[$=$SafeStr(Round(Rnd(), 2))]]></EXP>
+						</PAR>
+						<PAR Name="P4_Long">
+							<EXP><![CDATA[$=$SafeStr(Round(Rnd(), 2))]]></EXP>
+						</PAR>
+						<PAR Name="P4_Front">
+							<EXP><![CDATA[$=$SafeStr(Round(Rnd(), 2))]]></EXP>
+						</PAR>
+						<PAR Name="P5_Long">
+							<EXP><![CDATA[$=$SafeStr(Round(Rnd(), 2))]]></EXP>
+						</PAR>
+						<PAR Name="P5_Front">
+							<EXP><![CDATA[$=$SafeStr(Round(Rnd(), 2))]]></EXP>
+						</PAR>
+					</SET_STRUCT>
+					<SET_STRUCT Id="RDK:602" VarRef="MyRilevazione" ClearAll="True" ListRef="Rilevazioni">
+						<PAR Name="Fila">
+							<EXP><![CDATA[$C$F]]></EXP>
+						</PAR>
+						<PAR Name="P1_Long">
+							<EXP><![CDATA[$=$SafeStr(Round(Rnd(), 2))]]></EXP>
+						</PAR>
+						<PAR Name="P1_Front">
+							<EXP><![CDATA[$=$SafeStr(Round(Rnd(), 2))]]></EXP>
+						</PAR>
+						<PAR Name="P2_Long">
+							<EXP><![CDATA[$=$SafeStr(Round(Rnd(), 2))]]></EXP>
+						</PAR>
+						<PAR Name="P2_Front">
+							<EXP><![CDATA[$=$SafeStr(Round(Rnd(), 2))]]></EXP>
+						</PAR>
+						<PAR Name="P3_Long">
+							<EXP><![CDATA[$=$SafeStr(Round(Rnd(), 2))]]></EXP>
+						</PAR>
+						<PAR Name="P3_Front">
+							<EXP><![CDATA[$=$SafeStr(Round(Rnd(), 2))]]></EXP>
+						</PAR>
+						<PAR Name="P4_Long">
+							<EXP><![CDATA[$=$SafeStr(Round(Rnd(), 2))]]></EXP>
+						</PAR>
+						<PAR Name="P4_Front">
+							<EXP><![CDATA[$=$SafeStr(Round(Rnd(), 2))]]></EXP>
+						</PAR>
+						<PAR Name="P5_Long">
+							<EXP><![CDATA[$=$SafeStr(Round(Rnd(), 2))]]></EXP>
+						</PAR>
+						<PAR Name="P5_Front">
+							<EXP><![CDATA[$=$SafeStr(Round(Rnd(), 2))]]></EXP>
+						</PAR>
+					</SET_STRUCT>
+					<SET_STRUCT Id="RDK:604" VarRef="MyRilevazione" ClearAll="True" ListRef="Rilevazioni">
+						<PAR Name="Fila">
+							<EXP><![CDATA[$C$G]]></EXP>
+						</PAR>
+						<PAR Name="P1_Long">
+							<EXP><![CDATA[$=$SafeStr(Round(Rnd(), 2))]]></EXP>
+						</PAR>
+						<PAR Name="P1_Front">
+							<EXP><![CDATA[$=$SafeStr(Round(Rnd(), 2))]]></EXP>
+						</PAR>
+						<PAR Name="P2_Long">
+							<EXP><![CDATA[$=$SafeStr(Round(Rnd(), 2))]]></EXP>
+						</PAR>
+						<PAR Name="P2_Front">
+							<EXP><![CDATA[$=$SafeStr(Round(Rnd(), 2))]]></EXP>
+						</PAR>
+						<PAR Name="P3_Long">
+							<EXP><![CDATA[$=$SafeStr(Round(Rnd(), 2))]]></EXP>
+						</PAR>
+						<PAR Name="P3_Front">
+							<EXP><![CDATA[$=$SafeStr(Round(Rnd(), 2))]]></EXP>
+						</PAR>
+						<PAR Name="P4_Long">
+							<EXP><![CDATA[$=$SafeStr(Round(Rnd(), 2))]]></EXP>
+						</PAR>
+						<PAR Name="P4_Front">
+							<EXP><![CDATA[$=$SafeStr(Round(Rnd(), 2))]]></EXP>
+						</PAR>
+						<PAR Name="P5_Long">
+							<EXP><![CDATA[$=$SafeStr(Round(Rnd(), 2))]]></EXP>
+						</PAR>
+						<PAR Name="P5_Front">
+							<EXP><![CDATA[$=$SafeStr(Round(Rnd(), 2))]]></EXP>
+						</PAR>
+					</SET_STRUCT>
+					<SET_STRUCT Id="RDK:606" VarRef="MyRilevazione" ClearAll="True" ListRef="Rilevazioni">
+						<PAR Name="Fila">
+							<EXP><![CDATA[$C$H]]></EXP>
+						</PAR>
+						<PAR Name="P1_Long">
+							<EXP><![CDATA[$=$SafeStr(Round(Rnd(), 2))]]></EXP>
+						</PAR>
+						<PAR Name="P1_Front">
+							<EXP><![CDATA[$=$SafeStr(Round(Rnd(), 2))]]></EXP>
+						</PAR>
+						<PAR Name="P2_Long">
+							<EXP><![CDATA[$=$SafeStr(Round(Rnd(), 2))]]></EXP>
+						</PAR>
+						<PAR Name="P2_Front">
+							<EXP><![CDATA[$=$SafeStr(Round(Rnd(), 2))]]></EXP>
+						</PAR>
+						<PAR Name="P3_Long">
+							<EXP><![CDATA[$=$SafeStr(Round(Rnd(), 2))]]></EXP>
+						</PAR>
+						<PAR Name="P3_Front">
+							<EXP><![CDATA[$=$SafeStr(Round(Rnd(), 2))]]></EXP>
+						</PAR>
+						<PAR Name="P4_Long">
+							<EXP><![CDATA[$=$SafeStr(Round(Rnd(), 2))]]></EXP>
+						</PAR>
+						<PAR Name="P4_Front">
+							<EXP><![CDATA[$=$SafeStr(Round(Rnd(), 2))]]></EXP>
+						</PAR>
+						<PAR Name="P5_Long">
+							<EXP><![CDATA[$=$SafeStr(Round(Rnd(), 2))]]></EXP>
+						</PAR>
+						<PAR Name="P5_Front">
+							<EXP><![CDATA[$=$SafeStr(Round(Rnd(), 2))]]></EXP>
+						</PAR>
+					</SET_STRUCT>
+					<SET_STRUCT Id="RDK:608" VarRef="MyRilevazione" ClearAll="True" ListRef="Rilevazioni">
+						<PAR Name="Fila">
+							<EXP><![CDATA[$C$I]]></EXP>
+						</PAR>
+						<PAR Name="P1_Long">
+							<EXP><![CDATA[$=$SafeStr(Round(Rnd(), 2))]]></EXP>
+						</PAR>
+						<PAR Name="P1_Front">
+							<EXP><![CDATA[$=$SafeStr(Round(Rnd(), 2))]]></EXP>
+						</PAR>
+						<PAR Name="P2_Long">
+							<EXP><![CDATA[$=$SafeStr(Round(Rnd(), 2))]]></EXP>
+						</PAR>
+						<PAR Name="P2_Front">
+							<EXP><![CDATA[$=$SafeStr(Round(Rnd(), 2))]]></EXP>
+						</PAR>
+						<PAR Name="P3_Long">
+							<EXP><![CDATA[$=$SafeStr(Round(Rnd(), 2))]]></EXP>
+						</PAR>
+						<PAR Name="P3_Front">
+							<EXP><![CDATA[$=$SafeStr(Round(Rnd(), 2))]]></EXP>
+						</PAR>
+						<PAR Name="P4_Long">
+							<EXP><![CDATA[$=$SafeStr(Round(Rnd(), 2))]]></EXP>
+						</PAR>
+						<PAR Name="P4_Front">
+							<EXP><![CDATA[$=$SafeStr(Round(Rnd(), 2))]]></EXP>
+						</PAR>
+						<PAR Name="P5_Long">
+							<EXP><![CDATA[$=$SafeStr(Round(Rnd(), 2))]]></EXP>
+						</PAR>
+						<PAR Name="P5_Front">
+							<EXP><![CDATA[$=$SafeStr(Round(Rnd(), 2))]]></EXP>
+						</PAR>
+					</SET_STRUCT>
+					<SET_STRUCT Id="RDK:589" VarRef="MyVerticalitaReparto" ClearAll="True" ListRef="Verticalita">
+						<PAR Name="Reparto">
+							<EXP><![CDATA[$C$Reparto A]]></EXP>
+						</PAR>
+						<PAR Name="Rilevazioni">
+							<EXP><![CDATA[$=$Rilevazioni]]></EXP>
+						</PAR>
+						<PAR Name="p1">
+							<EXP><![CDATA[$C$01]]></EXP>
+						</PAR>
+						<PAR Name="p2">
+							<EXP><![CDATA[$C$03]]></EXP>
+						</PAR>
+						<PAR Name="p3">
+							<EXP><![CDATA[$C$05]]></EXP>
+						</PAR>
+						<PAR Name="p4">
+							<EXP><![CDATA[$C$07]]></EXP>
+						</PAR>
+						<PAR Name="p5">
+							<EXP><![CDATA[$C$09]]></EXP>
+						</PAR>
+					</SET_STRUCT>
+					<SET Id="RDK:636" VarRef="Rilevazioni">
+						<EXP><![CDATA[$C$NOTHING]]></EXP>
+						<PAR Name="AdvancedOptions" />
+					</SET>
+				</GROUP>
+				<GROUP Id="RDK:633" Name="reparto B" SubType="Generic">
+					<SET_STRUCT Id="RDK:623" VarRef="MyRilevazione" ClearAll="True" ListRef="Rilevazioni">
+						<PAR Name="Fila">
+							<EXP><![CDATA[$C$A1]]></EXP>
+						</PAR>
+						<PAR Name="P1_Long">
+							<EXP><![CDATA[$=$SafeStr(Round(Rnd(), 2))]]></EXP>
+						</PAR>
+						<PAR Name="P1_Front">
+							<EXP><![CDATA[$=$SafeStr(Round(Rnd(), 2))]]></EXP>
+						</PAR>
+						<PAR Name="P2_Long">
+							<EXP><![CDATA[$=$SafeStr(Round(Rnd(), 2))]]></EXP>
+						</PAR>
+						<PAR Name="P2_Front">
+							<EXP><![CDATA[$=$SafeStr(Round(Rnd(), 2))]]></EXP>
+						</PAR>
+						<PAR Name="P3_Long">
+							<EXP><![CDATA[$=$SafeStr(Round(Rnd(), 2))]]></EXP>
+						</PAR>
+						<PAR Name="P3_Front">
+							<EXP><![CDATA[$=$SafeStr(Round(Rnd(), 2))]]></EXP>
+						</PAR>
+						<PAR Name="P4_Long">
+							<EXP><![CDATA[$=$SafeStr(Round(Rnd(), 2))]]></EXP>
+						</PAR>
+						<PAR Name="P4_Front">
+							<EXP><![CDATA[$=$SafeStr(Round(Rnd(), 2))]]></EXP>
+						</PAR>
+						<PAR Name="P5_Long">
+							<EXP><![CDATA[$=$SafeStr(Round(Rnd(), 2))]]></EXP>
+						</PAR>
+						<PAR Name="P5_Front">
+							<EXP><![CDATA[$=$SafeStr(Round(Rnd(), 2))]]></EXP>
+						</PAR>
+					</SET_STRUCT>
+					<SET_STRUCT Id="RDK:624" VarRef="MyRilevazione" ClearAll="True" ListRef="Rilevazioni">
+						<PAR Name="Fila">
+							<EXP><![CDATA[$C$A5]]></EXP>
+						</PAR>
+						<PAR Name="P1_Long">
+							<EXP><![CDATA[$=$SafeStr(Round(Rnd(), 2))]]></EXP>
+						</PAR>
+						<PAR Name="P1_Front">
+							<EXP><![CDATA[$=$SafeStr(Round(Rnd(), 2))]]></EXP>
+						</PAR>
+						<PAR Name="P2_Long">
+							<EXP><![CDATA[$=$SafeStr(Round(Rnd(), 2))]]></EXP>
+						</PAR>
+						<PAR Name="P2_Front">
+							<EXP><![CDATA[$=$SafeStr(Round(Rnd(), 2))]]></EXP>
+						</PAR>
+						<PAR Name="P3_Long">
+							<EXP><![CDATA[$=$SafeStr(Round(Rnd(), 2))]]></EXP>
+						</PAR>
+						<PAR Name="P3_Front">
+							<EXP><![CDATA[$=$SafeStr(Round(Rnd(), 2))]]></EXP>
+						</PAR>
+						<PAR Name="P4_Long">
+							<EXP><![CDATA[$=$SafeStr(Round(Rnd(), 2))]]></EXP>
+						</PAR>
+						<PAR Name="P4_Front">
+							<EXP><![CDATA[$=$SafeStr(Round(Rnd(), 2))]]></EXP>
+						</PAR>
+						<PAR Name="P5_Long">
+							<EXP><![CDATA[$=$SafeStr(Round(Rnd(), 2))]]></EXP>
+						</PAR>
+						<PAR Name="P5_Front">
+							<EXP><![CDATA[$=$SafeStr(Round(Rnd(), 2))]]></EXP>
+						</PAR>
+					</SET_STRUCT>
+					<SET_STRUCT Id="RDK:625" VarRef="MyRilevazione" ClearAll="True" ListRef="Rilevazioni">
+						<PAR Name="Fila">
+							<EXP><![CDATA[$C$C2]]></EXP>
+						</PAR>
+						<PAR Name="P1_Long">
+							<EXP><![CDATA[$=$SafeStr(Round(Rnd(), 2))]]></EXP>
+						</PAR>
+						<PAR Name="P1_Front">
+							<EXP><![CDATA[$=$SafeStr(Round(Rnd(), 2))]]></EXP>
+						</PAR>
+						<PAR Name="P2_Long">
+							<EXP><![CDATA[$=$SafeStr(Round(Rnd(), 2))]]></EXP>
+						</PAR>
+						<PAR Name="P2_Front">
+							<EXP><![CDATA[$=$SafeStr(Round(Rnd(), 2))]]></EXP>
+						</PAR>
+						<PAR Name="P3_Long">
+							<EXP><![CDATA[$=$SafeStr(Round(Rnd(), 2))]]></EXP>
+						</PAR>
+						<PAR Name="P3_Front">
+							<EXP><![CDATA[$=$SafeStr(Round(Rnd(), 2))]]></EXP>
+						</PAR>
+						<PAR Name="P4_Long">
+							<EXP><![CDATA[$=$SafeStr(Round(Rnd(), 2))]]></EXP>
+						</PAR>
+						<PAR Name="P4_Front">
+							<EXP><![CDATA[$=$SafeStr(Round(Rnd(), 2))]]></EXP>
+						</PAR>
+						<PAR Name="P5_Long">
+							<EXP><![CDATA[$=$SafeStr(Round(Rnd(), 2))]]></EXP>
+						</PAR>
+						<PAR Name="P5_Front">
+							<EXP><![CDATA[$=$SafeStr(Round(Rnd(), 2))]]></EXP>
+						</PAR>
+					</SET_STRUCT>
+					<SET_STRUCT Id="RDK:626" VarRef="MyRilevazione" ClearAll="True" ListRef="Rilevazioni">
+						<PAR Name="Fila">
+							<EXP><![CDATA[$C$C6]]></EXP>
+						</PAR>
+						<PAR Name="P1_Long">
+							<EXP><![CDATA[$=$SafeStr(Round(Rnd(), 2))]]></EXP>
+						</PAR>
+						<PAR Name="P1_Front">
+							<EXP><![CDATA[$=$SafeStr(Round(Rnd(), 2))]]></EXP>
+						</PAR>
+						<PAR Name="P2_Long">
+							<EXP><![CDATA[$=$SafeStr(Round(Rnd(), 2))]]></EXP>
+						</PAR>
+						<PAR Name="P2_Front">
+							<EXP><![CDATA[$=$SafeStr(Round(Rnd(), 2))]]></EXP>
+						</PAR>
+						<PAR Name="P3_Long">
+							<EXP><![CDATA[$=$SafeStr(Round(Rnd(), 2))]]></EXP>
+						</PAR>
+						<PAR Name="P3_Front">
+							<EXP><![CDATA[$=$SafeStr(Round(Rnd(), 2))]]></EXP>
+						</PAR>
+						<PAR Name="P4_Long">
+							<EXP><![CDATA[$=$SafeStr(Round(Rnd(), 2))]]></EXP>
+						</PAR>
+						<PAR Name="P4_Front">
+							<EXP><![CDATA[$=$SafeStr(Round(Rnd(), 2))]]></EXP>
+						</PAR>
+						<PAR Name="P5_Long">
+							<EXP><![CDATA[$=$SafeStr(Round(Rnd(), 2))]]></EXP>
+						</PAR>
+						<PAR Name="P5_Front">
+							<EXP><![CDATA[$=$SafeStr(Round(Rnd(), 2))]]></EXP>
+						</PAR>
+					</SET_STRUCT>
+					<SET_STRUCT Id="RDK:627" VarRef="MyRilevazione" ClearAll="True" ListRef="Rilevazioni">
+						<PAR Name="Fila">
+							<EXP><![CDATA[$C$D3]]></EXP>
+						</PAR>
+						<PAR Name="P1_Long">
+							<EXP><![CDATA[$=$SafeStr(Round(Rnd(), 2))]]></EXP>
+						</PAR>
+						<PAR Name="P1_Front">
+							<EXP><![CDATA[$=$SafeStr(Round(Rnd(), 2))]]></EXP>
+						</PAR>
+						<PAR Name="P2_Long">
+							<EXP><![CDATA[$=$SafeStr(Round(Rnd(), 2))]]></EXP>
+						</PAR>
+						<PAR Name="P2_Front">
+							<EXP><![CDATA[$=$SafeStr(Round(Rnd(), 2))]]></EXP>
+						</PAR>
+						<PAR Name="P3_Long">
+							<EXP><![CDATA[$=$SafeStr(Round(Rnd(), 2))]]></EXP>
+						</PAR>
+						<PAR Name="P3_Front">
+							<EXP><![CDATA[$=$SafeStr(Round(Rnd(), 2))]]></EXP>
+						</PAR>
+						<PAR Name="P4_Long">
+							<EXP><![CDATA[$=$SafeStr(Round(Rnd(), 2))]]></EXP>
+						</PAR>
+						<PAR Name="P4_Front">
+							<EXP><![CDATA[$=$SafeStr(Round(Rnd(), 2))]]></EXP>
+						</PAR>
+						<PAR Name="P5_Long">
+							<EXP><![CDATA[$=$SafeStr(Round(Rnd(), 2))]]></EXP>
+						</PAR>
+						<PAR Name="P5_Front">
+							<EXP><![CDATA[$=$SafeStr(Round(Rnd(), 2))]]></EXP>
+						</PAR>
+					</SET_STRUCT>
+					<SET_STRUCT Id="RDK:628" VarRef="MyRilevazione" ClearAll="True" ListRef="Rilevazioni">
+						<PAR Name="Fila">
+							<EXP><![CDATA[$C$D7]]></EXP>
+						</PAR>
+						<PAR Name="P1_Long">
+							<EXP><![CDATA[$=$SafeStr(Round(Rnd(), 2))]]></EXP>
+						</PAR>
+						<PAR Name="P1_Front">
+							<EXP><![CDATA[$=$SafeStr(Round(Rnd(), 2))]]></EXP>
+						</PAR>
+						<PAR Name="P2_Long">
+							<EXP><![CDATA[$=$SafeStr(Round(Rnd(), 2))]]></EXP>
+						</PAR>
+						<PAR Name="P2_Front">
+							<EXP><![CDATA[$=$SafeStr(Round(Rnd(), 2))]]></EXP>
+						</PAR>
+						<PAR Name="P3_Long">
+							<EXP><![CDATA[$=$SafeStr(Round(Rnd(), 2))]]></EXP>
+						</PAR>
+						<PAR Name="P3_Front">
+							<EXP><![CDATA[$=$SafeStr(Round(Rnd(), 2))]]></EXP>
+						</PAR>
+						<PAR Name="P4_Long">
+							<EXP><![CDATA[$=$SafeStr(Round(Rnd(), 2))]]></EXP>
+						</PAR>
+						<PAR Name="P4_Front">
+							<EXP><![CDATA[$=$SafeStr(Round(Rnd(), 2))]]></EXP>
+						</PAR>
+						<PAR Name="P5_Long">
+							<EXP><![CDATA[$=$SafeStr(Round(Rnd(), 2))]]></EXP>
+						</PAR>
+						<PAR Name="P5_Front">
+							<EXP><![CDATA[$=$SafeStr(Round(Rnd(), 2))]]></EXP>
+						</PAR>
+					</SET_STRUCT>
+					<SET_STRUCT Id="RDK:629" VarRef="MyRilevazione" ClearAll="True" ListRef="Rilevazioni">
+						<PAR Name="Fila">
+							<EXP><![CDATA[$C$E2]]></EXP>
+						</PAR>
+						<PAR Name="P1_Long">
+							<EXP><![CDATA[$=$SafeStr(Round(Rnd(), 2))]]></EXP>
+						</PAR>
+						<PAR Name="P1_Front">
+							<EXP><![CDATA[$=$SafeStr(Round(Rnd(), 2))]]></EXP>
+						</PAR>
+						<PAR Name="P2_Long">
+							<EXP><![CDATA[$=$SafeStr(Round(Rnd(), 2))]]></EXP>
+						</PAR>
+						<PAR Name="P2_Front">
+							<EXP><![CDATA[$=$SafeStr(Round(Rnd(), 2))]]></EXP>
+						</PAR>
+						<PAR Name="P3_Long">
+							<EXP><![CDATA[$=$SafeStr(Round(Rnd(), 2))]]></EXP>
+						</PAR>
+						<PAR Name="P3_Front">
+							<EXP><![CDATA[$=$SafeStr(Round(Rnd(), 2))]]></EXP>
+						</PAR>
+						<PAR Name="P4_Long">
+							<EXP><![CDATA[$=$SafeStr(Round(Rnd(), 2))]]></EXP>
+						</PAR>
+						<PAR Name="P4_Front">
+							<EXP><![CDATA[$=$SafeStr(Round(Rnd(), 2))]]></EXP>
+						</PAR>
+						<PAR Name="P5_Long">
+							<EXP><![CDATA[$=$SafeStr(Round(Rnd(), 2))]]></EXP>
+						</PAR>
+						<PAR Name="P5_Front">
+							<EXP><![CDATA[$=$SafeStr(Round(Rnd(), 2))]]></EXP>
+						</PAR>
+					</SET_STRUCT>
+					<SET_STRUCT Id="RDK:630" VarRef="MyRilevazione" ClearAll="True" ListRef="Rilevazioni">
+						<PAR Name="Fila">
+							<EXP><![CDATA[$C$E6]]></EXP>
+						</PAR>
+						<PAR Name="P1_Long">
+							<EXP><![CDATA[$=$SafeStr(Round(Rnd(), 2))]]></EXP>
+						</PAR>
+						<PAR Name="P1_Front">
+							<EXP><![CDATA[$=$SafeStr(Round(Rnd(), 2))]]></EXP>
+						</PAR>
+						<PAR Name="P2_Long">
+							<EXP><![CDATA[$=$SafeStr(Round(Rnd(), 2))]]></EXP>
+						</PAR>
+						<PAR Name="P2_Front">
+							<EXP><![CDATA[$=$SafeStr(Round(Rnd(), 2))]]></EXP>
+						</PAR>
+						<PAR Name="P3_Long">
+							<EXP><![CDATA[$=$SafeStr(Round(Rnd(), 2))]]></EXP>
+						</PAR>
+						<PAR Name="P3_Front">
+							<EXP><![CDATA[$=$SafeStr(Round(Rnd(), 2))]]></EXP>
+						</PAR>
+						<PAR Name="P4_Long">
+							<EXP><![CDATA[$=$SafeStr(Round(Rnd(), 2))]]></EXP>
+						</PAR>
+						<PAR Name="P4_Front">
+							<EXP><![CDATA[$=$SafeStr(Round(Rnd(), 2))]]></EXP>
+						</PAR>
+						<PAR Name="P5_Long">
+							<EXP><![CDATA[$=$SafeStr(Round(Rnd(), 2))]]></EXP>
+						</PAR>
+						<PAR Name="P5_Front">
+							<EXP><![CDATA[$=$SafeStr(Round(Rnd(), 2))]]></EXP>
+						</PAR>
+					</SET_STRUCT>
+					<SET_STRUCT Id="RDK:632" VarRef="MyVerticalitaReparto" ClearAll="True" ListRef="Verticalita">
+						<PAR Name="Reparto">
+							<EXP><![CDATA[$C$Reparto B]]></EXP>
+						</PAR>
+						<PAR Name="Rilevazioni">
+							<EXP><![CDATA[$=$Rilevazioni]]></EXP>
+						</PAR>
+						<PAR Name="p1">
+							<EXP><![CDATA[$C$02]]></EXP>
+						</PAR>
+						<PAR Name="p2">
+							<EXP><![CDATA[$C$04]]></EXP>
+						</PAR>
+						<PAR Name="p3">
+							<EXP><![CDATA[$C$06]]></EXP>
+						</PAR>
+						<PAR Name="p4">
+							<EXP><![CDATA[$C$07]]></EXP>
+						</PAR>
+						<PAR Name="p5">
+							<EXP><![CDATA[$C$09]]></EXP>
+						</PAR>
+					</SET_STRUCT>
+				</GROUP>
+			</GROUP>
+			<SET Id="RDK:172" VarRef="WorkingDir" Suppressed="True">
+				<EXP><![CDATA[$=$ProcPath()+"RisultatiTest\"]]></EXP>
+				<PAR Name="AdvancedOptions" />
+			</SET>
+		</GROUP>
+		<GROUP Id="RDK:711" Name="DATI ANOMALIE DA FILE" SubType="Generic" Expanded="True">
+			<SET Id="RDK:798" VarRef="ProcessFolder">
+				<EXP><![CDATA[$=$WorkingDir+"..\"]]></EXP>
+				<PAR Name="AdvancedOptions" />
+			</SET>
+			<SET Id="RDK:795" VarRef="Anomalie_files">
+				<EXP><![CDATA[$=$GetAllFiles(ProcessFolder+"LAYOUT\", "AnomalieList_*", "")]]></EXP>
+				<PAR Name="AdvancedOptions" />
+			</SET>
+			<ACTION_CALL Id="RDK:850" Name="RDEngineering_ReadFromTextFile">
+				<PAR Name="RDLibraryName">
+					<EXP><![CDATA[$C$RDEngineering_FILE_TEXT]]></EXP>
+				</PAR>
+				<PAR Name="FileName">
+					<EXP><![CDATA[$=$ProcessFolder+"LAYOUT\" + "Reparti.json"]]></EXP>
+				</PAR>
+				<PAR Name="DataType">
+					<EXP><![CDATA[$C$0]]></EXP>
+				</PAR>
+				<PAR Name="StringText">
+					<EXP><![CDATA[$V$Reparti_txt]]></EXP>
+				</PAR>
+				<PAR Name="StringVector">
+					<EXP><![CDATA[$V$]]></EXP>
+				</PAR>
+				<PAR Name="StringTable">
+					<EXP><![CDATA[$V$]]></EXP>
+				</PAR>
+				<PAR Name="NumberVector">
+					<EXP><![CDATA[$V$]]></EXP>
+				</PAR>
+				<PAR Name="NumberTable">
+					<EXP><![CDATA[$V$]]></EXP>
+				</PAR>
+				<PAR Name="FileFormat">
+					<EXP><![CDATA[$C$0]]></EXP>
+				</PAR>
+				<PAR Name="IniSection" />
+				<PAR Name="IniProperty" />
+				<PAR Name="Options" />
+			</ACTION_CALL>
+			<SET Id="RDK:952" VarRef="myRepartiList">
+				<EXP><![CDATA[$=$FromJSON(Reparti_txt)]]></EXP>
+				<PAR Name="AdvancedOptions" />
+			</SET>
+			<FOREACHLOOP Id="RDK:799" Expanded="True" ItemVarRef="anomalia_file">
+				<PAR Name="ArrayValueExp">
+					<EXP><![CDATA[$V$Anomalie_files]]></EXP>
+				</PAR>
+				<PAR Name="ExitCondExp">
+					<EXP><![CDATA[$V$]]></EXP>
+				</PAR>
+				<ACTION_CALL Id="RDK:801" Name="RDEngineering_ReadFromTextFile">
+					<PAR Name="RDLibraryName">
+						<EXP><![CDATA[$C$RDEngineering_FILE_TEXT]]></EXP>
+					</PAR>
+					<PAR Name="FileName">
+						<EXP><![CDATA[$=$anomalia_file]]></EXP>
+					</PAR>
+					<PAR Name="DataType">
+						<EXP><![CDATA[$C$0]]></EXP>
+					</PAR>
+					<PAR Name="StringText">
+						<EXP><![CDATA[$V$anomalie_txt]]></EXP>
+					</PAR>
+					<PAR Name="StringVector">
+						<EXP><![CDATA[$V$]]></EXP>
+					</PAR>
+					<PAR Name="StringTable">
+						<EXP><![CDATA[$V$]]></EXP>
+					</PAR>
+					<PAR Name="NumberVector">
+						<EXP><![CDATA[$V$]]></EXP>
+					</PAR>
+					<PAR Name="NumberTable">
+						<EXP><![CDATA[$V$]]></EXP>
+					</PAR>
+					<PAR Name="FileFormat">
+						<EXP><![CDATA[$C$0]]></EXP>
+					</PAR>
+					<PAR Name="IniSection" />
+					<PAR Name="IniProperty" />
+					<PAR Name="Options" />
+				</ACTION_CALL>
+				<SET Id="RDK:803" VarRef="myServiceList">
+					<EXP><![CDATA[$=$FromJSON(anomalie_txt)]]></EXP>
+					<PAR Name="AdvancedOptions" />
+				</SET>
+				<SET Id="RDK:805" VarRef="AnomalieReparto">
+					<EXP><![CDATA[$C$NOTHING]]></EXP>
+					<PAR Name="AdvancedOptions" />
+				</SET>
+				<FOREACHLOOP Id="RDK:806" Expanded="True" ItemVarRef="myService">
+					<PAR Name="ArrayValueExp">
+						<EXP><![CDATA[$V$myServiceList]]></EXP>
+					</PAR>
+					<PAR Name="ExitCondExp">
+						<EXP><![CDATA[$V$]]></EXP>
+					</PAR>
+					<GROUP Id="RDK:999" Name="Group" SubType="Generic" Expanded="True">
+						<VALUECONDITION Value="true">
+							<EXP><![CDATA[$=$myService.Scelta="A"]]></EXP>
+						</VALUECONDITION>
+						<SET_STRUCT Id="RDK:808" VarRef="MyAnomalia" ClearAll="True" ListRef="AnomalieReparto">
+							<PAR Name="Fila">
+								<EXP><![CDATA[$=$myService.Fila]]></EXP>
+							</PAR>
+							<PAR Name="Posizione">
+								<EXP><![CDATA[$=$myService.Numero]]></EXP>
+							</PAR>
+							<PAR Name="Anomalia">
+								<EXP><![CDATA[$=$myService.Anomalia]]></EXP>
+							</PAR>
+							<PAR Name="Componente">
+								<EXP><![CDATA[$=$myService.Componente]]></EXP>
+							</PAR>
+							<PAR Name="Intervento">
+								<EXP><![CDATA[$=$myService.Intervento]]></EXP>
+							</PAR>
+							<PAR Name="Colore">
+								<EXP><![CDATA[$=$myService.Colore_anomalia]]></EXP>
+							</PAR>
+							<PAR Name="Immagini">
+								<EXP><![CDATA[$=$myService.Immagini]]></EXP>
+							</PAR>
+							<PAR Name="IMG" />
+							<PAR Name="Dati_tecnici">
+								<EXP><![CDATA[$=$IIF(StrToUpper(myService.Colore_anomalia)<>"VERDE", "("+myService.Dati_tecnici+")","")]]></EXP>
+							</PAR>
+						</SET_STRUCT>
+					</GROUP>
+					<GROUP Id="RDK:1010" Name="Group" SubType="Generic" Expanded="True">
+						<VALUECONDITION Value="true">
+							<EXP><![CDATA[$=$myService.Scelta="V"]]></EXP>
+						</VALUECONDITION>
+						<VALUECONDITION Value="true">
+							<EXP><![CDATA[$=$myService.I_E="E"]]></EXP>
+						</VALUECONDITION>
+						<LIST_ADD Id="RDK:1090" ListRef="MyServiceVerticalitàList">
+							<PAR Name="VALUE_TO_ADD">
+								<EXP><![CDATA[$=$myService]]></EXP>
+							</PAR>
+							<PAR Name="POS_TO_ADD" />
+						</LIST_ADD>
+					</GROUP>
+				</FOREACHLOOP>
+				<SET Id="RDK:954" VarRef="id_reparto">
+					<EXP><![CDATA[$=$FieldValue(FirstOf(FilterByFieldValue(myRepartiList, "id", StrBefore(StrAfter(anomalia_file, "AnomalieList_"), ".json"))), "text")]]></EXP>
+					<PAR Name="AdvancedOptions" />
+				</SET>
+				<SET Id="RDK:956" VarRef="note_reparto">
+					<EXP><![CDATA[$=$FieldValue(FirstOf(FilterByFieldValue(myRepartiList, "text", id_reparto)), "description")]]></EXP>
+					<PAR Name="AdvancedOptions" />
+				</SET>
+				<SET_STRUCT Id="RDK:810" VarRef="MyReparto" ClearAll="True" ListRef="ListaRepartiAnomalie">
+					<PAR Name="Reparto">
+						<EXP><![CDATA[$=$"REPARTO "+id_reparto]]></EXP>
+					</PAR>
+					<PAR Name="Anomalie">
+						<EXP><![CDATA[$=$AnomalieReparto]]></EXP>
+					</PAR>
+					<PAR Name="Note">
+						<EXP><![CDATA[$=$note_reparto]]></EXP>
+					</PAR>
+				</SET_STRUCT>
+				<GROUP Id="RDK:1093" Name="SETTO STRUTTURE PER TABELLA VERTICALITA'" SubType="Generic" Expanded="True">
+					<SET Id="RDK:1112" VarRef="AltezzeSpalleList">
+						<EXP><![CDATA[$C$NOTHING]]></EXP>
+						<PAR Name="AdvancedOptions" />
+					</SET>
+					<SET_STRUCT Id="RDK:1116" VarRef="MyVerticalitaReparto" ClearAll="True">
+						<PAR Name="Reparto">
+							<EXP><![CDATA[$=$id_reparto]]></EXP>
+						</PAR>
+						<PAR Name="Rilevazioni" />
+						<PAR Name="AltezzeSpalle" />
+					</SET_STRUCT>
+					<FOREACHLOOP Id="RDK:1100" Expanded="True" ItemVarRef="myService">
+						<PAR Name="ArrayValueExp">
+							<EXP><![CDATA[$=$myServiceVerticalitàList]]></EXP>
+						</PAR>
+						<PAR Name="ExitCondExp">
+							<EXP><![CDATA[$V$]]></EXP>
+						</PAR>
+						<SET Id="RDK:1106" VarRef="S">
+							<EXP><![CDATA[$=$myService.AltezzaSpalla/350]]></EXP>
+							<PAR Name="AdvancedOptions" />
+						</SET>
+						<IFTHENELSE Id="RDK:1122" Expanded="True">
+							<VALUECONDITION Value="true">
+								<EXP><![CDATA[$=$CountByExp(MyVerticalitaReparto.Rilevazioni, "Me.Fila=myService.Fila")=0]]></EXP>
+							</VALUECONDITION>
+							<GROUP Id="RDK:1123" SubType="Then" Expanded="True">
+								<SET_STRUCT Id="RDK:1109" VarRef="MyRilevazione" ClearAll="True">
+									<PAR Name="Fila">
+										<EXP><![CDATA[$=$myService.Fila]]></EXP>
+									</PAR>
+									<PAR Name="Posizioni" />
+								</SET_STRUCT>
+							</GROUP>
+							<GROUP Id="RDK:1124" SubType="Else" Expanded="True">
+								<SET Id="RDK:1135" VarRef="MyRilevazione">
+									<EXP><![CDATA[$=$FirstOf(FilterByExp(MyVerticalitaReparto.Rilevazioni, "Me.Fila=myService.Fila", ""))]]></EXP>
+									<PAR Name="AdvancedOptions" />
+								</SET>
+								<REMOVE_ADD Id="RDK:1138" ListRef="MyVerticalitaReparto.Rilevazioni" Value="$=$MyRilevazione">
+									<EXP />
+								</REMOVE_ADD>
+							</GROUP>
+						</IFTHENELSE>
+						<SET Id="RDK:1591" VarRef="myService.VertL">
+							<EXP><![CDATA[$=$IIF(IsEmpty(myService.VertL), 0, myService.VertL)]]></EXP>
+							<PAR Name="AdvancedOptions" />
+						</SET>
+						<SET Id="RDK:1593" VarRef="myService.VertT">
+							<EXP><![CDATA[$=$IIF(IsEmpty(myService.VertT), 0, myService.VertT)]]></EXP>
+							<PAR Name="AdvancedOptions" />
+						</SET>
+						<SET_STRUCT Id="RDK:1101" VarRef="PosizioneVerticalità" ClearAll="True" ListRef="MyRilevazione.Posizioni">
+							<PAR Name="Posizione">
+								<EXP><![CDATA[$=$SafeInt(myService.Numero)]]></EXP>
+							</PAR>
+							<PAR Name="Long">
+								<EXP><![CDATA[$=$myService.VertL]]></EXP>
+							</PAR>
+							<PAR Name="Front">
+								<EXP><![CDATA[$=$myService.VertT]]></EXP>
+							</PAR>
+							<PAR Name="ColoreFront">
+								<EXP><![CDATA[$=$IIF(myService.VertT=0, "BIANCO",
+    IIF(Abs(myService.VertT)<=S, "VERDE",
+        IIF(Abs(myService.VertT)<=(2*S), "GIALLO",
+            "ROSSO"
+        )
+    )
+)]]></EXP>
+							</PAR>
+							<PAR Name="ColoreLong">
+								<EXP><![CDATA[$=$IIF(myService.VertL=0, "BIANCO",
+    IIF(Abs(myService.VertL)<=S, "VERDE",
+        IIF(Abs(myService.VertL)<=(2*S), "GIALLO",
+            "ROSSO"
+        )
+    )
+)
+]]></EXP>
+							</PAR>
+						</SET_STRUCT>
+						<LIST_ADD Id="RDK:1113" ListRef="AltezzeSpalleList">
+							<PAR Name="VALUE_TO_ADD">
+								<EXP><![CDATA[$=$myService.AltezzaSpalla]]></EXP>
+							</PAR>
+							<PAR Name="POS_TO_ADD" />
+						</LIST_ADD>
+						<LIST_ADD Id="RDK:1139" ListRef="MyVerticalitaReparto.Rilevazioni">
+							<PAR Name="VALUE_TO_ADD">
+								<EXP><![CDATA[$=$MyRilevazione]]></EXP>
+							</PAR>
+							<PAR Name="POS_TO_ADD" />
+						</LIST_ADD>
+					</FOREACHLOOP>
+					<SET Id="RDK:1140" VarRef="MyVerticalitaReparto.AltezzeSpalle">
+						<EXP><![CDATA[$=$NumListToStr(SortListDbl(ListDistinct(AltezzeSpalleList), False), "", "mm/")+"mm"]]></EXP>
+						<PAR Name="AdvancedOptions" />
+					</SET>
+					<LIST_ADD Id="RDK:1142" ListRef="Verticalita">
+						<PAR Name="VALUE_TO_ADD">
+							<EXP><![CDATA[$=$MyVerticalitaReparto]]></EXP>
+						</PAR>
+						<PAR Name="POS_TO_ADD" />
+					</LIST_ADD>
+					<SET Id="RDK:1251" VarRef="myServiceVerticalitàList">
+						<EXP><![CDATA[$C$NOTHING]]></EXP>
+						<PAR Name="AdvancedOptions" />
+					</SET>
+				</GROUP>
+			</FOREACHLOOP>
+		</GROUP>
+		<GROUP Id="RDK:54" Name="DOCUMENTO Verifica" SubType="Generic" Expanded="True">
+			<GROUP Id="RDK:103" Name="Organizzo file su cui lavorare" SubType="Generic" Expanded="True">
+				<SET Id="RDK:107" VarRef="OutFile">
+					<EXP><![CDATA[$=$WorkingDir+"Verifica_"+StrReplace(DateToStrShort(Data), "/", "-")+".docx"]]></EXP>
+					<PAR Name="AdvancedOptions" />
+				</SET>
+				<SET Id="RDK:110" VarRef="TemplateFile">
+					<EXP><![CDATA[$=$ProcPath()+"Templates\Verifica.docx"]]></EXP>
+					<PAR Name="AdvancedOptions" />
+				</SET>
+				<ACTION_CALL Id="RDK:109" Name="RDEngineering_CopyFile" DesignTimeRemark="{Source File} --&gt; {Destination File}">
+					<PAR Name="RDLibraryName">
+						<EXP><![CDATA[$C$RDEngineering_MISC]]></EXP>
+					</PAR>
+					<PAR Name="FileName">
+						<EXP><![CDATA[$=$TemplateFile]]></EXP>
+					</PAR>
+					<PAR Name="NewFileName">
+						<EXP><![CDATA[$=$OutFile]]></EXP>
+					</PAR>
+					<PAR Name="AcceptWildcards" />
+					<PAR Name="Overwrite" />
+					<PAR Name="Options" />
+				</ACTION_CALL>
+				<SET Id="RDK:161" VarRef="MyTemplateTabellaFile">
+					<EXP><![CDATA[$=$WorkingDir+"TabellaRepartoTemplate.docx"]]></EXP>
+					<PAR Name="AdvancedOptions" />
+				</SET>
+				<SET Id="RDK:163" VarRef="TemplateTabellaFile">
+					<EXP><![CDATA[$=$ProcPath()+"Templates\TabellaRepartoVerifica.docx"]]></EXP>
+					<PAR Name="AdvancedOptions" />
+				</SET>
+				<ACTION_CALL Id="RDK:159" Name="RDEngineering_CopyFile" DesignTimeRemark="{Source File} --&gt; {Destination File}">
+					<PAR Name="RDLibraryName">
+						<EXP><![CDATA[$C$RDEngineering_MISC]]></EXP>
+					</PAR>
+					<PAR Name="FileName">
+						<EXP><![CDATA[$=$TemplateTabellaFile]]></EXP>
+					</PAR>
+					<PAR Name="NewFileName">
+						<EXP><![CDATA[$=$MyTemplateTabellaFile]]></EXP>
+					</PAR>
+					<PAR Name="AcceptWildcards" />
+					<PAR Name="Overwrite" />
+					<PAR Name="Options" />
+				</ACTION_CALL>
+				<ACTION_CALL Id="RDK:112" Name="RDEngineering_OpenFile" DesignTimeRemark="{FileName}">
+					<PAR Name="RDLibraryName">
+						<EXP><![CDATA[$C$RDEngineering_OFFICE_WORD]]></EXP>
+					</PAR>
+					<PAR Name="FileName">
+						<EXP><![CDATA[$=$OutFile]]></EXP>
+					</PAR>
+					<PAR Name="IsVisible">
+						<EXP><![CDATA[$C$True]]></EXP>
+					</PAR>
+					<PAR Name="ModelName" />
+					<PAR Name="Options">
+						<EXP><![CDATA[$C$(FILEDIRECT)]]></EXP>
+					</PAR>
+				</ACTION_CALL>
+			</GROUP>
+			<GROUP Id="RDK:113" Name="Set Intestazione" SubType="Generic">
+				<CALLFUNCTION Id="RDK:316" Expanded="True">
+					<PAR Name="FuncName">
+						<EXP><![CDATA[$C$SetIntestazione]]></EXP>
+					</PAR>
+					<PAR Name="InputExp" />
+					<PAR Name="ResultRef">
+						<EXP><![CDATA[$V$]]></EXP>
+					</PAR>
+					<PAR Name="Options" />
+				</CALLFUNCTION>
+			</GROUP>
+			<GROUP Id="RDK:149" Name="Set Corpo WORD" SubType="Generic">
+				<FOREACHLOOP Id="RDK:153" ItemVarRef="MyReparto" CountVarRef="idx" Backward="True" ByRefMode="True">
+					<PAR Name="ArrayValueExp">
+						<EXP><![CDATA[$V$ListaRepartiAnomalie]]></EXP>
+					</PAR>
+					<PAR Name="ExitCondExp">
+						<EXP><![CDATA[$V$]]></EXP>
+					</PAR>
+					<SET Id="RDK:170" VarRef="myTabellaReparto">
+						<EXP><![CDATA[$=$WorkingDir+"myTabellaReparto_"+idx+".docx"]]></EXP>
+						<PAR Name="AdvancedOptions" />
+					</SET>
+					<ACTION_CALL Id="RDK:169" Name="RDEngineering_CopyFile" DesignTimeRemark="{Source File} --&gt; {Destination File}">
+						<PAR Name="RDLibraryName">
+							<EXP><![CDATA[$C$RDEngineering_MISC]]></EXP>
+						</PAR>
+						<PAR Name="FileName">
+							<EXP><![CDATA[$=$MyTemplateTabellaFile]]></EXP>
+						</PAR>
+						<PAR Name="NewFileName">
+							<EXP><![CDATA[$=$myTabellaReparto]]></EXP>
+						</PAR>
+						<PAR Name="AcceptWildcards" />
+						<PAR Name="Overwrite" />
+						<PAR Name="Options" />
+					</ACTION_CALL>
+					<ACTION_CALL Id="RDK:175" Name="RDEngineering_OpenFile" DesignTimeRemark="{FileName}">
+						<PAR Name="RDLibraryName">
+							<EXP><![CDATA[$C$RDEngineering_OFFICE_WORD]]></EXP>
+						</PAR>
+						<PAR Name="FileName">
+							<EXP><![CDATA[$=$myTabellaReparto]]></EXP>
+						</PAR>
+						<PAR Name="IsVisible">
+							<EXP><![CDATA[$C$True]]></EXP>
+						</PAR>
+						<PAR Name="ModelName" />
+						<PAR Name="Options">
+							<EXP><![CDATA[$C$(FILEDIRECT)]]></EXP>
+						</PAR>
+					</ACTION_CALL>
+					<ACTION_CALL Id="RDK:131" Name="RDEngineering_SearchAndReplace" DesignTimeRemark="{Search For} --&gt; {Replace With}">
+						<PAR Name="RDLibraryName">
+							<EXP><![CDATA[$C$RDEngineering_OFFICE_WORD]]></EXP>
+						</PAR>
+						<PAR Name="FileName">
+							<EXP><![CDATA[$=$myTabellaReparto]]></EXP>
+						</PAR>
+						<PAR Name="SearchFor">
+							<EXP><![CDATA[$C$<REPARTO>]]></EXP>
+						</PAR>
+						<PAR Name="ReplaceWith">
+							<EXP><![CDATA[$=$MyReparto.Reparto]]></EXP>
+						</PAR>
+						<PAR Name="ReplaceWhere">
+							<EXP><![CDATA[$C$3]]></EXP>
+						</PAR>
+						<PAR Name="ReplaceAll">
+							<EXP><![CDATA[$C$True]]></EXP>
+						</PAR>
+						<PAR Name="Options">
+							<EXP><![CDATA[$C$(FILEDIRECT)]]></EXP>
+						</PAR>
+					</ACTION_CALL>
+					<ACTION_CALL Id="RDK:997" Name="RDEngineering_SearchAndReplace" DesignTimeRemark="{Search For} --&gt; {Replace With}">
+						<PAR Name="RDLibraryName">
+							<EXP><![CDATA[$C$RDEngineering_OFFICE_WORD]]></EXP>
+						</PAR>
+						<PAR Name="FileName">
+							<EXP><![CDATA[$=$myTabellaReparto]]></EXP>
+						</PAR>
+						<PAR Name="SearchFor">
+							<EXP><![CDATA[$C$<NOTE_REPARTO>]]></EXP>
+						</PAR>
+						<PAR Name="ReplaceWith">
+							<EXP><![CDATA[$=$MyReparto.Note]]></EXP>
+						</PAR>
+						<PAR Name="ReplaceWhere">
+							<EXP><![CDATA[$C$3]]></EXP>
+						</PAR>
+						<PAR Name="ReplaceAll">
+							<EXP><![CDATA[$C$True]]></EXP>
+						</PAR>
+						<PAR Name="Options">
+							<EXP><![CDATA[$C$(FILEDIRECT)]]></EXP>
+						</PAR>
+					</ACTION_CALL>
+					<SET Id="RDK:1381" VarRef="MyReparto.Anomalie">
+						<EXP><![CDATA[$=$SortListOfStructs(MyReparto.Anomalie, "Fila", False)]]></EXP>
+						<PAR Name="AdvancedOptions" />
+					</SET>
+					<ACTION_CALL Id="RDK:213" Name="RDEngineering_BookmarkOperation" DesignTimeRemark="{Operation} of [{Merge Table}]">
+						<PAR Name="RDLibraryName">
+							<EXP><![CDATA[$C$RDEngineering_OFFICE_WORD]]></EXP>
+						</PAR>
+						<PAR Name="FileName">
+							<EXP><![CDATA[$=$myTabellaReparto]]></EXP>
+						</PAR>
+						<PAR Name="BookmarkName" />
+						<PAR Name="BookmarkOper">
+							<EXP><![CDATA[$C$8]]></EXP>
+						</PAR>
+						<PAR Name="InsertMode">
+							<EXP><![CDATA[$C$-1]]></EXP>
+						</PAR>
+						<PAR Name="SourceFile" />
+						<PAR Name="SourceText" />
+						<PAR Name="MergeTable">
+							<EXP><![CDATA[$=$MyReparto.Anomalie]]></EXP>
+						</PAR>
+						<PAR Name="ContentTable">
+							<EXP><![CDATA[$V$]]></EXP>
+						</PAR>
+						<PAR Name="LinkUrl" />
+						<PAR Name="NewName" />
+						<PAR Name="Options">
+							<EXP><![CDATA[$C$(FILEDIRECT)(MERGERANGE=Table)]]></EXP>
+						</PAR>
+					</ACTION_CALL>
+					<ACTION_CALL Id="RDK:189" Name="RDEngineering_SaveFile" DesignTimeRemark="{FileName}">
+						<PAR Name="RDLibraryName">
+							<EXP><![CDATA[$C$RDEngineering_OFFICE_WORD]]></EXP>
+						</PAR>
+						<PAR Name="FileName">
+							<EXP><![CDATA[$=$myTabellaReparto]]></EXP>
+						</PAR>
+						<PAR Name="Options">
+							<EXP><![CDATA[$C$(FILEDIRECT)]]></EXP>
+						</PAR>
+					</ACTION_CALL>
+					<ACTION_CALL Id="RDK:155" Name="RDEngineering_BookmarkOperation" DesignTimeRemark="{Operation} on [{Bookmark Name}]">
+						<PAR Name="RDLibraryName">
+							<EXP><![CDATA[$C$RDEngineering_OFFICE_WORD]]></EXP>
+						</PAR>
+						<PAR Name="FileName">
+							<EXP><![CDATA[$=$OutFile]]></EXP>
+						</PAR>
+						<PAR Name="BookmarkName">
+							<EXP><![CDATA[$C$TabellaAnomalie]]></EXP>
+						</PAR>
+						<PAR Name="BookmarkOper">
+							<EXP><![CDATA[$C$3]]></EXP>
+						</PAR>
+						<PAR Name="InsertMode">
+							<EXP><![CDATA[$C$2]]></EXP>
+						</PAR>
+						<PAR Name="SourceFile">
+							<EXP><![CDATA[$=$myTabellaReparto]]></EXP>
+						</PAR>
+						<PAR Name="SourceText" />
+						<PAR Name="MergeTable" />
+						<PAR Name="ContentTable">
+							<EXP><![CDATA[$V$]]></EXP>
+						</PAR>
+						<PAR Name="LinkUrl" />
+						<PAR Name="NewName" />
+						<PAR Name="Options">
+							<EXP><![CDATA[$C$(FILEDIRECT)(USEDESTSTYLES)]]></EXP>
+						</PAR>
+					</ACTION_CALL>
+					<ACTION_CALL Id="RDK:190" Name="RDEngineering_DeleteFile" DesignTimeRemark="{FileFullPath}">
+						<PAR Name="RDLibraryName">
+							<EXP><![CDATA[$C$RDEngineering_MISC]]></EXP>
+						</PAR>
+						<PAR Name="FileFullPath">
+							<EXP><![CDATA[$=$myTabellaReparto]]></EXP>
+						</PAR>
+						<PAR Name="AcceptWildcards" />
+					</ACTION_CALL>
+				</FOREACHLOOP>
+				<ACTION_CALL Id="RDK:194" Name="RDEngineering_DeleteFile" DesignTimeRemark="{FileFullPath}">
+					<PAR Name="RDLibraryName">
+						<EXP><![CDATA[$C$RDEngineering_MISC]]></EXP>
+					</PAR>
+					<PAR Name="FileFullPath">
+						<EXP><![CDATA[$=$MyTemplateTabellaFile]]></EXP>
+					</PAR>
+					<PAR Name="AcceptWildcards" />
+				</ACTION_CALL>
+			</GROUP>
+			<GROUP Id="RDK:841" Name="Set Corpo EXCEL" SubType="Generic" Suppressed="True">
+				<SET Id="RDK:965" VarRef="myTemplateRiga">
+					<EXP><![CDATA[$=$WorkingDir+"RigaTemplate.xlsx"]]></EXP>
+					<PAR Name="AdvancedOptions" />
+				</SET>
+				<SET Id="RDK:967" VarRef="TemplateRiga">
+					<EXP><![CDATA[$=$ProcPath()+"Templates\RigaRepartoVerifica.xlsx"]]></EXP>
+					<PAR Name="AdvancedOptions" />
+				</SET>
+				<ACTION_CALL Id="RDK:969" Name="RDEngineering_CopyFile" DesignTimeRemark="{Source File} --&gt; {Destination File}">
+					<PAR Name="RDLibraryName">
+						<EXP><![CDATA[$C$RDEngineering_MISC]]></EXP>
+					</PAR>
+					<PAR Name="FileName">
+						<EXP><![CDATA[$=$TemplateRiga]]></EXP>
+					</PAR>
+					<PAR Name="NewFileName">
+						<EXP><![CDATA[$=$myTemplateRiga]]></EXP>
+					</PAR>
+					<PAR Name="AcceptWildcards" />
+					<PAR Name="Overwrite" />
+					<PAR Name="Options" />
+				</ACTION_CALL>
+				<FOREACHLOOP Id="RDK:839" ItemVarRef="MyReparto" CountVarRef="idx" Backward="True" ByRefMode="True">
+					<PAR Name="ArrayValueExp">
+						<EXP><![CDATA[$V$ListaRepartiAnomalie]]></EXP>
+					</PAR>
+					<PAR Name="ExitCondExp">
+						<EXP><![CDATA[$V$]]></EXP>
+					</PAR>
+					<SET Id="RDK:831" VarRef="myTabellaReparto">
+						<EXP><![CDATA[$=$WorkingDir+"myTabellaReparto_"+idx+".docx"]]></EXP>
+						<PAR Name="AdvancedOptions" />
+					</SET>
+					<ACTION_CALL Id="RDK:832" Name="RDEngineering_CopyFile" DesignTimeRemark="{Source File} --&gt; {Destination File}">
+						<PAR Name="RDLibraryName">
+							<EXP><![CDATA[$C$RDEngineering_MISC]]></EXP>
+						</PAR>
+						<PAR Name="FileName">
+							<EXP><![CDATA[$=$MyTemplateTabellaFile]]></EXP>
+						</PAR>
+						<PAR Name="NewFileName">
+							<EXP><![CDATA[$=$myTabellaReparto]]></EXP>
+						</PAR>
+						<PAR Name="AcceptWildcards" />
+						<PAR Name="Overwrite" />
+						<PAR Name="Options" />
+					</ACTION_CALL>
+					<ACTION_CALL Id="RDK:833" Name="RDEngineering_OpenFile" DesignTimeRemark="{FileName}">
+						<PAR Name="RDLibraryName">
+							<EXP><![CDATA[$C$RDEngineering_OFFICE_WORD]]></EXP>
+						</PAR>
+						<PAR Name="FileName">
+							<EXP><![CDATA[$=$myTabellaReparto]]></EXP>
+						</PAR>
+						<PAR Name="IsVisible">
+							<EXP><![CDATA[$C$True]]></EXP>
+						</PAR>
+						<PAR Name="ModelName" />
+						<PAR Name="Options">
+							<EXP><![CDATA[$C$(FILEDIRECT)]]></EXP>
+						</PAR>
+					</ACTION_CALL>
+					<ACTION_CALL Id="RDK:834" Name="RDEngineering_SearchAndReplace" DesignTimeRemark="{Search For} --&gt; {Replace With}">
+						<PAR Name="RDLibraryName">
+							<EXP><![CDATA[$C$RDEngineering_OFFICE_WORD]]></EXP>
+						</PAR>
+						<PAR Name="FileName">
+							<EXP><![CDATA[$=$myTabellaReparto]]></EXP>
+						</PAR>
+						<PAR Name="SearchFor">
+							<EXP><![CDATA[$C$<REPARTO>]]></EXP>
+						</PAR>
+						<PAR Name="ReplaceWith">
+							<EXP><![CDATA[$=$MyReparto.Reparto]]></EXP>
+						</PAR>
+						<PAR Name="ReplaceWhere">
+							<EXP><![CDATA[$C$3]]></EXP>
+						</PAR>
+						<PAR Name="ReplaceAll">
+							<EXP><![CDATA[$C$True]]></EXP>
+						</PAR>
+						<PAR Name="Options">
+							<EXP><![CDATA[$C$(FILEDIRECT)]]></EXP>
+						</PAR>
+					</ACTION_CALL>
+					<ACTION_CALL Id="RDK:848" Name="RDEngineering_SearchAndReplace" DesignTimeRemark="{Search For} --&gt; {Replace With}">
+						<PAR Name="RDLibraryName">
+							<EXP><![CDATA[$C$RDEngineering_OFFICE_WORD]]></EXP>
+						</PAR>
+						<PAR Name="FileName">
+							<EXP><![CDATA[$=$myTabellaReparto]]></EXP>
+						</PAR>
+						<PAR Name="SearchFor">
+							<EXP><![CDATA[$C$<NOTE_REPARTO>]]></EXP>
+						</PAR>
+						<PAR Name="ReplaceWith">
+							<EXP><![CDATA[$=$MyReparto.Note]]></EXP>
+						</PAR>
+						<PAR Name="ReplaceWhere">
+							<EXP><![CDATA[$C$3]]></EXP>
+						</PAR>
+						<PAR Name="ReplaceAll">
+							<EXP><![CDATA[$C$True]]></EXP>
+						</PAR>
+						<PAR Name="Options">
+							<EXP><![CDATA[$C$(FILEDIRECT)]]></EXP>
+						</PAR>
+					</ACTION_CALL>
+					<SET Id="RDK:961" VarRef="myRiga">
+						<EXP><![CDATA[$=$WorkingDir+"myRigaTabellaVerifica_"+idx+".xlsx"]]></EXP>
+						<PAR Name="AdvancedOptions" />
+					</SET>
+					<ACTION_CALL Id="RDK:963" Name="RDEngineering_CopyFile" DesignTimeRemark="{Source File} --&gt; {Destination File}">
+						<PAR Name="RDLibraryName">
+							<EXP><![CDATA[$C$RDEngineering_MISC]]></EXP>
+						</PAR>
+						<PAR Name="FileName">
+							<EXP><![CDATA[$=$myTemplateRiga]]></EXP>
+						</PAR>
+						<PAR Name="NewFileName">
+							<EXP><![CDATA[$=$myRiga]]></EXP>
+						</PAR>
+						<PAR Name="AcceptWildcards" />
+						<PAR Name="Overwrite" />
+						<PAR Name="Options" />
+					</ACTION_CALL>
+					<ACTION_CALL Id="RDK:982" Name="RDEngineering_OpenFile" DesignTimeRemark="{FileName}">
+						<PAR Name="RDLibraryName">
+							<EXP><![CDATA[$C$RDEngineering_OFFICE_EXCEL]]></EXP>
+						</PAR>
+						<PAR Name="FileName">
+							<EXP><![CDATA[$=$myRiga]]></EXP>
+						</PAR>
+						<PAR Name="IsVisible">
+							<EXP><![CDATA[$C$True]]></EXP>
+						</PAR>
+						<PAR Name="ModelName" />
+						<PAR Name="Options">
+							<EXP><![CDATA[$C$(FILEDIRECT)]]></EXP>
+						</PAR>
+					</ACTION_CALL>
+					<FOREACHLOOP Id="RDK:959" ItemVarRef="MyAnomalia" CountVarRef="r">
+						<PAR Name="ArrayValueExp">
+							<EXP><![CDATA[$V$MyReparto.Anomalie]]></EXP>
+						</PAR>
+						<PAR Name="ExitCondExp">
+							<EXP><![CDATA[$V$]]></EXP>
+						</PAR>
+						<ACTION_CALL Id="RDK:846" Name="RDEngineering_SetCellGrid">
+							<PAR Name="RDLibraryName">
+								<EXP><![CDATA[$C$RDEngineering_OFFICE_EXCEL]]></EXP>
+							</PAR>
+							<PAR Name="ExcelFileName">
+								<EXP><![CDATA[$=$myRiga]]></EXP>
+							</PAR>
+							<PAR Name="OpenMode">
+								<EXP><![CDATA[$C$1]]></EXP>
+							</PAR>
+							<PAR Name="CellSpec">
+								<EXP><![CDATA[$C$0]]></EXP>
+							</PAR>
+							<PAR Name="Row">
+								<EXP><![CDATA[$=$r]]></EXP>
+							</PAR>
+							<PAR Name="Col">
+								<EXP><![CDATA[$C$A]]></EXP>
+							</PAR>
+							<PAR Name="Name" />
+							<PAR Name="Sheet" />
+							<PAR Name="VarValue">
+								<EXP><![CDATA[$=$"Fila: "+MyAnomalia.Fila+"  Spalla: "+MyAnomalia.Posizione+"
+"+MyAnomalia.Anomalia+" su "+MyAnomalia.Componente]]></EXP>
+							</PAR>
+							<PAR Name="Options">
+								<EXP><![CDATA[$C$(FORECOLOR=#4472C4)]]></EXP>
+							</PAR>
+						</ACTION_CALL>
+						<ACTION_CALL Id="RDK:971" Name="RDEngineering_SetCellGrid" Suppressed="True">
+							<PAR Name="RDLibraryName">
+								<EXP><![CDATA[$C$RDEngineering_OFFICE_EXCEL]]></EXP>
+							</PAR>
+							<PAR Name="ExcelFileName">
+								<EXP><![CDATA[$=$myRiga]]></EXP>
+							</PAR>
+							<PAR Name="OpenMode">
+								<EXP><![CDATA[$C$1]]></EXP>
+							</PAR>
+							<PAR Name="CellSpec">
+								<EXP><![CDATA[$C$0]]></EXP>
+							</PAR>
+							<PAR Name="Row">
+								<EXP><![CDATA[$=$r]]></EXP>
+							</PAR>
+							<PAR Name="Col">
+								<EXP><![CDATA[$C$A]]></EXP>
+							</PAR>
+							<PAR Name="Name" />
+							<PAR Name="Sheet" />
+							<PAR Name="VarValue">
+								<EXP><![CDATA[$=$MyAnomalia.Anomalia+" su "+MyAnomalia.Componente]]></EXP>
+							</PAR>
+							<PAR Name="Options">
+								<EXP><![CDATA[$C$(FORECOLOR=#000000)]]></EXP>
+							</PAR>
+						</ACTION_CALL>
+						<ACTION_CALL Id="RDK:973" Name="RDEngineering_SetCellGrid">
+							<PAR Name="RDLibraryName">
+								<EXP><![CDATA[$C$RDEngineering_OFFICE_EXCEL]]></EXP>
+							</PAR>
+							<PAR Name="ExcelFileName">
+								<EXP><![CDATA[$=$myRiga]]></EXP>
+							</PAR>
+							<PAR Name="OpenMode">
+								<EXP><![CDATA[$C$1]]></EXP>
+							</PAR>
+							<PAR Name="CellSpec">
+								<EXP><![CDATA[$C$0]]></EXP>
+							</PAR>
+							<PAR Name="Row">
+								<EXP><![CDATA[$=$r]]></EXP>
+							</PAR>
+							<PAR Name="Col">
+								<EXP><![CDATA[$C$B]]></EXP>
+							</PAR>
+							<PAR Name="Name" />
+							<PAR Name="Sheet" />
+							<PAR Name="VarValue">
+								<EXP><![CDATA[$=$MyAnomalia.Intervento]]></EXP>
+							</PAR>
+							<PAR Name="Options" />
+						</ACTION_CALL>
+						<ACTION_CALL Id="RDK:975" Name="RDEngineering_SetCellGrid">
+							<PAR Name="RDLibraryName">
+								<EXP><![CDATA[$C$RDEngineering_OFFICE_EXCEL]]></EXP>
+							</PAR>
+							<PAR Name="ExcelFileName">
+								<EXP><![CDATA[$=$myRiga]]></EXP>
+							</PAR>
+							<PAR Name="OpenMode">
+								<EXP><![CDATA[$C$1]]></EXP>
+							</PAR>
+							<PAR Name="CellSpec">
+								<EXP><![CDATA[$C$0]]></EXP>
+							</PAR>
+							<PAR Name="Row">
+								<EXP><![CDATA[$=$r]]></EXP>
+							</PAR>
+							<PAR Name="Col">
+								<EXP><![CDATA[$C$C]]></EXP>
+							</PAR>
+							<PAR Name="Name" />
+							<PAR Name="Sheet" />
+							<PAR Name="VarValue">
+								<EXP><![CDATA[$=$"   "]]></EXP>
+							</PAR>
+							<PAR Name="Options">
+								<EXP><![CDATA[$=$IIF(MyAnomalia.Colore="VERDE", "(BACKCOLOR=#00FF00)",
+    IIF(MyAnomalia.Colore="GIALLO", "(BACKCOLOR=#FFFF00)",
+        "(BACKCOLOR=#FF0000)")
+)
+    
+]]></EXP>
+							</PAR>
+						</ACTION_CALL>
+					</FOREACHLOOP>
+					<ACTION_CALL Id="RDK:977" Name="RDEngineering_SaveFile" DesignTimeRemark="{FileName}">
+						<PAR Name="RDLibraryName">
+							<EXP><![CDATA[$C$RDEngineering_OFFICE_EXCEL]]></EXP>
+						</PAR>
+						<PAR Name="FileName">
+							<EXP><![CDATA[$=$myRiga]]></EXP>
+						</PAR>
+						<PAR Name="Options">
+							<EXP><![CDATA[$C$(FILEDIRECT)]]></EXP>
+						</PAR>
+					</ACTION_CALL>
+					<ACTION_CALL Id="RDK:986" Name="RDEngineering_CopyFile" DesignTimeRemark="{Source File} --&gt; {Destination File}">
+						<PAR Name="RDLibraryName">
+							<EXP><![CDATA[$C$RDEngineering_MISC]]></EXP>
+						</PAR>
+						<PAR Name="FileName">
+							<EXP><![CDATA[$=$myRiga]]></EXP>
+						</PAR>
+						<PAR Name="NewFileName">
+							<EXP><![CDATA[$=$ChangeExt(myRiga, ".xls")]]></EXP>
+						</PAR>
+						<PAR Name="AcceptWildcards" />
+						<PAR Name="Overwrite" />
+						<PAR Name="Options" />
+					</ACTION_CALL>
+					<ACTION_CALL Id="RDK:979" Name="RDEngineering_BookmarkOperation" DesignTimeRemark="{Operation} on [{Bookmark Name}]">
+						<PAR Name="RDLibraryName">
+							<EXP><![CDATA[$C$RDEngineering_OFFICE_WORD]]></EXP>
+						</PAR>
+						<PAR Name="FileName">
+							<EXP><![CDATA[$=$myTabellaReparto]]></EXP>
+						</PAR>
+						<PAR Name="BookmarkName">
+							<EXP><![CDATA[$C$NewRiga]]></EXP>
+						</PAR>
+						<PAR Name="BookmarkOper">
+							<EXP><![CDATA[$C$3]]></EXP>
+						</PAR>
+						<PAR Name="InsertMode">
+							<EXP><![CDATA[$C$2]]></EXP>
+						</PAR>
+						<PAR Name="SourceFile">
+							<EXP><![CDATA[$=$ChangeExt(myRiga, ".xls")]]></EXP>
+						</PAR>
+						<PAR Name="SourceText" />
+						<PAR Name="MergeTable" />
+						<PAR Name="ContentTable">
+							<EXP><![CDATA[$V$]]></EXP>
+						</PAR>
+						<PAR Name="LinkUrl" />
+						<PAR Name="NewName" />
+						<PAR Name="Options">
+							<EXP><![CDATA[$C$(FILEDIRECT)]]></EXP>
+						</PAR>
+					</ACTION_CALL>
+					<ACTION_CALL Id="RDK:836" Name="RDEngineering_SaveFile" DesignTimeRemark="{FileName}">
+						<PAR Name="RDLibraryName">
+							<EXP><![CDATA[$C$RDEngineering_OFFICE_WORD]]></EXP>
+						</PAR>
+						<PAR Name="FileName">
+							<EXP><![CDATA[$=$myTabellaReparto]]></EXP>
+						</PAR>
+						<PAR Name="Options">
+							<EXP><![CDATA[$C$(FILEDIRECT)]]></EXP>
+						</PAR>
+					</ACTION_CALL>
+					<ACTION_CALL Id="RDK:837" Name="RDEngineering_BookmarkOperation" DesignTimeRemark="{Operation} on [{Bookmark Name}]">
+						<PAR Name="RDLibraryName">
+							<EXP><![CDATA[$C$RDEngineering_OFFICE_WORD]]></EXP>
+						</PAR>
+						<PAR Name="FileName">
+							<EXP><![CDATA[$=$OutFile]]></EXP>
+						</PAR>
+						<PAR Name="BookmarkName">
+							<EXP><![CDATA[$C$TabellaAnomalie]]></EXP>
+						</PAR>
+						<PAR Name="BookmarkOper">
+							<EXP><![CDATA[$C$3]]></EXP>
+						</PAR>
+						<PAR Name="InsertMode">
+							<EXP><![CDATA[$C$2]]></EXP>
+						</PAR>
+						<PAR Name="SourceFile">
+							<EXP><![CDATA[$=$myTabellaReparto]]></EXP>
+						</PAR>
+						<PAR Name="SourceText" />
+						<PAR Name="MergeTable" />
+						<PAR Name="ContentTable">
+							<EXP><![CDATA[$V$]]></EXP>
+						</PAR>
+						<PAR Name="LinkUrl" />
+						<PAR Name="NewName" />
+						<PAR Name="Options">
+							<EXP><![CDATA[$C$(FILEDIRECT)(USEDESTSTYLES)]]></EXP>
+						</PAR>
+					</ACTION_CALL>
+					<ACTION_CALL Id="RDK:838" Name="RDEngineering_DeleteFile" DesignTimeRemark="{FileFullPath}">
+						<PAR Name="RDLibraryName">
+							<EXP><![CDATA[$C$RDEngineering_MISC]]></EXP>
+						</PAR>
+						<PAR Name="FileFullPath">
+							<EXP><![CDATA[$=$myTabellaReparto]]></EXP>
+						</PAR>
+						<PAR Name="AcceptWildcards" />
+					</ACTION_CALL>
+					<ACTION_CALL Id="RDK:988" Name="RDEngineering_DeleteFile" DesignTimeRemark="{FileFullPath}">
+						<PAR Name="RDLibraryName">
+							<EXP><![CDATA[$C$RDEngineering_MISC]]></EXP>
+						</PAR>
+						<PAR Name="FileFullPath">
+							<EXP><![CDATA[$=$myRiga]]></EXP>
+						</PAR>
+						<PAR Name="AcceptWildcards" />
+					</ACTION_CALL>
+					<ACTION_CALL Id="RDK:992" Name="RDEngineering_DeleteFile" DesignTimeRemark="{FileFullPath}">
+						<PAR Name="RDLibraryName">
+							<EXP><![CDATA[$C$RDEngineering_MISC]]></EXP>
+						</PAR>
+						<PAR Name="FileFullPath">
+							<EXP><![CDATA[$=$ChangeExt(myRiga, ".docx")]]></EXP>
+						</PAR>
+						<PAR Name="AcceptWildcards" />
+					</ACTION_CALL>
+					<ACTION_CALL Id="RDK:990" Name="RDEngineering_DeleteFile" DesignTimeRemark="{FileFullPath}">
+						<PAR Name="RDLibraryName">
+							<EXP><![CDATA[$C$RDEngineering_MISC]]></EXP>
+						</PAR>
+						<PAR Name="FileFullPath">
+							<EXP><![CDATA[$=$myTemplateRiga]]></EXP>
+						</PAR>
+						<PAR Name="AcceptWildcards" />
+					</ACTION_CALL>
+				</FOREACHLOOP>
+				<ACTION_CALL Id="RDK:840" Name="RDEngineering_DeleteFile" DesignTimeRemark="{FileFullPath}">
+					<PAR Name="RDLibraryName">
+						<EXP><![CDATA[$C$RDEngineering_MISC]]></EXP>
+					</PAR>
+					<PAR Name="FileFullPath">
+						<EXP><![CDATA[$=$MyTemplateTabellaFile]]></EXP>
+					</PAR>
+					<PAR Name="AcceptWildcards" />
+				</ACTION_CALL>
+			</GROUP>
+			<GROUP Id="RDK:140" Name="Salvataggio file" SubType="Generic">
+				<CALLFUNCTION Id="RDK:370">
+					<PAR Name="FuncName">
+						<EXP><![CDATA[$C$SaveWordPDF]]></EXP>
+					</PAR>
+					<PAR Name="InputExp" />
+					<PAR Name="ResultRef">
+						<EXP><![CDATA[$V$]]></EXP>
+					</PAR>
+					<PAR Name="Options" />
+				</CALLFUNCTION>
+			</GROUP>
+		</GROUP>
+		<GROUP Id="RDK:254" Name="DOCUMENTO Allegato_Fotografico" SubType="Generic" Expanded="True">
+			<GROUP Id="RDK:258" Name="Organizzo file su cui lavorare" SubType="Generic" Expanded="True">
+				<SET Id="RDK:272" VarRef="OutFile">
+					<EXP><![CDATA[$=$WorkingDir+"AllegatoFotografico_"+StrReplace(DateToStrShort(Data), "/", "-")+".docx"]]></EXP>
+					<PAR Name="AdvancedOptions" />
+				</SET>
+				<SET Id="RDK:274" VarRef="TemplateFile">
+					<EXP><![CDATA[$=$ProcPath()+"Templates\Allegato_fotografico.docx"]]></EXP>
+					<PAR Name="AdvancedOptions" />
+				</SET>
+				<ACTION_CALL Id="RDK:276" Name="RDEngineering_CopyFile" DesignTimeRemark="{Source File} --&gt; {Destination File}">
+					<PAR Name="RDLibraryName">
+						<EXP><![CDATA[$C$RDEngineering_MISC]]></EXP>
+					</PAR>
+					<PAR Name="FileName">
+						<EXP><![CDATA[$=$TemplateFile]]></EXP>
+					</PAR>
+					<PAR Name="NewFileName">
+						<EXP><![CDATA[$=$OutFile]]></EXP>
+					</PAR>
+					<PAR Name="AcceptWildcards" />
+					<PAR Name="Overwrite" />
+					<PAR Name="Options" />
+				</ACTION_CALL>
+				<SET Id="RDK:278" VarRef="MyTemplateTabellaFile">
+					<EXP><![CDATA[$=$WorkingDir+"TabellaImmaginiAnomalieTemplate.docx"]]></EXP>
+					<PAR Name="AdvancedOptions" />
+				</SET>
+				<SET Id="RDK:283" VarRef="TemplateTabellaFile">
+					<EXP><![CDATA[$=$ProcPath()+"Templates\TabellaImmaginiAnomalie.docx"]]></EXP>
+					<PAR Name="AdvancedOptions" />
+				</SET>
+				<ACTION_CALL Id="RDK:285" Name="RDEngineering_CopyFile" DesignTimeRemark="{Source File} --&gt; {Destination File}">
+					<PAR Name="RDLibraryName">
+						<EXP><![CDATA[$C$RDEngineering_MISC]]></EXP>
+					</PAR>
+					<PAR Name="FileName">
+						<EXP><![CDATA[$=$TemplateTabellaFile]]></EXP>
+					</PAR>
+					<PAR Name="NewFileName">
+						<EXP><![CDATA[$=$MyTemplateTabellaFile]]></EXP>
+					</PAR>
+					<PAR Name="AcceptWildcards" />
+					<PAR Name="Overwrite" />
+					<PAR Name="Options" />
+				</ACTION_CALL>
+				<SET Id="RDK:432" VarRef="myTemplateRiga">
+					<EXP><![CDATA[$=$WorkingDir+"RigaTemplate.docx"]]></EXP>
+					<PAR Name="AdvancedOptions" />
+				</SET>
+				<SET Id="RDK:434" VarRef="TemplateRiga">
+					<EXP><![CDATA[$=$ProcPath()+"Templates\RigaTabellaImmaginiAnomalie.docx"]]></EXP>
+					<PAR Name="AdvancedOptions" />
+				</SET>
+				<ACTION_CALL Id="RDK:459" Name="RDEngineering_CopyFile" DesignTimeRemark="{Source File} --&gt; {Destination File}">
+					<PAR Name="RDLibraryName">
+						<EXP><![CDATA[$C$RDEngineering_MISC]]></EXP>
+					</PAR>
+					<PAR Name="FileName">
+						<EXP><![CDATA[$=$TemplateRiga]]></EXP>
+					</PAR>
+					<PAR Name="NewFileName">
+						<EXP><![CDATA[$=$myTemplateRiga]]></EXP>
+					</PAR>
+					<PAR Name="AcceptWildcards" />
+					<PAR Name="Overwrite" />
+					<PAR Name="Options" />
+				</ACTION_CALL>
+				<ACTION_CALL Id="RDK:287" Name="RDEngineering_OpenFile" DesignTimeRemark="{FileName}">
+					<PAR Name="RDLibraryName">
+						<EXP><![CDATA[$C$RDEngineering_OFFICE_WORD]]></EXP>
+					</PAR>
+					<PAR Name="FileName">
+						<EXP><![CDATA[$=$OutFile]]></EXP>
+					</PAR>
+					<PAR Name="IsVisible">
+						<EXP><![CDATA[$C$True]]></EXP>
+					</PAR>
+					<PAR Name="ModelName" />
+					<PAR Name="Options">
+						<EXP><![CDATA[$C$(FILEDIRECT)]]></EXP>
+					</PAR>
+				</ACTION_CALL>
+			</GROUP>
+			<GROUP Id="RDK:260" Name="Set Intestazione" SubType="Generic">
+				<CALLFUNCTION Id="RDK:319">
+					<PAR Name="FuncName">
+						<EXP><![CDATA[$C$SetIntestazione]]></EXP>
+					</PAR>
+					<PAR Name="InputExp" />
+					<PAR Name="ResultRef">
+						<EXP><![CDATA[$V$]]></EXP>
+					</PAR>
+					<PAR Name="Options" />
+				</CALLFUNCTION>
+			</GROUP>
+			<GROUP Id="RDK:262" Name="Set Corpo" SubType="Generic">
+				<FOREACHLOOP Id="RDK:347" ItemVarRef="MyReparto" CountVarRef="idx" Backward="True" ByRefMode="True">
+					<PAR Name="ArrayValueExp">
+						<EXP><![CDATA[$V$ListaRepartiAnomalie]]></EXP>
+					</PAR>
+					<PAR Name="ExitCondExp">
+						<EXP><![CDATA[$V$]]></EXP>
+					</PAR>
+					<SET Id="RDK:336" VarRef="myTabellaReparto">
+						<EXP><![CDATA[$=$WorkingDir+"myTabellaAnomalie_"+idx+".docx"]]></EXP>
+						<PAR Name="AdvancedOptions" />
+					</SET>
+					<ACTION_CALL Id="RDK:337" Name="RDEngineering_CopyFile" DesignTimeRemark="{Source File} --&gt; {Destination File}">
+						<PAR Name="RDLibraryName">
+							<EXP><![CDATA[$C$RDEngineering_MISC]]></EXP>
+						</PAR>
+						<PAR Name="FileName">
+							<EXP><![CDATA[$=$MyTemplateTabellaFile]]></EXP>
+						</PAR>
+						<PAR Name="NewFileName">
+							<EXP><![CDATA[$=$myTabellaReparto]]></EXP>
+						</PAR>
+						<PAR Name="AcceptWildcards" />
+						<PAR Name="Overwrite" />
+						<PAR Name="Options" />
+					</ACTION_CALL>
+					<ACTION_CALL Id="RDK:338" Name="RDEngineering_OpenFile" DesignTimeRemark="{FileName}">
+						<PAR Name="RDLibraryName">
+							<EXP><![CDATA[$C$RDEngineering_OFFICE_WORD]]></EXP>
+						</PAR>
+						<PAR Name="FileName">
+							<EXP><![CDATA[$=$myTabellaReparto]]></EXP>
+						</PAR>
+						<PAR Name="IsVisible">
+							<EXP><![CDATA[$C$True]]></EXP>
+						</PAR>
+						<PAR Name="ModelName" />
+						<PAR Name="Options">
+							<EXP><![CDATA[$C$(FILEDIRECT)]]></EXP>
+						</PAR>
+					</ACTION_CALL>
+					<ACTION_CALL Id="RDK:339" Name="RDEngineering_SearchAndReplace" DesignTimeRemark="{Search For} --&gt; {Replace With}">
+						<PAR Name="RDLibraryName">
+							<EXP><![CDATA[$C$RDEngineering_OFFICE_WORD]]></EXP>
+						</PAR>
+						<PAR Name="FileName">
+							<EXP><![CDATA[$=$myTabellaReparto]]></EXP>
+						</PAR>
+						<PAR Name="SearchFor">
+							<EXP><![CDATA[$C$<REPARTO>]]></EXP>
+						</PAR>
+						<PAR Name="ReplaceWith">
+							<EXP><![CDATA[$=$MyReparto.Reparto]]></EXP>
+						</PAR>
+						<PAR Name="ReplaceWhere">
+							<EXP><![CDATA[$C$3]]></EXP>
+						</PAR>
+						<PAR Name="ReplaceAll">
+							<EXP><![CDATA[$C$True]]></EXP>
+						</PAR>
+						<PAR Name="Options">
+							<EXP><![CDATA[$C$(FILEDIRECT)]]></EXP>
+						</PAR>
+					</ACTION_CALL>
+					<ACTION_CALL Id="RDK:350" Name="RDEngineering_SearchAndReplace" DesignTimeRemark="{Search For} --&gt; {Replace With}">
+						<PAR Name="RDLibraryName">
+							<EXP><![CDATA[$C$RDEngineering_OFFICE_WORD]]></EXP>
+						</PAR>
+						<PAR Name="FileName">
+							<EXP><![CDATA[$=$myTabellaReparto]]></EXP>
+						</PAR>
+						<PAR Name="SearchFor">
+							<EXP><![CDATA[$C$<note>]]></EXP>
+						</PAR>
+						<PAR Name="ReplaceWith">
+							<EXP><![CDATA[$=$MyReparto.Note]]></EXP>
+						</PAR>
+						<PAR Name="ReplaceWhere">
+							<EXP><![CDATA[$C$3]]></EXP>
+						</PAR>
+						<PAR Name="ReplaceAll">
+							<EXP><![CDATA[$C$True]]></EXP>
+						</PAR>
+						<PAR Name="Options">
+							<EXP><![CDATA[$C$(FILEDIRECT)]]></EXP>
+						</PAR>
+					</ACTION_CALL>
+					<SET Id="RDK:1383" VarRef="MyReparto.Anomalie">
+						<EXP><![CDATA[$=$SortListOfStructs(MyReparto.Anomalie, "Fila", False)]]></EXP>
+						<PAR Name="AdvancedOptions" />
+					</SET>
+					<FOREACHLOOP Id="RDK:401" ItemVarRef="MyAnomalia" CountVarRef="r">
+						<PAR Name="ArrayValueExp">
+							<EXP><![CDATA[$V$MyReparto.Anomalie]]></EXP>
+						</PAR>
+						<PAR Name="ExitCondExp">
+							<EXP><![CDATA[$V$]]></EXP>
+						</PAR>
+						<SET Id="RDK:436" VarRef="myRiga">
+							<EXP><![CDATA[$=$WorkingDir+"myRigaTabellaAnomalie_"+idx+"_"+r+".docx"]]></EXP>
+							<PAR Name="AdvancedOptions" />
+						</SET>
+						<ACTION_CALL Id="RDK:438" Name="RDEngineering_CopyFile" DesignTimeRemark="{Source File} --&gt; {Destination File}">
+							<PAR Name="RDLibraryName">
+								<EXP><![CDATA[$C$RDEngineering_MISC]]></EXP>
+							</PAR>
+							<PAR Name="FileName">
+								<EXP><![CDATA[$=$myTemplateRiga]]></EXP>
+							</PAR>
+							<PAR Name="NewFileName">
+								<EXP><![CDATA[$=$myRiga]]></EXP>
+							</PAR>
+							<PAR Name="AcceptWildcards" />
+							<PAR Name="Overwrite" />
+							<PAR Name="Options" />
+						</ACTION_CALL>
+						<ACTION_CALL Id="RDK:440" Name="RDEngineering_OpenFile" DesignTimeRemark="{FileName}">
+							<PAR Name="RDLibraryName">
+								<EXP><![CDATA[$C$RDEngineering_OFFICE_WORD]]></EXP>
+							</PAR>
+							<PAR Name="FileName">
+								<EXP><![CDATA[$=$myRiga]]></EXP>
+							</PAR>
+							<PAR Name="IsVisible">
+								<EXP><![CDATA[$C$True]]></EXP>
+							</PAR>
+							<PAR Name="ModelName" />
+							<PAR Name="Options">
+								<EXP><![CDATA[$C$(FILEDIRECT)]]></EXP>
+							</PAR>
+						</ACTION_CALL>
+						<ACTION_CALL Id="RDK:441" Name="RDEngineering_SearchAndReplace" DesignTimeRemark="{Search For} --&gt; {Replace With}">
+							<PAR Name="RDLibraryName">
+								<EXP><![CDATA[$C$RDEngineering_OFFICE_WORD]]></EXP>
+							</PAR>
+							<PAR Name="FileName">
+								<EXP><![CDATA[$=$myRiga]]></EXP>
+							</PAR>
+							<PAR Name="SearchFor">
+								<EXP><![CDATA[$C$<Fila>]]></EXP>
+							</PAR>
+							<PAR Name="ReplaceWith">
+								<EXP><![CDATA[$=$MyAnomalia.Fila]]></EXP>
+							</PAR>
+							<PAR Name="ReplaceWhere">
+								<EXP><![CDATA[$C$3]]></EXP>
+							</PAR>
+							<PAR Name="ReplaceAll">
+								<EXP><![CDATA[$C$True]]></EXP>
+							</PAR>
+							<PAR Name="Options">
+								<EXP><![CDATA[$C$(FILEDIRECT)]]></EXP>
+							</PAR>
+						</ACTION_CALL>
+						<ACTION_CALL Id="RDK:443" Name="RDEngineering_SearchAndReplace" DesignTimeRemark="{Search For} --&gt; {Replace With}">
+							<PAR Name="RDLibraryName">
+								<EXP><![CDATA[$C$RDEngineering_OFFICE_WORD]]></EXP>
+							</PAR>
+							<PAR Name="FileName">
+								<EXP><![CDATA[$=$myRiga]]></EXP>
+							</PAR>
+							<PAR Name="SearchFor">
+								<EXP><![CDATA[$C$<Posizione>]]></EXP>
+							</PAR>
+							<PAR Name="ReplaceWith">
+								<EXP><![CDATA[$=$MyAnomalia.Posizione]]></EXP>
+							</PAR>
+							<PAR Name="ReplaceWhere">
+								<EXP><![CDATA[$C$3]]></EXP>
+							</PAR>
+							<PAR Name="ReplaceAll">
+								<EXP><![CDATA[$C$True]]></EXP>
+							</PAR>
+							<PAR Name="Options">
+								<EXP><![CDATA[$C$(FILEDIRECT)]]></EXP>
+							</PAR>
+						</ACTION_CALL>
+						<ACTION_CALL Id="RDK:445" Name="RDEngineering_SearchAndReplace" DesignTimeRemark="{Search For} --&gt; {Replace With}">
+							<PAR Name="RDLibraryName">
+								<EXP><![CDATA[$C$RDEngineering_OFFICE_WORD]]></EXP>
+							</PAR>
+							<PAR Name="FileName">
+								<EXP><![CDATA[$=$myRiga]]></EXP>
+							</PAR>
+							<PAR Name="SearchFor">
+								<EXP><![CDATA[$C$<Anomalia>]]></EXP>
+							</PAR>
+							<PAR Name="ReplaceWith">
+								<EXP><![CDATA[$=$MyAnomalia.Anomalia]]></EXP>
+							</PAR>
+							<PAR Name="ReplaceWhere">
+								<EXP><![CDATA[$C$3]]></EXP>
+							</PAR>
+							<PAR Name="ReplaceAll">
+								<EXP><![CDATA[$C$True]]></EXP>
+							</PAR>
+							<PAR Name="Options">
+								<EXP><![CDATA[$C$(FILEDIRECT)]]></EXP>
+							</PAR>
+						</ACTION_CALL>
+						<ACTION_CALL Id="RDK:447" Name="RDEngineering_SearchAndReplace" DesignTimeRemark="{Search For} --&gt; {Replace With}">
+							<PAR Name="RDLibraryName">
+								<EXP><![CDATA[$C$RDEngineering_OFFICE_WORD]]></EXP>
+							</PAR>
+							<PAR Name="FileName">
+								<EXP><![CDATA[$=$myRiga]]></EXP>
+							</PAR>
+							<PAR Name="SearchFor">
+								<EXP><![CDATA[$C$<Componente>]]></EXP>
+							</PAR>
+							<PAR Name="ReplaceWith">
+								<EXP><![CDATA[$=$MyAnomalia.Componente]]></EXP>
+							</PAR>
+							<PAR Name="ReplaceWhere">
+								<EXP><![CDATA[$C$3]]></EXP>
+							</PAR>
+							<PAR Name="ReplaceAll">
+								<EXP><![CDATA[$C$True]]></EXP>
+							</PAR>
+							<PAR Name="Options">
+								<EXP><![CDATA[$C$(FILEDIRECT)]]></EXP>
+							</PAR>
+						</ACTION_CALL>
+						<ACTION_CALL Id="RDK:449" Name="RDEngineering_SearchAndReplace" Suppressed="True" DesignTimeRemark="{Search For} --&gt; {Replace With}">
+							<PAR Name="RDLibraryName">
+								<EXP><![CDATA[$C$RDEngineering_OFFICE_WORD]]></EXP>
+							</PAR>
+							<PAR Name="FileName">
+								<EXP><![CDATA[$=$myRiga]]></EXP>
+							</PAR>
+							<PAR Name="SearchFor">
+								<EXP><![CDATA[$C$<Intervento>]]></EXP>
+							</PAR>
+							<PAR Name="ReplaceWith">
+								<EXP><![CDATA[$=$MyAnomalia.Intervento]]></EXP>
+							</PAR>
+							<PAR Name="ReplaceWhere">
+								<EXP><![CDATA[$C$3]]></EXP>
+							</PAR>
+							<PAR Name="ReplaceAll">
+								<EXP><![CDATA[$C$True]]></EXP>
+							</PAR>
+							<PAR Name="Options">
+								<EXP><![CDATA[$C$(FILEDIRECT)]]></EXP>
+							</PAR>
+						</ACTION_CALL>
+						<FOREACHLOOP Id="RDK:404" ItemVarRef="MyIMG" Backward="True">
+							<PAR Name="ArrayValueExp">
+								<EXP><![CDATA[$=$MyAnomalia.Immagini]]></EXP>
+							</PAR>
+							<PAR Name="ExitCondExp">
+								<EXP><![CDATA[$V$]]></EXP>
+							</PAR>
+							<ACTION_CALL Id="RDK:450" Name="RDEngineering_BookmarkOperation" Suppressed="True" DesignTimeRemark="{Operation} on [{Bookmark Name}]">
+								<PAR Name="RDLibraryName">
+									<EXP><![CDATA[$C$RDEngineering_OFFICE_WORD]]></EXP>
+								</PAR>
+								<PAR Name="FileName">
+									<EXP><![CDATA[$=$myRiga]]></EXP>
+								</PAR>
+								<PAR Name="BookmarkName">
+									<EXP><![CDATA[$C$Immagini]]></EXP>
+								</PAR>
+								<PAR Name="BookmarkOper">
+									<EXP><![CDATA[$C$3]]></EXP>
+								</PAR>
+								<PAR Name="InsertMode">
+									<EXP><![CDATA[$C$2]]></EXP>
+								</PAR>
+								<PAR Name="SourceFile">
+									<EXP><![CDATA[$=$WorkingDir+"..\TestIMG\"+MyIMG]]></EXP>
+								</PAR>
+								<PAR Name="SourceText" />
+								<PAR Name="MergeTable" />
+								<PAR Name="ContentTable">
+									<EXP><![CDATA[$V$]]></EXP>
+								</PAR>
+								<PAR Name="LinkUrl" />
+								<PAR Name="NewName" />
+								<PAR Name="Options">
+									<EXP><![CDATA[$C$(FILEDIRECT)]]></EXP>
+								</PAR>
+							</ACTION_CALL>
+							<ACTION_CALL Id="RDK:813" Name="RDEngineering_BookmarkOperation" DesignTimeRemark="{Operation} on [{Bookmark Name}]">
+								<PAR Name="RDLibraryName">
+									<EXP><![CDATA[$C$RDEngineering_OFFICE_WORD]]></EXP>
+								</PAR>
+								<PAR Name="FileName">
+									<EXP><![CDATA[$=$myRiga]]></EXP>
+								</PAR>
+								<PAR Name="BookmarkName">
+									<EXP><![CDATA[$C$Immagini]]></EXP>
+								</PAR>
+								<PAR Name="BookmarkOper">
+									<EXP><![CDATA[$C$3]]></EXP>
+								</PAR>
+								<PAR Name="InsertMode">
+									<EXP><![CDATA[$C$2]]></EXP>
+								</PAR>
+								<PAR Name="SourceFile">
+									<EXP><![CDATA[$=$MyIMG]]></EXP>
+								</PAR>
+								<PAR Name="SourceText" />
+								<PAR Name="MergeTable" />
+								<PAR Name="ContentTable">
+									<EXP><![CDATA[$V$]]></EXP>
+								</PAR>
+								<PAR Name="LinkUrl" />
+								<PAR Name="NewName" />
+								<PAR Name="Options">
+									<EXP><![CDATA[$C$(FILEDIRECT)]]></EXP>
+								</PAR>
+							</ACTION_CALL>
+						</FOREACHLOOP>
+						<ACTION_CALL Id="RDK:453" Name="RDEngineering_SaveFile" DesignTimeRemark="{FileName}">
+							<PAR Name="RDLibraryName">
+								<EXP><![CDATA[$C$RDEngineering_OFFICE_WORD]]></EXP>
+							</PAR>
+							<PAR Name="FileName">
+								<EXP><![CDATA[$=$myRiga]]></EXP>
+							</PAR>
+							<PAR Name="Options">
+								<EXP><![CDATA[$C$(FILEDIRECT)]]></EXP>
+							</PAR>
+						</ACTION_CALL>
+						<ACTION_CALL Id="RDK:340" Name="RDEngineering_BookmarkOperation" DesignTimeRemark="{Operation} on [{Bookmark Name}]">
+							<PAR Name="RDLibraryName">
+								<EXP><![CDATA[$C$RDEngineering_OFFICE_WORD]]></EXP>
+							</PAR>
+							<PAR Name="FileName">
+								<EXP><![CDATA[$=$myTabellaReparto]]></EXP>
+							</PAR>
+							<PAR Name="BookmarkName">
+								<EXP><![CDATA[$C$NewRiga]]></EXP>
+							</PAR>
+							<PAR Name="BookmarkOper">
+								<EXP><![CDATA[$C$7]]></EXP>
+							</PAR>
+							<PAR Name="InsertMode">
+								<EXP><![CDATA[$C$-1]]></EXP>
+							</PAR>
+							<PAR Name="SourceFile">
+								<EXP><![CDATA[$=$myRiga]]></EXP>
+							</PAR>
+							<PAR Name="SourceText" />
+							<PAR Name="MergeTable" />
+							<PAR Name="ContentTable">
+								<EXP><![CDATA[$V$]]></EXP>
+							</PAR>
+							<PAR Name="LinkUrl" />
+							<PAR Name="NewName" />
+							<PAR Name="Options">
+								<EXP><![CDATA[$C$(FILEDIRECT)]]></EXP>
+							</PAR>
+						</ACTION_CALL>
+						<ACTION_CALL Id="RDK:455" Name="RDEngineering_DeleteFile" DesignTimeRemark="{FileFullPath}">
+							<PAR Name="RDLibraryName">
+								<EXP><![CDATA[$C$RDEngineering_MISC]]></EXP>
+							</PAR>
+							<PAR Name="FileFullPath">
+								<EXP><![CDATA[$=$myRiga]]></EXP>
+							</PAR>
+							<PAR Name="AcceptWildcards" />
+						</ACTION_CALL>
+					</FOREACHLOOP>
+					<ACTION_CALL Id="RDK:344" Name="RDEngineering_SaveFile" DesignTimeRemark="{FileName}">
+						<PAR Name="RDLibraryName">
+							<EXP><![CDATA[$C$RDEngineering_OFFICE_WORD]]></EXP>
+						</PAR>
+						<PAR Name="FileName">
+							<EXP><![CDATA[$=$myTabellaReparto]]></EXP>
+						</PAR>
+						<PAR Name="Options">
+							<EXP><![CDATA[$C$(FILEDIRECT)]]></EXP>
+						</PAR>
+					</ACTION_CALL>
+					<ACTION_CALL Id="RDK:373" Name="RDEngineering_BookmarkOperation" DesignTimeRemark="{Operation} on [{Bookmark Name}]">
+						<PAR Name="RDLibraryName">
+							<EXP><![CDATA[$C$RDEngineering_OFFICE_WORD]]></EXP>
+						</PAR>
+						<PAR Name="FileName">
+							<EXP><![CDATA[$=$OutFile]]></EXP>
+						</PAR>
+						<PAR Name="BookmarkName">
+							<EXP><![CDATA[$C$TabellaAnomalie]]></EXP>
+						</PAR>
+						<PAR Name="BookmarkOper">
+							<EXP><![CDATA[$C$3]]></EXP>
+						</PAR>
+						<PAR Name="InsertMode">
+							<EXP><![CDATA[$C$2]]></EXP>
+						</PAR>
+						<PAR Name="SourceFile">
+							<EXP><![CDATA[$=$myTabellaReparto]]></EXP>
+						</PAR>
+						<PAR Name="SourceText" />
+						<PAR Name="MergeTable" />
+						<PAR Name="ContentTable">
+							<EXP><![CDATA[$V$]]></EXP>
+						</PAR>
+						<PAR Name="LinkUrl" />
+						<PAR Name="NewName" />
+						<PAR Name="Options">
+							<EXP><![CDATA[$C$(FILEDIRECT)(USEDESTSTYLES)]]></EXP>
+						</PAR>
+					</ACTION_CALL>
+					<ACTION_CALL Id="RDK:346" Name="RDEngineering_DeleteFile" DesignTimeRemark="{FileFullPath}">
+						<PAR Name="RDLibraryName">
+							<EXP><![CDATA[$C$RDEngineering_MISC]]></EXP>
+						</PAR>
+						<PAR Name="FileFullPath">
+							<EXP><![CDATA[$=$myTabellaReparto]]></EXP>
+						</PAR>
+						<PAR Name="AcceptWildcards" />
+					</ACTION_CALL>
+				</FOREACHLOOP>
+				<ACTION_CALL Id="RDK:355" Name="RDEngineering_DeleteFile" DesignTimeRemark="{FileFullPath}">
+					<PAR Name="RDLibraryName">
+						<EXP><![CDATA[$C$RDEngineering_MISC]]></EXP>
+					</PAR>
+					<PAR Name="FileFullPath">
+						<EXP><![CDATA[$=$MyTemplateTabellaFile]]></EXP>
+					</PAR>
+					<PAR Name="AcceptWildcards" />
+				</ACTION_CALL>
+				<ACTION_CALL Id="RDK:457" Name="RDEngineering_DeleteFile" DesignTimeRemark="{FileFullPath}">
+					<PAR Name="RDLibraryName">
+						<EXP><![CDATA[$C$RDEngineering_MISC]]></EXP>
+					</PAR>
+					<PAR Name="FileFullPath">
+						<EXP><![CDATA[$=$myTemplateRiga]]></EXP>
+					</PAR>
+					<PAR Name="AcceptWildcards" />
+				</ACTION_CALL>
+			</GROUP>
+			<GROUP Id="RDK:264" Name="Salvataggio file" SubType="Generic">
+				<CALLFUNCTION Id="RDK:368" Expanded="True">
+					<PAR Name="FuncName">
+						<EXP><![CDATA[$C$SaveWordPDF]]></EXP>
+					</PAR>
+					<PAR Name="InputExp" />
+					<PAR Name="ResultRef">
+						<EXP><![CDATA[$V$]]></EXP>
+					</PAR>
+					<PAR Name="Options" />
+				</CALLFUNCTION>
+			</GROUP>
+		</GROUP>
+		<GROUP Id="RDK:471" Name="DOCUMENTO Verticalità" SubType="Generic" Expanded="True">
+			<GROUP Id="RDK:496" Name="Organizzo file su cui lavorare" SubType="Generic" Expanded="True">
+				<SET Id="RDK:486" VarRef="OutFile">
+					<EXP><![CDATA[$=$WorkingDir+"Verticalità_"+StrReplace(DateToStrShort(Data), "/", "-")+".docx"]]></EXP>
+					<PAR Name="AdvancedOptions" />
+				</SET>
+				<SET Id="RDK:487" VarRef="TemplateFile">
+					<EXP><![CDATA[$=$ProcPath()+"Templates\Verticalità.docx"]]></EXP>
+					<PAR Name="AdvancedOptions" />
+				</SET>
+				<ACTION_CALL Id="RDK:488" Name="RDEngineering_CopyFile" DesignTimeRemark="{Source File} --&gt; {Destination File}">
+					<PAR Name="RDLibraryName">
+						<EXP><![CDATA[$C$RDEngineering_MISC]]></EXP>
+					</PAR>
+					<PAR Name="FileName">
+						<EXP><![CDATA[$=$TemplateFile]]></EXP>
+					</PAR>
+					<PAR Name="NewFileName">
+						<EXP><![CDATA[$=$OutFile]]></EXP>
+					</PAR>
+					<PAR Name="AcceptWildcards" />
+					<PAR Name="Overwrite" />
+					<PAR Name="Options" />
+				</ACTION_CALL>
+				<SET Id="RDK:489" VarRef="MyTemplateTabellaFile">
+					<EXP><![CDATA[$=$WorkingDir+"TabellaVerticalitàTemplate.docx"]]></EXP>
+					<PAR Name="AdvancedOptions" />
+				</SET>
+				<SET Id="RDK:490" VarRef="TemplateTabellaFile">
+					<EXP><![CDATA[$=$ProcPath()+"Templates\TabellaVerticalità.docx"]]></EXP>
+					<PAR Name="AdvancedOptions" />
+				</SET>
+				<ACTION_CALL Id="RDK:491" Name="RDEngineering_CopyFile" DesignTimeRemark="{Source File} --&gt; {Destination File}">
+					<PAR Name="RDLibraryName">
+						<EXP><![CDATA[$C$RDEngineering_MISC]]></EXP>
+					</PAR>
+					<PAR Name="FileName">
+						<EXP><![CDATA[$=$TemplateTabellaFile]]></EXP>
+					</PAR>
+					<PAR Name="NewFileName">
+						<EXP><![CDATA[$=$MyTemplateTabellaFile]]></EXP>
+					</PAR>
+					<PAR Name="AcceptWildcards" />
+					<PAR Name="Overwrite" />
+					<PAR Name="Options" />
+				</ACTION_CALL>
+				<SET Id="RDK:1145" VarRef="myTemplateRiga">
+					<EXP><![CDATA[$=$WorkingDir+"RigaVerticalitàTemplate.docx"]]></EXP>
+					<PAR Name="AdvancedOptions" />
+				</SET>
+				<SET Id="RDK:1147" VarRef="TemplateRiga">
+					<EXP><![CDATA[$=$ProcPath()+"Templates\RigaVerticalità.docx"]]></EXP>
+					<PAR Name="AdvancedOptions" />
+				</SET>
+				<ACTION_CALL Id="RDK:1201" Name="RDEngineering_CopyFile" DesignTimeRemark="{Source File} --&gt; {Destination File}">
+					<PAR Name="RDLibraryName">
+						<EXP><![CDATA[$C$RDEngineering_MISC]]></EXP>
+					</PAR>
+					<PAR Name="FileName">
+						<EXP><![CDATA[$=$TemplateRiga]]></EXP>
+					</PAR>
+					<PAR Name="NewFileName">
+						<EXP><![CDATA[$=$myTemplateRiga]]></EXP>
+					</PAR>
+					<PAR Name="AcceptWildcards" />
+					<PAR Name="Overwrite" />
+					<PAR Name="Options" />
+				</ACTION_CALL>
+				<ACTION_CALL Id="RDK:495" Name="RDEngineering_OpenFile" DesignTimeRemark="{FileName}">
+					<PAR Name="RDLibraryName">
+						<EXP><![CDATA[$C$RDEngineering_OFFICE_WORD]]></EXP>
+					</PAR>
+					<PAR Name="FileName">
+						<EXP><![CDATA[$=$OutFile]]></EXP>
+					</PAR>
+					<PAR Name="IsVisible">
+						<EXP><![CDATA[$C$True]]></EXP>
+					</PAR>
+					<PAR Name="ModelName" />
+					<PAR Name="Options">
+						<EXP><![CDATA[$C$(FILEDIRECT)]]></EXP>
+					</PAR>
+				</ACTION_CALL>
+			</GROUP>
+			<GROUP Id="RDK:508" Name="Set Intestazione" SubType="Generic" Expanded="True">
+				<CALLFUNCTION Id="RDK:507">
+					<PAR Name="FuncName">
+						<EXP><![CDATA[$C$SetIntestazione]]></EXP>
+					</PAR>
+					<PAR Name="InputExp" />
+					<PAR Name="ResultRef">
+						<EXP><![CDATA[$V$]]></EXP>
+					</PAR>
+					<PAR Name="Options" />
+				</CALLFUNCTION>
+			</GROUP>
+			<GROUP Id="RDK:513" Name="Set Corpo" SubType="Generic" Expanded="True">
+				<GROUP Id="RDK:1287" Name="LOCAL" SubType="VarSet" IncludeDate="0">
+					<VAR Id="RDK:1288" Name="wordMM" Type="VerticalitàMailMergeType" Expanded="True" />
+					<VAR Id="RDK:1291" Name="LISTwordMM" Type="VerticalitàMailMergeType[]" />
+				</GROUP>
+				<FOREACHLOOP Id="RDK:667" Expanded="True" ItemVarRef="MyVerticalitaReparto" CountVarRef="idx" Backward="True" ByRefMode="True">
+					<PAR Name="ArrayValueExp">
+						<EXP><![CDATA[$V$Verticalita]]></EXP>
+					</PAR>
+					<PAR Name="ExitCondExp">
+						<EXP><![CDATA[$V$]]></EXP>
+					</PAR>
+					<SET Id="RDK:650" VarRef="myTabellaReparto">
+						<EXP><![CDATA[$=$WorkingDir+"myTabellaVerticalità_"+idx+".docx"]]></EXP>
+						<PAR Name="AdvancedOptions" />
+					</SET>
+					<ACTION_CALL Id="RDK:652" Name="RDEngineering_CopyFile" DesignTimeRemark="{Source File} --&gt; {Destination File}">
+						<PAR Name="RDLibraryName">
+							<EXP><![CDATA[$C$RDEngineering_MISC]]></EXP>
+						</PAR>
+						<PAR Name="FileName">
+							<EXP><![CDATA[$=$MyTemplateTabellaFile]]></EXP>
+						</PAR>
+						<PAR Name="NewFileName">
+							<EXP><![CDATA[$=$myTabellaReparto]]></EXP>
+						</PAR>
+						<PAR Name="AcceptWildcards" />
+						<PAR Name="Overwrite" />
+						<PAR Name="Options" />
+					</ACTION_CALL>
+					<ACTION_CALL Id="RDK:654" Name="RDEngineering_OpenFile" DesignTimeRemark="{FileName}">
+						<PAR Name="RDLibraryName">
+							<EXP><![CDATA[$C$RDEngineering_OFFICE_WORD]]></EXP>
+						</PAR>
+						<PAR Name="FileName">
+							<EXP><![CDATA[$=$myTabellaReparto]]></EXP>
+						</PAR>
+						<PAR Name="IsVisible">
+							<EXP><![CDATA[$C$True]]></EXP>
+						</PAR>
+						<PAR Name="ModelName" />
+						<PAR Name="Options">
+							<EXP><![CDATA[$C$(FILEDIRECT)]]></EXP>
+						</PAR>
+					</ACTION_CALL>
+					<ACTION_CALL Id="RDK:656" Name="RDEngineering_SearchAndReplace" DesignTimeRemark="{Search For} --&gt; {Replace With}">
+						<PAR Name="RDLibraryName">
+							<EXP><![CDATA[$C$RDEngineering_OFFICE_WORD]]></EXP>
+						</PAR>
+						<PAR Name="FileName">
+							<EXP><![CDATA[$=$myTabellaReparto]]></EXP>
+						</PAR>
+						<PAR Name="SearchFor">
+							<EXP><![CDATA[$C$<REPARTO>]]></EXP>
+						</PAR>
+						<PAR Name="ReplaceWith">
+							<EXP><![CDATA[$=$MyVerticalitaReparto.Reparto]]></EXP>
+						</PAR>
+						<PAR Name="ReplaceWhere">
+							<EXP><![CDATA[$C$3]]></EXP>
+						</PAR>
+						<PAR Name="ReplaceAll">
+							<EXP><![CDATA[$C$True]]></EXP>
+						</PAR>
+						<PAR Name="Options">
+							<EXP><![CDATA[$C$(FILEDIRECT)]]></EXP>
+						</PAR>
+					</ACTION_CALL>
+					<ACTION_CALL Id="RDK:1149" Name="RDEngineering_SearchAndReplace" DesignTimeRemark="{Search For} --&gt; {Replace With}">
+						<PAR Name="RDLibraryName">
+							<EXP><![CDATA[$C$RDEngineering_OFFICE_WORD]]></EXP>
+						</PAR>
+						<PAR Name="FileName">
+							<EXP><![CDATA[$=$myTabellaReparto]]></EXP>
+						</PAR>
+						<PAR Name="SearchFor">
+							<EXP><![CDATA[$C$<AltezzeSpalle>]]></EXP>
+						</PAR>
+						<PAR Name="ReplaceWith">
+							<EXP><![CDATA[$=$MyVerticalitaReparto.AltezzeSpalle]]></EXP>
+						</PAR>
+						<PAR Name="ReplaceWhere">
+							<EXP><![CDATA[$C$3]]></EXP>
+						</PAR>
+						<PAR Name="ReplaceAll">
+							<EXP><![CDATA[$C$True]]></EXP>
+						</PAR>
+						<PAR Name="Options">
+							<EXP><![CDATA[$C$(FILEDIRECT)]]></EXP>
+						</PAR>
+					</ACTION_CALL>
+					<SET Id="RDK:1247" VarRef="MyVerticalitaReparto.Rilevazioni">
+						<EXP><![CDATA[$=$SortListOfStructs(MyVerticalitaReparto.Rilevazioni, "Fila", False)]]></EXP>
+						<PAR Name="AdvancedOptions" />
+					</SET>
+					<FOREACHLOOP Id="RDK:1150" Expanded="True" ItemVarRef="MyRilevazione" IndexVarRef="r">
+						<PAR Name="ArrayValueExp">
+							<EXP><![CDATA[$=$MyVerticalitaReparto.Rilevazioni]]></EXP>
+						</PAR>
+						<PAR Name="ExitCondExp">
+							<EXP><![CDATA[$V$]]></EXP>
+						</PAR>
+						<SET Id="RDK:1152" VarRef="myRiga">
+							<EXP><![CDATA[$=$WorkingDir+"myRigaVerticalità_"+idx+"_"+r+".docx"]]></EXP>
+							<PAR Name="AdvancedOptions" />
+						</SET>
+						<ACTION_CALL Id="RDK:1156" Name="RDEngineering_CopyFile" DesignTimeRemark="{Source File} --&gt; {Destination File}">
+							<PAR Name="RDLibraryName">
+								<EXP><![CDATA[$C$RDEngineering_MISC]]></EXP>
+							</PAR>
+							<PAR Name="FileName">
+								<EXP><![CDATA[$=$myTemplateRiga]]></EXP>
+							</PAR>
+							<PAR Name="NewFileName">
+								<EXP><![CDATA[$=$myRiga]]></EXP>
+							</PAR>
+							<PAR Name="AcceptWildcards" />
+							<PAR Name="Overwrite" />
+							<PAR Name="Options" />
+						</ACTION_CALL>
+						<ACTION_CALL Id="RDK:1158" Name="RDEngineering_OpenFile" DesignTimeRemark="{FileName}">
+							<PAR Name="RDLibraryName">
+								<EXP><![CDATA[$C$RDEngineering_OFFICE_WORD]]></EXP>
+							</PAR>
+							<PAR Name="FileName">
+								<EXP><![CDATA[$=$myRiga]]></EXP>
+							</PAR>
+							<PAR Name="IsVisible">
+								<EXP><![CDATA[$C$True]]></EXP>
+							</PAR>
+							<PAR Name="ModelName" />
+							<PAR Name="Options">
+								<EXP><![CDATA[$C$(FILEDIRECT)]]></EXP>
+							</PAR>
+						</ACTION_CALL>
+						<ACTION_CALL Id="RDK:1162" Name="RDEngineering_SearchAndReplace" DesignTimeRemark="{Search For} --&gt; {Replace With}">
+							<PAR Name="RDLibraryName">
+								<EXP><![CDATA[$C$RDEngineering_OFFICE_WORD]]></EXP>
+							</PAR>
+							<PAR Name="FileName">
+								<EXP><![CDATA[$=$myRiga]]></EXP>
+							</PAR>
+							<PAR Name="SearchFor">
+								<EXP><![CDATA[$C$<Fila>]]></EXP>
+							</PAR>
+							<PAR Name="ReplaceWith">
+								<EXP><![CDATA[$=$MyRilevazione.Fila]]></EXP>
+							</PAR>
+							<PAR Name="ReplaceWhere">
+								<EXP><![CDATA[$C$3]]></EXP>
+							</PAR>
+							<PAR Name="ReplaceAll">
+								<EXP><![CDATA[$C$True]]></EXP>
+							</PAR>
+							<PAR Name="Options">
+								<EXP><![CDATA[$C$(FILEDIRECT)]]></EXP>
+							</PAR>
+						</ACTION_CALL>
+						<SET Id="RDK:1173" VarRef="old_index">
+							<EXP><![CDATA[$C$0]]></EXP>
+							<PAR Name="AdvancedOptions" />
+						</SET>
+						<SET Id="RDK:1342" VarRef="LISTwordMM">
+							<EXP><![CDATA[$C$NOTHING]]></EXP>
+							<PAR Name="AdvancedOptions" />
+						</SET>
+						<SET_STRUCT Id="RDK:1350" VarRef="wordMM" ClearAll="True">
+							<PAR Name="Fila">
+								<EXP><![CDATA[$=$MyRilevazione.Fila]]></EXP>
+							</PAR>
+							<PAR Name="pos_p1">
+								<EXP><![CDATA[$=$]]></EXP>
+							</PAR>
+							<PAR Name="P1_LC" />
+							<PAR Name="P1_L" />
+							<PAR Name="P1_FC" />
+							<PAR Name="P1_F" />
+							<PAR Name="pos_p2" />
+							<PAR Name="P2_LC" />
+							<PAR Name="P2_L" />
+							<PAR Name="P2_FC" />
+							<PAR Name="P2_F" />
+							<PAR Name="pos_p3" />
+							<PAR Name="P3_LC" />
+							<PAR Name="P3_L" />
+							<PAR Name="P3_FC" />
+							<PAR Name="P3_F" />
+							<PAR Name="pos_p4" />
+							<PAR Name="P4_LC" />
+							<PAR Name="P4_L" />
+							<PAR Name="P4_FC" />
+							<PAR Name="P4_F" />
+							<PAR Name="pos_p5" />
+							<PAR Name="P5_LC" />
+							<PAR Name="P5_L" />
+							<PAR Name="P5_FC" />
+							<PAR Name="P5_F" />
+						</SET_STRUCT>
+						<SET Id="RDK:1522" VarRef="MyRilevazione.Posizioni">
+							<EXP><![CDATA[$=$SortListOfStructs(MyRilevazione.Posizioni, "Posizione", False)]]></EXP>
+							<PAR Name="AdvancedOptions" />
+						</SET>
+						<FOREACHLOOP Id="RDK:1159" Expanded="True" ItemVarRef="PosizioneVerticalità" IndexVarRef="p">
+							<PAR Name="ArrayValueExp">
+								<EXP><![CDATA[$=$MyRilevazione.Posizioni]]></EXP>
+							</PAR>
+							<PAR Name="ExitCondExp">
+								<EXP><![CDATA[$V$]]></EXP>
+							</PAR>
+							<SET Id="RDK:1169" VarRef="index">
+								<EXP><![CDATA[$=$Floor(p/5)]]></EXP>
+								<PAR Name="AdvancedOptions" />
+							</SET>
+							<SET Id="RDK:1177" VarRef="reminder">
+								<EXP><![CDATA[$=$p-(index*5)]]></EXP>
+								<PAR Name="AdvancedOptions" />
+							</SET>
+							<GROUP Id="RDK:1348" Name="GESTIONE MAIL MERGE" SubType="Generic" Expanded="True">
+								<GROUP Id="RDK:1354" Name="Group" SubType="Generic" Expanded="True">
+									<VALUECONDITION Value="true">
+										<EXP><![CDATA[$=$old_index<>index]]></EXP>
+									</VALUECONDITION>
+									<LIST_ADD Id="RDK:1367" ListRef="LISTwordMM">
+										<PAR Name="VALUE_TO_ADD">
+											<EXP><![CDATA[$=$wordMM]]></EXP>
+										</PAR>
+										<PAR Name="POS_TO_ADD" />
+									</LIST_ADD>
+									<SET_STRUCT Id="RDK:1369" VarRef="wordMM" ClearAll="True">
+										<PAR Name="Fila">
+											<EXP><![CDATA[$=$MyRilevazione.Fila]]></EXP>
+										</PAR>
+										<PAR Name="pos_p1" />
+										<PAR Name="P1_LC" />
+										<PAR Name="P1_L" />
+										<PAR Name="P1_FC" />
+										<PAR Name="P1_F" />
+										<PAR Name="pos_p2" />
+										<PAR Name="P2_LC" />
+										<PAR Name="P2_L" />
+										<PAR Name="P2_FC" />
+										<PAR Name="P2_F" />
+										<PAR Name="pos_p3" />
+										<PAR Name="P3_LC" />
+										<PAR Name="P3_L" />
+										<PAR Name="P3_FC" />
+										<PAR Name="P3_F" />
+										<PAR Name="pos_p4" />
+										<PAR Name="P4_LC" />
+										<PAR Name="P4_L" />
+										<PAR Name="P4_FC" />
+										<PAR Name="P4_F" />
+										<PAR Name="pos_p5" />
+										<PAR Name="P5_LC" />
+										<PAR Name="P5_L" />
+										<PAR Name="P5_FC" />
+										<PAR Name="P5_F" />
+									</SET_STRUCT>
+								</GROUP>
+								<SET Id="RDK:1357" VarRef="wordMM">
+									<EXP><![CDATA[$=$SetStruct(wordMM, "pos_p"+(1+reminder), "Posizione "+PosizioneVerticalità.Posizione)]]></EXP>
+									<PAR Name="AdvancedOptions" />
+								</SET>
+								<SET Id="RDK:1359" VarRef="wordMM">
+									<EXP><![CDATA[$=$SetStruct(wordMM, "P"+(1+reminder)+"_LC", PosizioneVerticalità.ColoreLong)]]></EXP>
+									<PAR Name="AdvancedOptions" />
+								</SET>
+								<SET Id="RDK:1361" VarRef="wordMM">
+									<EXP><![CDATA[$=$SetStruct(wordMM, "P"+(1+reminder)+"_L", "AAAAA"+PosizioneVerticalità.Long+"AAAAA.")]]></EXP>
+									<PAR Name="AdvancedOptions" />
+								</SET>
+								<SET Id="RDK:1365" VarRef="wordMM">
+									<EXP><![CDATA[$=$SetStruct(wordMM, "P"+(1+reminder)+"_FC", PosizioneVerticalità.ColoreFront)]]></EXP>
+									<PAR Name="AdvancedOptions" />
+								</SET>
+								<SET Id="RDK:1363" VarRef="wordMM">
+									<EXP><![CDATA[$=$SetStruct(wordMM, "P"+(1+reminder)+"_F", "AAAAA"+PosizioneVerticalità.Front+"AAAAA.")]]></EXP>
+									<PAR Name="AdvancedOptions" />
+								</SET>
+							</GROUP>
+							<GROUP Id="RDK:1344" Name="GESTIONE CON SEARCH AND REPLACE" SubType="Generic" Suppressed="True">
+								<GROUP Id="RDK:1181" Name="Group" SubType="Generic">
+									<VALUECONDITION Value="true">
+										<EXP><![CDATA[$=$old_index<>index]]></EXP>
+									</VALUECONDITION>
+									<ACTION_CALL Id="RDK:1186" Name="RDEngineering_SaveFile" DesignTimeRemark="{FileName}">
+										<PAR Name="RDLibraryName">
+											<EXP><![CDATA[$C$RDEngineering_OFFICE_WORD]]></EXP>
+										</PAR>
+										<PAR Name="FileName">
+											<EXP><![CDATA[$=$myRiga]]></EXP>
+										</PAR>
+										<PAR Name="Options">
+											<EXP><![CDATA[$C$(FILEDIRECT)]]></EXP>
+										</PAR>
+									</ACTION_CALL>
+									<ACTION_CALL Id="RDK:1188" Name="RDEngineering_BookmarkOperation" DesignTimeRemark="{Operation} on [{Bookmark Name}]">
+										<PAR Name="RDLibraryName">
+											<EXP><![CDATA[$C$RDEngineering_OFFICE_WORD]]></EXP>
+										</PAR>
+										<PAR Name="FileName">
+											<EXP><![CDATA[$=$myTabellaReparto]]></EXP>
+										</PAR>
+										<PAR Name="BookmarkName">
+											<EXP><![CDATA[$C$NewRiga]]></EXP>
+										</PAR>
+										<PAR Name="BookmarkOper">
+											<EXP><![CDATA[$C$7]]></EXP>
+										</PAR>
+										<PAR Name="InsertMode">
+											<EXP><![CDATA[$C$-1]]></EXP>
+										</PAR>
+										<PAR Name="SourceFile">
+											<EXP><![CDATA[$=$myRiga]]></EXP>
+										</PAR>
+										<PAR Name="SourceText" />
+										<PAR Name="MergeTable" />
+										<PAR Name="ContentTable">
+											<EXP><![CDATA[$V$]]></EXP>
+										</PAR>
+										<PAR Name="LinkUrl" />
+										<PAR Name="NewName" />
+										<PAR Name="Options">
+											<EXP><![CDATA[$C$(FILEDIRECT)(USEDESTSTYLES)]]></EXP>
+										</PAR>
+									</ACTION_CALL>
+									<ACTION_CALL Id="RDK:1190" Name="RDEngineering_DeleteFile" DesignTimeRemark="{FileFullPath}">
+										<PAR Name="RDLibraryName">
+											<EXP><![CDATA[$C$RDEngineering_MISC]]></EXP>
+										</PAR>
+										<PAR Name="FileFullPath">
+											<EXP><![CDATA[$=$myRiga]]></EXP>
+										</PAR>
+										<PAR Name="AcceptWildcards" />
+									</ACTION_CALL>
+									<SET Id="RDK:1192" VarRef="myRiga">
+										<EXP><![CDATA[$=$WorkingDir+"myRigaVerticalità_"+idx+"_"+r+"_"+index+".docx"]]></EXP>
+										<PAR Name="AdvancedOptions" />
+									</SET>
+									<ACTION_CALL Id="RDK:1194" Name="RDEngineering_CopyFile" DesignTimeRemark="{Source File} --&gt; {Destination File}">
+										<PAR Name="RDLibraryName">
+											<EXP><![CDATA[$C$RDEngineering_MISC]]></EXP>
+										</PAR>
+										<PAR Name="FileName">
+											<EXP><![CDATA[$=$myTemplateRiga]]></EXP>
+										</PAR>
+										<PAR Name="NewFileName">
+											<EXP><![CDATA[$=$myRiga]]></EXP>
+										</PAR>
+										<PAR Name="AcceptWildcards" />
+										<PAR Name="Overwrite" />
+										<PAR Name="Options" />
+									</ACTION_CALL>
+									<ACTION_CALL Id="RDK:1196" Name="RDEngineering_OpenFile" DesignTimeRemark="{FileName}">
+										<PAR Name="RDLibraryName">
+											<EXP><![CDATA[$C$RDEngineering_OFFICE_WORD]]></EXP>
+										</PAR>
+										<PAR Name="FileName">
+											<EXP><![CDATA[$=$myRiga]]></EXP>
+										</PAR>
+										<PAR Name="IsVisible">
+											<EXP><![CDATA[$C$True]]></EXP>
+										</PAR>
+										<PAR Name="ModelName" />
+										<PAR Name="Options">
+											<EXP><![CDATA[$C$(FILEDIRECT)]]></EXP>
+										</PAR>
+									</ACTION_CALL>
+									<ACTION_CALL Id="RDK:1198" Name="RDEngineering_SearchAndReplace" DesignTimeRemark="{Search For} --&gt; {Replace With}">
+										<PAR Name="RDLibraryName">
+											<EXP><![CDATA[$C$RDEngineering_OFFICE_WORD]]></EXP>
+										</PAR>
+										<PAR Name="FileName">
+											<EXP><![CDATA[$=$myRiga]]></EXP>
+										</PAR>
+										<PAR Name="SearchFor">
+											<EXP><![CDATA[$C$<Fila>]]></EXP>
+										</PAR>
+										<PAR Name="ReplaceWith">
+											<EXP><![CDATA[$=$MyRilevazione.Fila]]></EXP>
+										</PAR>
+										<PAR Name="ReplaceWhere">
+											<EXP><![CDATA[$C$3]]></EXP>
+										</PAR>
+										<PAR Name="ReplaceAll">
+											<EXP><![CDATA[$C$True]]></EXP>
+										</PAR>
+										<PAR Name="Options">
+											<EXP><![CDATA[$C$(FILEDIRECT)]]></EXP>
+										</PAR>
+									</ACTION_CALL>
+								</GROUP>
+								<ACTION_CALL Id="RDK:658" Name="RDEngineering_SearchAndReplace" DesignTimeRemark="{Search For} --&gt; {Replace With}">
+									<PAR Name="RDLibraryName">
+										<EXP><![CDATA[$C$RDEngineering_OFFICE_WORD]]></EXP>
+									</PAR>
+									<PAR Name="FileName">
+										<EXP><![CDATA[$=$myRiga]]></EXP>
+									</PAR>
+									<PAR Name="SearchFor">
+										<EXP><![CDATA[$=$"<Posizione p"+(1+reminder)+">"]]></EXP>
+									</PAR>
+									<PAR Name="ReplaceWith">
+										<EXP><![CDATA[$=$"Posizione "+PosizioneVerticalità.Posizione]]></EXP>
+									</PAR>
+									<PAR Name="ReplaceWhere">
+										<EXP><![CDATA[$C$3]]></EXP>
+									</PAR>
+									<PAR Name="ReplaceAll">
+										<EXP><![CDATA[$C$True]]></EXP>
+									</PAR>
+									<PAR Name="Options">
+										<EXP><![CDATA[$C$(FILEDIRECT)]]></EXP>
+									</PAR>
+								</ACTION_CALL>
+								<GROUP Id="RDK:1262" Name="solo search and replace" SubType="Generic">
+									<ACTION_CALL Id="RDK:1164" Name="RDEngineering_SearchAndReplace" DesignTimeRemark="{Search For} --&gt; {Replace With}">
+										<PAR Name="RDLibraryName">
+											<EXP><![CDATA[$C$RDEngineering_OFFICE_WORD]]></EXP>
+										</PAR>
+										<PAR Name="FileName">
+											<EXP><![CDATA[$=$myRiga]]></EXP>
+										</PAR>
+										<PAR Name="SearchFor">
+											<EXP><![CDATA[$=$"<p"+(1+reminder)+"_L>"]]></EXP>
+										</PAR>
+										<PAR Name="ReplaceWith">
+											<EXP><![CDATA[$=$PosizioneVerticalità.Long]]></EXP>
+										</PAR>
+										<PAR Name="ReplaceWhere">
+											<EXP><![CDATA[$C$3]]></EXP>
+										</PAR>
+										<PAR Name="ReplaceAll">
+											<EXP><![CDATA[$C$True]]></EXP>
+										</PAR>
+										<PAR Name="Options">
+											<EXP><![CDATA[$C$(FILEDIRECT)]]></EXP>
+										</PAR>
+									</ACTION_CALL>
+									<ACTION_CALL Id="RDK:1258" Name="RDEngineering_SearchAndReplace" Suppressed="True" DesignTimeRemark="{Search For} --&gt; {Replace With}">
+										<PAR Name="RDLibraryName">
+											<EXP><![CDATA[$C$RDEngineering_OFFICE_WORD]]></EXP>
+										</PAR>
+										<PAR Name="FileName">
+											<EXP><![CDATA[$=$myRiga]]></EXP>
+										</PAR>
+										<PAR Name="SearchFor">
+											<EXP><![CDATA[$=$"<p"+(1+reminder)+"_LC>"]]></EXP>
+										</PAR>
+										<PAR Name="ReplaceWith">
+											<EXP><![CDATA[$=$StrToUpper(PosizioneVerticalità.ColoreLong)]]></EXP>
+										</PAR>
+										<PAR Name="ReplaceWhere">
+											<EXP><![CDATA[$C$3]]></EXP>
+										</PAR>
+										<PAR Name="ReplaceAll">
+											<EXP><![CDATA[$C$True]]></EXP>
+										</PAR>
+										<PAR Name="Options">
+											<EXP><![CDATA[$C$(FILEDIRECT)]]></EXP>
+										</PAR>
+									</ACTION_CALL>
+									<ACTION_CALL Id="RDK:1168" Name="RDEngineering_SearchAndReplace" DesignTimeRemark="{Search For} --&gt; {Replace With}">
+										<PAR Name="RDLibraryName">
+											<EXP><![CDATA[$C$RDEngineering_OFFICE_WORD]]></EXP>
+										</PAR>
+										<PAR Name="FileName">
+											<EXP><![CDATA[$=$myRiga]]></EXP>
+										</PAR>
+										<PAR Name="SearchFor">
+											<EXP><![CDATA[$=$"<p"+(1+reminder)+"_F>"]]></EXP>
+										</PAR>
+										<PAR Name="ReplaceWith">
+											<EXP><![CDATA[$=$PosizioneVerticalità.Front]]></EXP>
+										</PAR>
+										<PAR Name="ReplaceWhere">
+											<EXP><![CDATA[$C$3]]></EXP>
+										</PAR>
+										<PAR Name="ReplaceAll">
+											<EXP><![CDATA[$C$True]]></EXP>
+										</PAR>
+										<PAR Name="Options">
+											<EXP><![CDATA[$C$(FILEDIRECT)]]></EXP>
+										</PAR>
+									</ACTION_CALL>
+									<ACTION_CALL Id="RDK:1260" Name="RDEngineering_SearchAndReplace" Suppressed="True" DesignTimeRemark="{Search For} --&gt; {Replace With}">
+										<PAR Name="RDLibraryName">
+											<EXP><![CDATA[$C$RDEngineering_OFFICE_WORD]]></EXP>
+										</PAR>
+										<PAR Name="FileName">
+											<EXP><![CDATA[$=$myRiga]]></EXP>
+										</PAR>
+										<PAR Name="SearchFor">
+											<EXP><![CDATA[$=$"<p"+(1+reminder)+"_FC>"]]></EXP>
+										</PAR>
+										<PAR Name="ReplaceWith">
+											<EXP><![CDATA[$=$StrToUpper(PosizioneVerticalità.ColoreFront)]]></EXP>
+										</PAR>
+										<PAR Name="ReplaceWhere">
+											<EXP><![CDATA[$C$3]]></EXP>
+										</PAR>
+										<PAR Name="ReplaceAll">
+											<EXP><![CDATA[$C$True]]></EXP>
+										</PAR>
+										<PAR Name="Options">
+											<EXP><![CDATA[$C$(FILEDIRECT)]]></EXP>
+										</PAR>
+									</ACTION_CALL>
+								</GROUP>
+								<GROUP Id="RDK:1266" Name="Group" SubType="Generic">
+									<VALUECONDITION Value="true">
+										<EXP><![CDATA[$=$p=0]]></EXP>
+									</VALUECONDITION>
+									<SET_STRUCT Id="RDK:1284" VarRef="wordMM" ClearAll="True" ListRef="LISTwordMM">
+										<PAR Name="p1_LC">
+											<EXP><![CDATA[$=$StrToUpper(PosizioneVerticalità.ColoreLong)]]></EXP>
+										</PAR>
+										<PAR Name="p1_L">
+											<EXP><![CDATA[$=$PosizioneVerticalità.Long]]></EXP>
+										</PAR>
+										<PAR Name="p1_FC">
+											<EXP><![CDATA[$=$StrToUpper(PosizioneVerticalità.ColoreFront)]]></EXP>
+										</PAR>
+										<PAR Name="p1_F">
+											<EXP><![CDATA[$=$PosizioneVerticalità.Front]]></EXP>
+										</PAR>
+									</SET_STRUCT>
+									<ACTION_CALL Id="RDK:1294" Name="RDEngineering_BookmarkOperation" DesignTimeRemark="{Operation} of [{Merge Table}]">
+										<PAR Name="RDLibraryName">
+											<EXP><![CDATA[$C$RDEngineering_OFFICE_WORD]]></EXP>
+										</PAR>
+										<PAR Name="FileName">
+											<EXP><![CDATA[$=$myTabellaReparto]]></EXP>
+										</PAR>
+										<PAR Name="BookmarkName" />
+										<PAR Name="BookmarkOper">
+											<EXP><![CDATA[$C$8]]></EXP>
+										</PAR>
+										<PAR Name="InsertMode" />
+										<PAR Name="SourceFile" />
+										<PAR Name="SourceText" />
+										<PAR Name="MergeTable">
+											<EXP><![CDATA[$=$LISTwordMM]]></EXP>
+										</PAR>
+										<PAR Name="ContentTable">
+											<EXP><![CDATA[$V$]]></EXP>
+										</PAR>
+										<PAR Name="LinkUrl" />
+										<PAR Name="NewName" />
+										<PAR Name="Options">
+											<EXP><![CDATA[$C$(FILEDIRECT)]]></EXP>
+										</PAR>
+									</ACTION_CALL>
+									<SET Id="RDK:1292" VarRef="LISTwordMM">
+										<EXP><![CDATA[$C$NOTHING]]></EXP>
+										<PAR Name="AdvancedOptions" />
+									</SET>
+								</GROUP>
+							</GROUP>
+							<SET Id="RDK:1180" VarRef="old_index">
+								<EXP><![CDATA[$=$index]]></EXP>
+								<PAR Name="AdvancedOptions" />
+							</SET>
+						</FOREACHLOOP>
+						<GROUP Id="RDK:1220" SubType="Generic" Suppressed="True">
+							<SET Id="RDK:1231" VarRef="reminder">
+								<EXP><![CDATA[$=$reminder+1]]></EXP>
+								<PAR Name="AdvancedOptions" />
+							</SET>
+							<WHILELOOP Id="RDK:1227">
+								<VALUECONDITION Value="true">
+									<EXP><![CDATA[$=$reminder<=5]]></EXP>
+								</VALUECONDITION>
+								<ACTION_CALL Id="RDK:1219" Name="RDEngineering_SearchAndReplace" DesignTimeRemark="{Search For} --&gt; {Replace With}">
+									<PAR Name="RDLibraryName">
+										<EXP><![CDATA[$C$RDEngineering_OFFICE_WORD]]></EXP>
+									</PAR>
+									<PAR Name="FileName">
+										<EXP><![CDATA[$=$myRiga]]></EXP>
+									</PAR>
+									<PAR Name="SearchFor">
+										<EXP><![CDATA[$=$"<Posizione p"+reminder+">"]]></EXP>
+									</PAR>
+									<PAR Name="ReplaceWith" />
+									<PAR Name="ReplaceWhere">
+										<EXP><![CDATA[$C$3]]></EXP>
+									</PAR>
+									<PAR Name="ReplaceAll">
+										<EXP><![CDATA[$C$True]]></EXP>
+									</PAR>
+									<PAR Name="Options">
+										<EXP><![CDATA[$C$(FILEDIRECT)]]></EXP>
+									</PAR>
+								</ACTION_CALL>
+								<ACTION_CALL Id="RDK:1235" Name="RDEngineering_SearchAndReplace" DesignTimeRemark="{Search For} --&gt; {Replace With}">
+									<PAR Name="RDLibraryName">
+										<EXP><![CDATA[$C$RDEngineering_OFFICE_WORD]]></EXP>
+									</PAR>
+									<PAR Name="FileName">
+										<EXP><![CDATA[$=$myRiga]]></EXP>
+									</PAR>
+									<PAR Name="SearchFor">
+										<EXP><![CDATA[$=$"<p"+reminder+"_L>"]]></EXP>
+									</PAR>
+									<PAR Name="ReplaceWith" />
+									<PAR Name="ReplaceWhere">
+										<EXP><![CDATA[$C$3]]></EXP>
+									</PAR>
+									<PAR Name="ReplaceAll">
+										<EXP><![CDATA[$C$True]]></EXP>
+									</PAR>
+									<PAR Name="Options">
+										<EXP><![CDATA[$C$(FILEDIRECT)]]></EXP>
+									</PAR>
+								</ACTION_CALL>
+								<ACTION_CALL Id="RDK:1243" Name="RDEngineering_SearchAndReplace" DesignTimeRemark="{Search For} --&gt; {Replace With}">
+									<PAR Name="RDLibraryName">
+										<EXP><![CDATA[$C$RDEngineering_OFFICE_WORD]]></EXP>
+									</PAR>
+									<PAR Name="FileName">
+										<EXP><![CDATA[$=$myRiga]]></EXP>
+									</PAR>
+									<PAR Name="SearchFor">
+										<EXP><![CDATA[$=$"<p"+reminder+"_F>"]]></EXP>
+									</PAR>
+									<PAR Name="ReplaceWith" />
+									<PAR Name="ReplaceWhere">
+										<EXP><![CDATA[$C$3]]></EXP>
+									</PAR>
+									<PAR Name="ReplaceAll">
+										<EXP><![CDATA[$C$True]]></EXP>
+									</PAR>
+									<PAR Name="Options">
+										<EXP><![CDATA[$C$(FILEDIRECT)]]></EXP>
+									</PAR>
+								</ACTION_CALL>
+								<SET Id="RDK:1241" VarRef="reminder">
+									<EXP><![CDATA[$=$reminder+1]]></EXP>
+									<PAR Name="AdvancedOptions" />
+								</SET>
+							</WHILELOOP>
+						</GROUP>
+						<GROUP Id="RDK:1373" SubType="Generic" Expanded="True">
+							<LIST_ADD Id="RDK:1378" ListRef="LISTwordMM">
+								<PAR Name="VALUE_TO_ADD">
+									<EXP><![CDATA[$=$wordMM]]></EXP>
+								</PAR>
+								<PAR Name="POS_TO_ADD" />
+							</LIST_ADD>
+							<ACTION_CALL Id="RDK:1371" Name="RDEngineering_BookmarkOperation" DesignTimeRemark="{Operation} of [{Merge Table}]">
+								<PAR Name="RDLibraryName">
+									<EXP><![CDATA[$C$RDEngineering_OFFICE_WORD]]></EXP>
+								</PAR>
+								<PAR Name="FileName">
+									<EXP><![CDATA[$=$myRiga]]></EXP>
+								</PAR>
+								<PAR Name="BookmarkName" />
+								<PAR Name="BookmarkOper">
+									<EXP><![CDATA[$C$8]]></EXP>
+								</PAR>
+								<PAR Name="InsertMode">
+									<EXP><![CDATA[$C$-1]]></EXP>
+								</PAR>
+								<PAR Name="SourceFile" />
+								<PAR Name="SourceText" />
+								<PAR Name="MergeTable">
+									<EXP><![CDATA[$=$LISTwordMM]]></EXP>
+								</PAR>
+								<PAR Name="ContentTable">
+									<EXP><![CDATA[$V$]]></EXP>
+								</PAR>
+								<PAR Name="LinkUrl" />
+								<PAR Name="NewName" />
+								<PAR Name="Options">
+									<EXP><![CDATA[$C$(FILEDIRECT)(MERGERANGE=Table)]]></EXP>
+								</PAR>
+							</ACTION_CALL>
+						</GROUP>
+						<ACTION_CALL Id="RDK:1216" Name="RDEngineering_SaveFile" DesignTimeRemark="{FileName}">
+							<PAR Name="RDLibraryName">
+								<EXP><![CDATA[$C$RDEngineering_OFFICE_WORD]]></EXP>
+							</PAR>
+							<PAR Name="FileName">
+								<EXP><![CDATA[$=$myRiga]]></EXP>
+							</PAR>
+							<PAR Name="Options">
+								<EXP><![CDATA[$C$(FILEDIRECT)]]></EXP>
+							</PAR>
+						</ACTION_CALL>
+						<GROUP Id="RDK:1508" Name="Per evidenziatura più lunga" SubType="Generic" Expanded="True">
+							<ACTION_CALL Id="RDK:1511" Name="RDEngineering_OpenFile" DesignTimeRemark="{FileName}">
+								<PAR Name="RDLibraryName">
+									<EXP><![CDATA[$C$RDEngineering_OFFICE_WORD]]></EXP>
+								</PAR>
+								<PAR Name="FileName">
+									<EXP><![CDATA[$=$myRiga]]></EXP>
+								</PAR>
+								<PAR Name="IsVisible">
+									<EXP><![CDATA[$C$True]]></EXP>
+								</PAR>
+								<PAR Name="ModelName" />
+								<PAR Name="Options" />
+							</ACTION_CALL>
+							<ACTION_CALL Id="RDK:1507" Name="RDEngineering_SearchAndReplace" DesignTimeRemark="{Search For} --&gt; {Replace With}">
+								<PAR Name="RDLibraryName">
+									<EXP><![CDATA[$C$RDEngineering_OFFICE_WORD]]></EXP>
+								</PAR>
+								<PAR Name="FileName">
+									<EXP><![CDATA[$=$myRiga]]></EXP>
+								</PAR>
+								<PAR Name="SearchFor">
+									<EXP><![CDATA[$=$"AAAAA"]]></EXP>
+								</PAR>
+								<PAR Name="ReplaceWith">
+									<EXP><![CDATA[$=$StrSpace(3)]]></EXP>
+								</PAR>
+								<PAR Name="ReplaceWhere">
+									<EXP><![CDATA[$C$3]]></EXP>
+								</PAR>
+								<PAR Name="ReplaceAll">
+									<EXP><![CDATA[$C$True]]></EXP>
+								</PAR>
+								<PAR Name="Options" />
+							</ACTION_CALL>
+							<ACTION_CALL Id="RDK:1520" Name="RDEngineering_SearchAndReplace" DesignTimeRemark="{Search For} --&gt; {Replace With}">
+								<PAR Name="RDLibraryName">
+									<EXP><![CDATA[$C$RDEngineering_OFFICE_WORD]]></EXP>
+								</PAR>
+								<PAR Name="FileName">
+									<EXP><![CDATA[$=$myRiga]]></EXP>
+								</PAR>
+								<PAR Name="SearchFor">
+									<EXP><![CDATA[$=$"."]]></EXP>
+								</PAR>
+								<PAR Name="ReplaceWith">
+									<EXP><![CDATA[$=$"."]]></EXP>
+								</PAR>
+								<PAR Name="ReplaceWhere">
+									<EXP><![CDATA[$C$3]]></EXP>
+								</PAR>
+								<PAR Name="ReplaceAll">
+									<EXP><![CDATA[$C$True]]></EXP>
+								</PAR>
+								<PAR Name="Options">
+									<EXP><![CDATA[$C$(FONTSIZE=1)]]></EXP>
+								</PAR>
+							</ACTION_CALL>
+							<ACTION_CALL Id="RDK:1515" Name="RDEngineering_SaveFile" DesignTimeRemark="{FileName}">
+								<PAR Name="RDLibraryName">
+									<EXP><![CDATA[$C$RDEngineering_OFFICE_WORD]]></EXP>
+								</PAR>
+								<PAR Name="FileName">
+									<EXP><![CDATA[$=$myRiga]]></EXP>
+								</PAR>
+								<PAR Name="Options">
+									<EXP><![CDATA[$C$(WITHCLOSE)]]></EXP>
+								</PAR>
+							</ACTION_CALL>
+						</GROUP>
+						<ACTION_CALL Id="RDK:1214" Name="RDEngineering_BookmarkOperation" DesignTimeRemark="{Operation} on [{Bookmark Name}]">
+							<PAR Name="RDLibraryName">
+								<EXP><![CDATA[$C$RDEngineering_OFFICE_WORD]]></EXP>
+							</PAR>
+							<PAR Name="FileName">
+								<EXP><![CDATA[$=$myTabellaReparto]]></EXP>
+							</PAR>
+							<PAR Name="BookmarkName">
+								<EXP><![CDATA[$C$NewRiga]]></EXP>
+							</PAR>
+							<PAR Name="BookmarkOper">
+								<EXP><![CDATA[$C$7]]></EXP>
+							</PAR>
+							<PAR Name="InsertMode">
+								<EXP><![CDATA[$C$-1]]></EXP>
+							</PAR>
+							<PAR Name="SourceFile">
+								<EXP><![CDATA[$=$myRiga]]></EXP>
+							</PAR>
+							<PAR Name="SourceText" />
+							<PAR Name="MergeTable" />
+							<PAR Name="ContentTable">
+								<EXP><![CDATA[$V$]]></EXP>
+							</PAR>
+							<PAR Name="LinkUrl" />
+							<PAR Name="NewName" />
+							<PAR Name="Options">
+								<EXP><![CDATA[$C$(FILEDIRECT)(USEDESTSTYLES)]]></EXP>
+							</PAR>
+						</ACTION_CALL>
+						<ACTION_CALL Id="RDK:1212" Name="RDEngineering_DeleteFile" DesignTimeRemark="{FileFullPath}">
+							<PAR Name="RDLibraryName">
+								<EXP><![CDATA[$C$RDEngineering_MISC]]></EXP>
+							</PAR>
+							<PAR Name="FileFullPath">
+								<EXP><![CDATA[$=$myRiga]]></EXP>
+							</PAR>
+							<PAR Name="AcceptWildcards" />
+						</ACTION_CALL>
+					</FOREACHLOOP>
+					<ACTION_CALL Id="RDK:678" Name="RDEngineering_SaveFile" DesignTimeRemark="{FileName}">
+						<PAR Name="RDLibraryName">
+							<EXP><![CDATA[$C$RDEngineering_OFFICE_WORD]]></EXP>
+						</PAR>
+						<PAR Name="FileName">
+							<EXP><![CDATA[$=$myTabellaReparto]]></EXP>
+						</PAR>
+						<PAR Name="Options">
+							<EXP><![CDATA[$C$(FILEDIRECT)]]></EXP>
+						</PAR>
+					</ACTION_CALL>
+					<ACTION_CALL Id="RDK:680" Name="RDEngineering_BookmarkOperation" DesignTimeRemark="{Operation} on [{Bookmark Name}]">
+						<PAR Name="RDLibraryName">
+							<EXP><![CDATA[$C$RDEngineering_OFFICE_WORD]]></EXP>
+						</PAR>
+						<PAR Name="FileName">
+							<EXP><![CDATA[$=$OutFile]]></EXP>
+						</PAR>
+						<PAR Name="BookmarkName">
+							<EXP><![CDATA[$C$TabellaReparto]]></EXP>
+						</PAR>
+						<PAR Name="BookmarkOper">
+							<EXP><![CDATA[$C$3]]></EXP>
+						</PAR>
+						<PAR Name="InsertMode">
+							<EXP><![CDATA[$C$2]]></EXP>
+						</PAR>
+						<PAR Name="SourceFile">
+							<EXP><![CDATA[$=$myTabellaReparto]]></EXP>
+						</PAR>
+						<PAR Name="SourceText" />
+						<PAR Name="MergeTable" />
+						<PAR Name="ContentTable">
+							<EXP><![CDATA[$V$]]></EXP>
+						</PAR>
+						<PAR Name="LinkUrl" />
+						<PAR Name="NewName" />
+						<PAR Name="Options">
+							<EXP><![CDATA[$C$(FILEDIRECT)(USEDESTSTYLES)]]></EXP>
+						</PAR>
+					</ACTION_CALL>
+					<ACTION_CALL Id="RDK:674" Name="RDEngineering_DeleteFile" DesignTimeRemark="{FileFullPath}">
+						<PAR Name="RDLibraryName">
+							<EXP><![CDATA[$C$RDEngineering_MISC]]></EXP>
+						</PAR>
+						<PAR Name="FileFullPath">
+							<EXP><![CDATA[$=$myTabellaReparto]]></EXP>
+						</PAR>
+						<PAR Name="AcceptWildcards" />
+					</ACTION_CALL>
+				</FOREACHLOOP>
+				<ACTION_CALL Id="RDK:682" Name="RDEngineering_DeleteFile" DesignTimeRemark="{FileFullPath}">
+					<PAR Name="RDLibraryName">
+						<EXP><![CDATA[$C$RDEngineering_MISC]]></EXP>
+					</PAR>
+					<PAR Name="FileFullPath">
+						<EXP><![CDATA[$=$MyTemplateTabellaFile]]></EXP>
+					</PAR>
+					<PAR Name="AcceptWildcards" />
+				</ACTION_CALL>
+				<ACTION_CALL Id="RDK:1246" Name="RDEngineering_DeleteFile" DesignTimeRemark="{FileFullPath}">
+					<PAR Name="RDLibraryName">
+						<EXP><![CDATA[$C$RDEngineering_MISC]]></EXP>
+					</PAR>
+					<PAR Name="FileFullPath">
+						<EXP><![CDATA[$=$myTemplateRiga]]></EXP>
+					</PAR>
+					<PAR Name="AcceptWildcards" />
+				</ACTION_CALL>
+			</GROUP>
+			<GROUP Id="RDK:520" Name="Salvataggio file" SubType="Generic">
+				<CALLFUNCTION Id="RDK:519">
+					<PAR Name="FuncName">
+						<EXP><![CDATA[$C$SaveWordPDF]]></EXP>
+					</PAR>
+					<PAR Name="InputExp" />
+					<PAR Name="ResultRef">
+						<EXP><![CDATA[$V$]]></EXP>
+					</PAR>
+					<PAR Name="Options" />
+				</CALLFUNCTION>
+			</GROUP>
+		</GROUP>
+		<GROUP Id="RDK:1390" Name="MONTATORI" SubType="Generic" Expanded="True">
+			<GROUP Id="RDK:1500" Name="DOCUMENTO Lista Interventi" SubType="Generic" Expanded="True">
+				<GROUP Id="RDK:1454" Name="Organizzo file su cui lavorare" SubType="Generic" Expanded="True">
+					<SET Id="RDK:1447" VarRef="OutFile">
+						<EXP><![CDATA[$=$WorkingDir+"InterventiMontatori_"+StrReplace(DateToStrShort(Data), "/", "-")+".docx"]]></EXP>
+						<PAR Name="AdvancedOptions" />
+					</SET>
+					<SET Id="RDK:1448" VarRef="TemplateFile">
+						<EXP><![CDATA[$=$ProcPath()+"Templates\Verifica.docx"]]></EXP>
+						<PAR Name="AdvancedOptions" />
+					</SET>
+					<ACTION_CALL Id="RDK:1449" Name="RDEngineering_CopyFile" DesignTimeRemark="{Source File} --&gt; {Destination File}">
+						<PAR Name="RDLibraryName">
+							<EXP><![CDATA[$C$RDEngineering_MISC]]></EXP>
+						</PAR>
+						<PAR Name="FileName">
+							<EXP><![CDATA[$=$TemplateFile]]></EXP>
+						</PAR>
+						<PAR Name="NewFileName">
+							<EXP><![CDATA[$=$OutFile]]></EXP>
+						</PAR>
+						<PAR Name="AcceptWildcards" />
+						<PAR Name="Overwrite" />
+						<PAR Name="Options" />
+					</ACTION_CALL>
+					<SET Id="RDK:1450" VarRef="MyTemplateTabellaFile">
+						<EXP><![CDATA[$=$WorkingDir+"TabellaRepartoMontatoriTemplate.docx"]]></EXP>
+						<PAR Name="AdvancedOptions" />
+					</SET>
+					<SET Id="RDK:1451" VarRef="TemplateTabellaFile">
+						<EXP><![CDATA[$=$ProcPath()+"Templates\TabellaRepartoVerifica.docx"]]></EXP>
+						<PAR Name="AdvancedOptions" />
+					</SET>
+					<ACTION_CALL Id="RDK:1452" Name="RDEngineering_CopyFile" DesignTimeRemark="{Source File} --&gt; {Destination File}">
+						<PAR Name="RDLibraryName">
+							<EXP><![CDATA[$C$RDEngineering_MISC]]></EXP>
+						</PAR>
+						<PAR Name="FileName">
+							<EXP><![CDATA[$=$TemplateTabellaFile]]></EXP>
+						</PAR>
+						<PAR Name="NewFileName">
+							<EXP><![CDATA[$=$MyTemplateTabellaFile]]></EXP>
+						</PAR>
+						<PAR Name="AcceptWildcards" />
+						<PAR Name="Overwrite" />
+						<PAR Name="Options" />
+					</ACTION_CALL>
+					<ACTION_CALL Id="RDK:1453" Name="RDEngineering_OpenFile" DesignTimeRemark="{FileName}">
+						<PAR Name="RDLibraryName">
+							<EXP><![CDATA[$C$RDEngineering_OFFICE_WORD]]></EXP>
+						</PAR>
+						<PAR Name="FileName">
+							<EXP><![CDATA[$=$OutFile]]></EXP>
+						</PAR>
+						<PAR Name="IsVisible">
+							<EXP><![CDATA[$C$True]]></EXP>
+						</PAR>
+						<PAR Name="ModelName" />
+						<PAR Name="Options">
+							<EXP><![CDATA[$C$(FILEDIRECT)]]></EXP>
+						</PAR>
+					</ACTION_CALL>
+				</GROUP>
+				<GROUP Id="RDK:1456" Name="Set Intestazione" SubType="Generic">
+					<CALLFUNCTION Id="RDK:1455">
+						<PAR Name="FuncName">
+							<EXP><![CDATA[$C$SetIntestazione]]></EXP>
+						</PAR>
+						<PAR Name="InputExp" />
+						<PAR Name="ResultRef">
+							<EXP><![CDATA[$V$]]></EXP>
+						</PAR>
+						<PAR Name="Options" />
+					</CALLFUNCTION>
+				</GROUP>
+				<GROUP Id="RDK:1469" Name="Set Corpo WORD" SubType="Generic">
+					<FOREACHLOOP Id="RDK:1467" ItemVarRef="MyReparto" CountVarRef="idx" Backward="True" ByRefMode="True">
+						<PAR Name="ArrayValueExp">
+							<EXP><![CDATA[$V$ListaRepartiAnomalie]]></EXP>
+						</PAR>
+						<PAR Name="ExitCondExp">
+							<EXP><![CDATA[$V$]]></EXP>
+						</PAR>
+						<SET Id="RDK:1457" VarRef="myTabellaReparto">
+							<EXP><![CDATA[$=$WorkingDir+"myTabellaRepartoMontatori_"+idx+".docx"]]></EXP>
+							<PAR Name="AdvancedOptions" />
+						</SET>
+						<ACTION_CALL Id="RDK:1458" Name="RDEngineering_CopyFile" DesignTimeRemark="{Source File} --&gt; {Destination File}">
+							<PAR Name="RDLibraryName">
+								<EXP><![CDATA[$C$RDEngineering_MISC]]></EXP>
+							</PAR>
+							<PAR Name="FileName">
+								<EXP><![CDATA[$=$MyTemplateTabellaFile]]></EXP>
+							</PAR>
+							<PAR Name="NewFileName">
+								<EXP><![CDATA[$=$myTabellaReparto]]></EXP>
+							</PAR>
+							<PAR Name="AcceptWildcards" />
+							<PAR Name="Overwrite" />
+							<PAR Name="Options" />
+						</ACTION_CALL>
+						<ACTION_CALL Id="RDK:1459" Name="RDEngineering_OpenFile" DesignTimeRemark="{FileName}">
+							<PAR Name="RDLibraryName">
+								<EXP><![CDATA[$C$RDEngineering_OFFICE_WORD]]></EXP>
+							</PAR>
+							<PAR Name="FileName">
+								<EXP><![CDATA[$=$myTabellaReparto]]></EXP>
+							</PAR>
+							<PAR Name="IsVisible">
+								<EXP><![CDATA[$C$True]]></EXP>
+							</PAR>
+							<PAR Name="ModelName" />
+							<PAR Name="Options">
+								<EXP><![CDATA[$C$(FILEDIRECT)]]></EXP>
+							</PAR>
+						</ACTION_CALL>
+						<ACTION_CALL Id="RDK:1460" Name="RDEngineering_SearchAndReplace" DesignTimeRemark="{Search For} --&gt; {Replace With}">
+							<PAR Name="RDLibraryName">
+								<EXP><![CDATA[$C$RDEngineering_OFFICE_WORD]]></EXP>
+							</PAR>
+							<PAR Name="FileName">
+								<EXP><![CDATA[$=$myTabellaReparto]]></EXP>
+							</PAR>
+							<PAR Name="SearchFor">
+								<EXP><![CDATA[$C$<REPARTO>]]></EXP>
+							</PAR>
+							<PAR Name="ReplaceWith">
+								<EXP><![CDATA[$=$MyReparto.Reparto]]></EXP>
+							</PAR>
+							<PAR Name="ReplaceWhere">
+								<EXP><![CDATA[$C$3]]></EXP>
+							</PAR>
+							<PAR Name="ReplaceAll">
+								<EXP><![CDATA[$C$True]]></EXP>
+							</PAR>
+							<PAR Name="Options">
+								<EXP><![CDATA[$C$(FILEDIRECT)]]></EXP>
+							</PAR>
+						</ACTION_CALL>
+						<ACTION_CALL Id="RDK:1461" Name="RDEngineering_SearchAndReplace" DesignTimeRemark="{Search For} --&gt; {Replace With}">
+							<PAR Name="RDLibraryName">
+								<EXP><![CDATA[$C$RDEngineering_OFFICE_WORD]]></EXP>
+							</PAR>
+							<PAR Name="FileName">
+								<EXP><![CDATA[$=$myTabellaReparto]]></EXP>
+							</PAR>
+							<PAR Name="SearchFor">
+								<EXP><![CDATA[$C$<NOTE_REPARTO>]]></EXP>
+							</PAR>
+							<PAR Name="ReplaceWith">
+								<EXP><![CDATA[$=$MyReparto.Note]]></EXP>
+							</PAR>
+							<PAR Name="ReplaceWhere">
+								<EXP><![CDATA[$C$3]]></EXP>
+							</PAR>
+							<PAR Name="ReplaceAll">
+								<EXP><![CDATA[$C$True]]></EXP>
+							</PAR>
+							<PAR Name="Options">
+								<EXP><![CDATA[$C$(FILEDIRECT)]]></EXP>
+							</PAR>
+						</ACTION_CALL>
+						<SET Id="RDK:1462" VarRef="MyReparto.Anomalie">
+							<EXP><![CDATA[$=$FilterByExp(MyReparto.Anomalie, "Me.Colore<>""VERDE""", "")]]></EXP>
+							<PAR Name="AdvancedOptions" />
+						</SET>
+						<SET Id="RDK:1505" VarRef="MyReparto.Anomalie">
+							<EXP><![CDATA[$=$SortListOfStructs(MyReparto.Anomalie, "Fila", False)]]></EXP>
+							<PAR Name="AdvancedOptions" />
+						</SET>
+						<ACTION_CALL Id="RDK:1463" Name="RDEngineering_BookmarkOperation" DesignTimeRemark="{Operation} of [{Merge Table}]">
+							<PAR Name="RDLibraryName">
+								<EXP><![CDATA[$C$RDEngineering_OFFICE_WORD]]></EXP>
+							</PAR>
+							<PAR Name="FileName">
+								<EXP><![CDATA[$=$myTabellaReparto]]></EXP>
+							</PAR>
+							<PAR Name="BookmarkName" />
+							<PAR Name="BookmarkOper">
+								<EXP><![CDATA[$C$8]]></EXP>
+							</PAR>
+							<PAR Name="InsertMode">
+								<EXP><![CDATA[$C$-1]]></EXP>
+							</PAR>
+							<PAR Name="SourceFile" />
+							<PAR Name="SourceText" />
+							<PAR Name="MergeTable">
+								<EXP><![CDATA[$=$MyReparto.Anomalie]]></EXP>
+							</PAR>
+							<PAR Name="ContentTable">
+								<EXP><![CDATA[$V$]]></EXP>
+							</PAR>
+							<PAR Name="LinkUrl" />
+							<PAR Name="NewName" />
+							<PAR Name="Options">
+								<EXP><![CDATA[$C$(FILEDIRECT)(MERGERANGE=Table)]]></EXP>
+							</PAR>
+						</ACTION_CALL>
+						<ACTION_CALL Id="RDK:1464" Name="RDEngineering_SaveFile" DesignTimeRemark="{FileName}">
+							<PAR Name="RDLibraryName">
+								<EXP><![CDATA[$C$RDEngineering_OFFICE_WORD]]></EXP>
+							</PAR>
+							<PAR Name="FileName">
+								<EXP><![CDATA[$=$myTabellaReparto]]></EXP>
+							</PAR>
+							<PAR Name="Options">
+								<EXP><![CDATA[$C$(FILEDIRECT)]]></EXP>
+							</PAR>
+						</ACTION_CALL>
+						<ACTION_CALL Id="RDK:1465" Name="RDEngineering_BookmarkOperation" DesignTimeRemark="{Operation} on [{Bookmark Name}]">
+							<PAR Name="RDLibraryName">
+								<EXP><![CDATA[$C$RDEngineering_OFFICE_WORD]]></EXP>
+							</PAR>
+							<PAR Name="FileName">
+								<EXP><![CDATA[$=$OutFile]]></EXP>
+							</PAR>
+							<PAR Name="BookmarkName">
+								<EXP><![CDATA[$C$TabellaAnomalie]]></EXP>
+							</PAR>
+							<PAR Name="BookmarkOper">
+								<EXP><![CDATA[$C$3]]></EXP>
+							</PAR>
+							<PAR Name="InsertMode">
+								<EXP><![CDATA[$C$2]]></EXP>
+							</PAR>
+							<PAR Name="SourceFile">
+								<EXP><![CDATA[$=$myTabellaReparto]]></EXP>
+							</PAR>
+							<PAR Name="SourceText" />
+							<PAR Name="MergeTable" />
+							<PAR Name="ContentTable">
+								<EXP><![CDATA[$V$]]></EXP>
+							</PAR>
+							<PAR Name="LinkUrl" />
+							<PAR Name="NewName" />
+							<PAR Name="Options">
+								<EXP><![CDATA[$C$(FILEDIRECT)(USEDESTSTYLES)]]></EXP>
+							</PAR>
+						</ACTION_CALL>
+						<ACTION_CALL Id="RDK:1466" Name="RDEngineering_DeleteFile" DesignTimeRemark="{FileFullPath}">
+							<PAR Name="RDLibraryName">
+								<EXP><![CDATA[$C$RDEngineering_MISC]]></EXP>
+							</PAR>
+							<PAR Name="FileFullPath">
+								<EXP><![CDATA[$=$myTabellaReparto]]></EXP>
+							</PAR>
+							<PAR Name="AcceptWildcards" />
+						</ACTION_CALL>
+					</FOREACHLOOP>
+					<ACTION_CALL Id="RDK:1468" Name="RDEngineering_DeleteFile" DesignTimeRemark="{FileFullPath}">
+						<PAR Name="RDLibraryName">
+							<EXP><![CDATA[$C$RDEngineering_MISC]]></EXP>
+						</PAR>
+						<PAR Name="FileFullPath">
+							<EXP><![CDATA[$=$MyTemplateTabellaFile]]></EXP>
+						</PAR>
+						<PAR Name="AcceptWildcards" />
+					</ACTION_CALL>
+				</GROUP>
+				<GROUP Id="RDK:1499" Name="Salvataggio file" SubType="Generic">
+					<CALLFUNCTION Id="RDK:1498">
+						<PAR Name="FuncName">
+							<EXP><![CDATA[$C$SaveWordPDF]]></EXP>
+						</PAR>
+						<PAR Name="InputExp" />
+						<PAR Name="ResultRef">
+							<EXP><![CDATA[$V$]]></EXP>
+						</PAR>
+						<PAR Name="Options" />
+					</CALLFUNCTION>
+				</GROUP>
+			</GROUP>
+		</GROUP>
+	</GROUP>
+	<EXTERNAL_DATA>
+		<PROFILES_DATA />
+		<BOM_DATA />
+	</EXTERNAL_DATA>
+</PROCESS>

@@ -1,0 +1,598 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PROCESS Id="RDK:0001" Name="HomeIspettore" Expanded="True">
+	<PROCESSPROPERTY CrUser="nicholas.vittor [LAPT-IT07]" CrDate="2021-05-04T15:19:27" ModUser="nicholas.vittor [LAPT-IT07]" ModDate="2021-05-05T11:59:15" LanguageVersion="2011.1.1.0" />
+	<GROUP Id="RDK:0002" Name="Declarations" SubType="Declarations" Expanded="True">
+		<GROUP Id="RDK:0003" Name="Types" SubType="TypeSet" IncludeDate="0" Expanded="True">
+			<TYPE Id="RDK:121" Name="UserType" SubType="structure" HasArrayType="True">
+				<TYPE_VALUES />
+				<FIELD Id="RDK:100" Name="id" Type="integer" />
+				<FIELD Id="RDK:101" Name="name" Type="string" DesignTimeRemark="REQUIRED" />
+				<FIELD Id="RDK:102" Name="password" Type="string" DesignTimeRemark="REQUIRED" />
+				<FIELD Id="RDK:103" Name="fullname" Type="string" />
+				<FIELD Id="RDK:104" Name="initials" Type="string" />
+				<FIELD Id="RDK:105" Name="groupID" Type="integer" DesignTimeRemark="0 is NOT a valid ID" />
+				<FIELD Id="RDK:106" Name="groupName" Type="string" />
+				<FIELD Id="RDK:107" Name="groups" Type="integer[]" DesignTimeRemark="0 is NOT a valid ID" />
+				<FIELD Id="RDK:108" Name="secondaryGroups" Type="integer[]" DesignTimeRemark="READONLY - 0 is NOT a valid ID" />
+				<FIELD Id="RDK:109" Name="eMail" Type="string" />
+				<FIELD Id="RDK:110" Name="isInternal" Type="boolean" />
+				<FIELD Id="RDK:111" Name="personID" Type="string" />
+				<FIELD Id="RDK:112" Name="statusID" Type="string" />
+				<FIELD Id="RDK:113" Name="menuID" Type="string" />
+				<FIELD Id="RDK:114" Name="companyID" Type="string" />
+				<FIELD Id="RDK:115" Name="companyName" Type="string" />
+				<FIELD Id="RDK:116" Name="systemCompanyID" Type="string" />
+				<FIELD Id="RDK:117" Name="systemCompanyName" Type="string" />
+				<FIELD Id="RDK:118" Name="systemCompanies" Type="string[]" DesignTimeRemark="Leave empty for all companies" />
+				<FIELD Id="RDK:119" Name="languageID" Type="string" DesignTimeRemark="REQUIRED" />
+				<FIELD Id="RDK:120" Name="languageName" Type="string" />
+			</TYPE>
+			<GROUP Id="RDK:231" Name="ToolbarTypes" SubType="TypeSet" Include="Type_ToolbarTypes.rdx" IncludeDate="132646068434307066" Expanded="True">
+				<TYPE Id="RDK:246" Name="ButtonDefType" Expanded="True" SubType="structure" HasArrayType="True">
+					<TYPE_VALUES />
+					<FIELD Id="RDK:232" Name="ButtonText" Type="string" DesignTimeRemark="Label or Html content for this button" />
+					<FIELD Id="RDK:233" Name="ButtonValue" Type="string" DesignTimeRemark="String returned as ButtonPressed" />
+					<FIELD Id="RDK:235" Name="ButtonType" DesignTimeRemark="SIMPLE, IMAGE, SMART, HTML (empty=simple)">
+						<TYPE Id="RDK:235" IsInternal="True" DesignTimeRemark="SIMPLE, IMAGE, SMART, HTML (empty=simple)" Expanded="True" SubType="base" BaseType="string">
+							<UI_INPUT_TYPE TypeForm="Text" />
+							<UI_INPUT_VALIDATION ValidationType="none" />
+							<UI_INPUT_SUPPORT />
+							<TYPE_VALUES>
+								<EXP><![CDATA[$C$SIMPLE]]></EXP>
+								<EXP><![CDATA[$C$IMAGE]]></EXP>
+								<EXP><![CDATA[$C$SMART]]></EXP>
+								<EXP><![CDATA[$C$FAB]]></EXP>
+								<EXP><![CDATA[$C$HTML]]></EXP>
+							</TYPE_VALUES>
+						</TYPE>
+					</FIELD>
+					<FIELD Id="RDK:237" Name="ButtonAction" DesignTimeRemark="NONE, SUBMIT, VALIDATE, CANCEL (empty=validate)">
+						<TYPE Id="RDK:237" IsInternal="True" DesignTimeRemark="NONE, SUBMIT, VALIDATE, CANCEL (empty=validate)" Expanded="True" SubType="base" BaseType="string">
+							<UI_INPUT_TYPE TypeForm="Text" />
+							<UI_INPUT_VALIDATION ValidationType="none" />
+							<UI_INPUT_SUPPORT />
+							<TYPE_VALUES>
+								<EXP><![CDATA[$C$NONE]]></EXP>
+								<EXP><![CDATA[$C$SUBMIT]]></EXP>
+								<EXP><![CDATA[$C$VALIDATE]]></EXP>
+								<EXP><![CDATA[$C$CANCEL]]></EXP>
+								<EXP><![CDATA[$C$DISABLE]]></EXP>
+							</TYPE_VALUES>
+						</TYPE>
+					</FIELD>
+					<FIELD Id="RDK:239" Name="ButtonLocation" DesignTimeRemark="TOP, RIGHT, BOTTOM, LEFT, FAB (empty=bottom)">
+						<TYPE Id="RDK:239" IsInternal="True" DesignTimeRemark="TOP, RIGHT, BOTTOM, LEFT, FAB (empty=bottom)" Expanded="True" SubType="base" BaseType="string">
+							<UI_INPUT_TYPE TypeForm="Text" />
+							<UI_INPUT_VALIDATION ValidationType="none" />
+							<UI_INPUT_SUPPORT />
+							<TYPE_VALUES>
+								<EXP><![CDATA[$=$TOP]]></EXP>
+								<EXP><![CDATA[$C$RIGHT]]></EXP>
+								<EXP><![CDATA[$C$BOTTOM]]></EXP>
+								<EXP><![CDATA[$C$LEFT]]></EXP>
+								<EXP><![CDATA[$C$FAB]]></EXP>
+							</TYPE_VALUES>
+						</TYPE>
+					</FIELD>
+					<FIELD Id="RDK:241" Name="ButtonStyle" DesignTimeRemark="DISABLED, LOCKED, PRESSED, FOCUSED (empty=enabled)">
+						<TYPE Id="RDK:241" IsInternal="True" DesignTimeRemark="DISABLED, LOCKED, PRESSED, FOCUSED (empty=enabled)" Expanded="True" SubType="base" BaseType="string">
+							<UI_INPUT_TYPE TypeForm="Text" />
+							<UI_INPUT_VALIDATION ValidationType="none" />
+							<UI_INPUT_SUPPORT />
+							<TYPE_VALUES>
+								<EXP><![CDATA[$=$DISABLED]]></EXP>
+								<EXP><![CDATA[$C$LOCKED]]></EXP>
+								<EXP><![CDATA[$C$PRESSED]]></EXP>
+								<EXP><![CDATA[$C$FOCUSED]]></EXP>
+							</TYPE_VALUES>
+						</TYPE>
+					</FIELD>
+					<FIELD Id="RDK:242" Name="ButtonClass" Type="string" DesignTimeRemark="Extra CSS class for button rendering" />
+					<FIELD Id="RDK:243" Name="ButtonImage" Type="string" DesignTimeRemark="Image resource associated to button face" />
+					<FIELD Id="RDK:244" Name="ButtonTooltip" Type="string" DesignTimeRemark="Tooltip associated to button area" />
+					<FIELD Id="RDK:245" Name="ButtonOptions" Type="string" DesignTimeRemark="(BREAK) Split to new row, (GROUP=&lt;name&gt;) Start a new named group (GROUP=END) Close group" />
+				</TYPE>
+			</GROUP>
+			<TYPE Id="RDK:139" Name="AttivitàIspettoreType" Expanded="True" SubType="structure" HasArrayType="True">
+				<TYPE_VALUES />
+				<FIELD Id="RDK:141" Name="Progetto" Type="string" />
+				<FIELD Id="RDK:167" Name="Offerta" Type="string" />
+				<FIELD Id="RDK:149" Name="Cliente" Type="string" />
+				<FIELD Id="RDK:143" Name="DataVisita" Type="date" />
+				<FIELD Id="RDK:145" Name="Luogo" Type="string" />
+				<FIELD Id="RDK:147" Name="Durata" Type="double" />
+				<FIELD Id="RDK:157" Name="CartellaLocale" Type="string" />
+				<FIELD Id="RDK:151" Name="Layout" Type="string" />
+				<FIELD Id="RDK:230" Name="Import" Type="string" />
+				<FIELD Id="RDK:228" Name="Export" Type="string" />
+				<FIELD Id="RDK:153" Name="DataImport" Type="date" />
+				<FIELD Id="RDK:155" Name="DataExport" Type="date" />
+			</TYPE>
+		</GROUP>
+		<GROUP Id="RDK:0004" Name="Parameters" SubType="ParameterDefs" Expanded="True">
+			<PAR_DEF Id="RDK:73" Name="ContexID" TypeRD="string" Direction="IN" Panel="Parameters" UseDataFile="False">
+				<LABEL />
+				<DESCRIPTION />
+			</PAR_DEF>
+			<PAR_DEF Id="RDK:75" Name="URL" TypeRD="string" Direction="IN" Panel="Parameters" UseDataFile="False">
+				<LABEL />
+				<DESCRIPTION />
+			</PAR_DEF>
+			<PAR_DEF Id="RDK:77" Name="myUser" TypeRD="UserType" Direction="IN" Panel="Parameters" UseDataFile="False">
+				<LABEL />
+				<DESCRIPTION />
+			</PAR_DEF>
+		</GROUP>
+		<GROUP Id="RDK:0005" Name="Global Variables" SubType="VarSet" IncludeDate="0" Expanded="True">
+			<VAR Id="RDK:129" Name="Offline" Type="boolean" />
+			<VAR Id="RDK:132" Name="LoginSuccess" Type="boolean" Expanded="True" DesignTimeRemark="Generated by RD" />
+			<VAR Id="RDK:159" Name="AttivitàIspettore" Type="AttivitàIspettoreType" Expanded="True" />
+			<VAR Id="RDK:161" Name="AttivitàIspettore_List" Type="AttivitàIspettoreType[]" />
+			<GROUP Id="RDK:251" Name="BOTTONI" SubType="VarSet" IncludeDate="0" Expanded="True">
+				<VAR Id="RDK:252" Name="IMPORT" Type="string" Expanded="True" />
+				<VAR Id="RDK:254" Name="EXPORT" Type="string" />
+				<VAR Id="RDK:256" Name="LAYOUT" Type="string" />
+				<VAR Id="RDK:264" Name="ButtonPressed" Type="string" Expanded="True" />
+				<VAR Id="RDK:1494" Name="ButtonList" Type="ButtonDefType[]" />
+			</GROUP>
+			<VAR Id="RDK:265" Name="idx" Type="integer" Expanded="True" DesignTimeRemark="Generated by RD" />
+			<VAR Id="RDK:2614" Name="error" Type="boolean" Expanded="True" DesignTimeRemark="Generated by RD" />
+			<VAR Id="RDK:3679" Name="BaseWorkingDir" Type="string" Expanded="True" DesignTimeRemark="Generated by RD" />
+			<VAR Id="RDK:51036194" Name="ErrorMessage" Type="string" Expanded="True" DesignTimeRemark="Generated by RD" />
+		</GROUP>
+		<GROUP Id="RDK:0006" Name="Profiles" SubType="ProfileSet" Expanded="True" />
+		<GROUP Id="RDK:0007" Name="Functions" SubType="FunctionSet" IncludeDate="0" Expanded="True">
+			<FUNCTION Id="RDK:2337" Name="ImportData" Expanded="True" InputTypeName="integer" ResultTypeName="boolean">
+				<GROUP Id="RDK:2515" Name="IMPORTAZIONE" SubType="Generic" Expanded="True" ErrorProtected="True" BlockFailedVarRef="Param.Result" />
+			</FUNCTION>
+			<FUNCTION Id="RDK:2339" Name="ExportData" Expanded="True" InputTypeName="integer" ResultTypeName="boolean">
+				<GROUP Id="RDK:2520" Name="ESPORTAZIONE" SubType="Generic" ErrorProtected="True" BlockFailedVarRef="Param.Result" />
+			</FUNCTION>
+			<FUNCTION Id="RDK:2341" Name="OpenLayout" Expanded="True" InputTypeName="integer" ResultTypeName="boolean">
+				<GROUP Id="RDK:2524" Name="APERTURA LAYOUT" SubType="Generic" Expanded="True" ErrorProtected="True" BlockFailedVarRef="Param.Result" BlockFailedErrMsgRef="ErrorMessage">
+					<PROCESS_CALL Id="RDK:3680" Expanded="True">
+						<EXP><![CDATA[$C$..\SmartEditorRDX\SmartLayout.rdx]]></EXP>
+						<PAR Name="ProcessFolder">
+							<EXP><![CDATA[$=$AttivitàIspettore_List[idx].CartellaLocale]]></EXP>
+						</PAR>
+						<PAR Name="Cliente">
+							<EXP><![CDATA[$=$AttivitàIspettore_List[idx].Cliente]]></EXP>
+						</PAR>
+						<PAR Name="Indirizzo">
+							<EXP><![CDATA[$=$StrListToStr(ListCrop(SplitStr(AttivitàIspettore_List[idx].Luogo, ", ", ""), 0, 1), ", ")]]></EXP>
+						</PAR>
+						<PAR Name="CAP">
+							<EXP><![CDATA[$=$SplitStr(AttivitàIspettore_List[idx].Luogo, ", ", "")[3]]]></EXP>
+						</PAR>
+						<PAR Name="Citta">
+							<EXP><![CDATA[$=$SplitStr(AttivitàIspettore_List[idx].Luogo, ", ", "")[2]]]></EXP>
+						</PAR>
+						<PAR Name="Provincia">
+							<EXP><![CDATA[$=$SplitStr(AttivitàIspettore_List[idx].Luogo, ", ", "")[4]]]></EXP>
+						</PAR>
+						<PAR Name="Data">
+							<EXP><![CDATA[$=$AttivitàIspettore_List[idx].DataVisita]]></EXP>
+						</PAR>
+						<PAR Name="Verificatore">
+							<EXP><![CDATA[$=$myUser.name]]></EXP>
+						</PAR>
+						<PAR Name="TipoImpianto">
+							<EXP><![CDATA[$C$PORTAPALLET]]></EXP>
+						</PAR>
+						<PAR Name="nOfferta">
+							<EXP><![CDATA[$=$AttivitàIspettore_List[idx].Offerta]]></EXP>
+						</PAR>
+					</PROCESS_CALL>
+				</GROUP>
+			</FUNCTION>
+		</GROUP>
+	</GROUP>
+	<GROUP Id="RDK:0008" Name="Main Group" SubType="Generic" Expanded="True">
+		<GROUP Id="RDK:30" Name="LOGIN" SubType="Generic" Expanded="True" Bookmarked="True">
+			<VALUECONDITION Value="true">
+				<EXP><![CDATA[$=$isdebugmode()]]></EXP>
+			</VALUECONDITION>
+			<VALUECONDITION Value="false">
+				<EXP><![CDATA[$=$OFFLINE]]></EXP>
+			</VALUECONDITION>
+			<IFTHENELSE Id="RDK:24" Expanded="True">
+				<VALUECONDITION Value="true">
+					<EXP><![CDATA[$=$IsEmpty(URL)]]></EXP>
+				</VALUECONDITION>
+				<GROUP Id="RDK:23" SubType="Then" Expanded="True">
+					<SET Id="RDK:22" VarRef="URL">
+						<EXP><![CDATA[$C$http://testsint.modulblok.com/FUSIONTEST/]]></EXP>
+						<PAR Name="AdvancedOptions" />
+					</SET>
+				</GROUP>
+			</IFTHENELSE>
+			<ACTION_CALL Id="RDK:25" Name="RDEngineering_FUSIONLogin">
+				<PAR Name="RDLibraryName">
+					<EXP><![CDATA[$C$RDEngineering_RULEDESIGNER]]></EXP>
+				</PAR>
+				<PAR Name="serverUrl">
+					<EXP><![CDATA[$=$URL]]></EXP>
+				</PAR>
+				<PAR Name="clientID" />
+				<PAR Name="username">
+					<EXP><![CDATA[$C$configuratoruser]]></EXP>
+				</PAR>
+				<PAR Name="companyID">
+					<EXP><![CDATA[$C$001]]></EXP>
+				</PAR>
+				<PAR Name="password">
+					<EXP><![CDATA[$C$configuratoruser]]></EXP>
+				</PAR>
+				<PAR Name="outContextID">
+					<EXP><![CDATA[$V$]]></EXP>
+				</PAR>
+				<PAR Name="loginType">
+					<EXP><![CDATA[$C$0]]></EXP>
+				</PAR>
+				<PAR Name="contextID" />
+				<PAR Name="options" />
+				<PAR Name="success">
+					<EXP><![CDATA[$V$LoginSuccess]]></EXP>
+				</PAR>
+				<PAR Name="pdmUrl" />
+				<PAR Name="docUrl" />
+			</ACTION_CALL>
+			<GROUP Id="RDK:28" Name="Check Login" SubType="Generic" Expanded="True">
+				<VALUECONDITION Value="false">
+					<EXP><![CDATA[$=$LoginSuccess]]></EXP>
+				</VALUECONDITION>
+				<ACTION_CALL Id="RDK:26" Name="RDEngineering_RemoteMsgBox" DesignTimeRemark="{Text}">
+					<PAR Name="ImgBottom" />
+					<PAR Name="ImgLeft" />
+					<PAR Name="ButtonList" />
+					<PAR Name="RunTimeRemark" />
+					<PAR Name="ButtonImgs" />
+					<PAR Name="RDActionTimeOut" />
+					<PAR Name="InputTree">
+						<EXP><![CDATA[$=$]]></EXP>
+					</PAR>
+					<PAR Name="ImgRight" />
+					<PAR Name="ButtonsMode">
+						<EXP><![CDATA[$C$0]]></EXP>
+					</PAR>
+					<PAR Name="Options" />
+					<PAR Name="ButtonAction" />
+					<PAR Name="MsgFormat">
+						<EXP><![CDATA[$C$0]]></EXP>
+					</PAR>
+					<PAR Name="RDLibraryName">
+						<EXP><![CDATA[$C$RDEngineering_UI]]></EXP>
+					</PAR>
+					<PAR Name="ButtonOptions" />
+					<PAR Name="CSSStyle" />
+					<PAR Name="ButtonPressed">
+						<EXP><![CDATA[$V$]]></EXP>
+					</PAR>
+					<PAR Name="HeaderData" />
+					<PAR Name="MsgText">
+						<EXP><![CDATA[$C$Login error]]></EXP>
+					</PAR>
+					<PAR Name="WebResourcePath" />
+					<PAR Name="ImgTop" />
+					<PAR Name="MsgStyle">
+						<EXP><![CDATA[$C$1]]></EXP>
+					</PAR>
+					<PAR Name="WaitForInput">
+						<EXP><![CDATA[$C$true]]></EXP>
+					</PAR>
+					<PAR Name="ButtonDefs" />
+				</ACTION_CALL>
+				<EXIT_PROCESS Id="RDK:27" ExitStatus="0" />
+			</GROUP>
+			<ACTION_CALL Id="RDK:29" Name="RDEngineering_FUSIONGetUserInfo" DesignTimeRemark="{Query Type} - {User}">
+				<PAR Name="RDLibraryName">
+					<EXP><![CDATA[$C$RDEngineering_RULEDESIGNER]]></EXP>
+				</PAR>
+				<PAR Name="queryType">
+					<EXP><![CDATA[$C$0]]></EXP>
+				</PAR>
+				<PAR Name="userID" />
+				<PAR Name="userLogin" />
+				<PAR Name="user">
+					<EXP><![CDATA[$V$myUser]]></EXP>
+				</PAR>
+				<PAR Name="options" />
+			</ACTION_CALL>
+		</GROUP>
+		<GROUP Id="RDK:122" Name="INIT" SubType="Generic" Expanded="True">
+			<SET Id="RDK:3673" VarRef="BaseWorkingDir">
+				<EXP><![CDATA[$C$C:\Users\nicholas.vittor\Desktop\RDX SERVICE\TEST\]]></EXP>
+				<PAR Name="AdvancedOptions" />
+			</SET>
+			<GROUP Id="RDK:247" Name="SET BOTTONI" SubType="Generic" Expanded="True">
+				<SET Id="RDK:2642" VarRef="IMPORT">
+					<EXP><![CDATA[$C$Arrow24_down.png]]></EXP>
+					<PAR Name="AdvancedOptions" />
+				</SET>
+				<SET Id="RDK:2644" VarRef="EXPORT">
+					<EXP><![CDATA[$C$Arrow24_up.png]]></EXP>
+					<PAR Name="AdvancedOptions" />
+				</SET>
+				<SET Id="RDK:2646" VarRef="LAYOUT">
+					<EXP><![CDATA[$C$Arrow24_right.png]]></EXP>
+					<PAR Name="AdvancedOptions" />
+				</SET>
+			</GROUP>
+			<GROUP Id="RDK:3674" Name="DATI DEBUG" SubType="Generic" Expanded="True">
+				<SET_STRUCT Id="RDK:162" VarRef="AttivitàIspettore" ClearAll="True" ListRef="AttivitàIspettore_List">
+					<PAR Name="Progetto">
+						<EXP><![CDATA[$C$PR0XYZ0001]]></EXP>
+					</PAR>
+					<PAR Name="Offerta">
+						<EXP><![CDATA[$C$SRV00OFF010]]></EXP>
+					</PAR>
+					<PAR Name="Cliente">
+						<EXP><![CDATA[$C$Cliente1]]></EXP>
+					</PAR>
+					<PAR Name="DataVisita">
+						<EXP><![CDATA[$=$NewDateTime(2021, 5, 12, 9, 0, 0)]]></EXP>
+					</PAR>
+					<PAR Name="Luogo">
+						<EXP><![CDATA[$C$Via delcliente1, 10, Verona, 37100, VR, Italia]]></EXP>
+					</PAR>
+					<PAR Name="Durata">
+						<EXP><![CDATA[$C$7]]></EXP>
+					</PAR>
+					<PAR Name="CartellaLocale">
+						<EXP><![CDATA[$=$BaseWorkingDir+"PR0XYZ0001\"]]></EXP>
+					</PAR>
+					<PAR Name="Layout">
+						<EXP><![CDATA[$=$LAYOUT]]></EXP>
+					</PAR>
+					<PAR Name="Import">
+						<EXP><![CDATA[$=$IMPORT]]></EXP>
+					</PAR>
+					<PAR Name="Export">
+						<EXP><![CDATA[$=$EXPORT]]></EXP>
+					</PAR>
+					<PAR Name="DataImport" />
+					<PAR Name="DataExport" />
+				</SET_STRUCT>
+				<SET_STRUCT Id="RDK:164" VarRef="AttivitàIspettore" ClearAll="True" ListRef="AttivitàIspettore_List">
+					<PAR Name="Progetto">
+						<EXP><![CDATA[$C$PR0SRV0037]]></EXP>
+					</PAR>
+					<PAR Name="Offerta">
+						<EXP><![CDATA[$C$SRV00OFF015]]></EXP>
+					</PAR>
+					<PAR Name="Cliente">
+						<EXP><![CDATA[$C$Cliente1]]></EXP>
+					</PAR>
+					<PAR Name="DataVisita">
+						<EXP><![CDATA[$=$NewDateTime(2021, 5, 13, 8, 0, 0)]]></EXP>
+					</PAR>
+					<PAR Name="Luogo">
+						<EXP><![CDATA[$C$Via delcliente1, 33, Bolzano, 39100, BZ, Italia]]></EXP>
+					</PAR>
+					<PAR Name="Durata">
+						<EXP><![CDATA[$C$3]]></EXP>
+					</PAR>
+					<PAR Name="CartellaLocale">
+						<EXP><![CDATA[$=$BaseWorkingDir+"PR0SRV0037\"]]></EXP>
+					</PAR>
+					<PAR Name="Layout">
+						<EXP><![CDATA[$=$LAYOUT]]></EXP>
+					</PAR>
+					<PAR Name="Import">
+						<EXP><![CDATA[$=$IMPORT]]></EXP>
+					</PAR>
+					<PAR Name="Export">
+						<EXP><![CDATA[$=$EXPORT]]></EXP>
+					</PAR>
+					<PAR Name="DataImport" />
+					<PAR Name="DataExport" />
+				</SET_STRUCT>
+				<SET_STRUCT Id="RDK:166" VarRef="AttivitàIspettore" ClearAll="True" ListRef="AttivitàIspettore_List">
+					<PAR Name="Progetto">
+						<EXP><![CDATA[$C$PR0ABCD0009]]></EXP>
+					</PAR>
+					<PAR Name="Offerta">
+						<EXP><![CDATA[$C$SRV00OFF407]]></EXP>
+					</PAR>
+					<PAR Name="Cliente">
+						<EXP><![CDATA[$C$Cliente2]]></EXP>
+					</PAR>
+					<PAR Name="DataVisita">
+						<EXP><![CDATA[$=$NewDateTime(2021, 5, 13, 13, 0, 0)]]></EXP>
+					</PAR>
+					<PAR Name="Luogo">
+						<EXP><![CDATA[$C$Via delcliente2, 8, Trento, 38014, TN, Italia]]></EXP>
+					</PAR>
+					<PAR Name="Durata">
+						<EXP><![CDATA[$C$4]]></EXP>
+					</PAR>
+					<PAR Name="CartellaLocale">
+						<EXP><![CDATA[$=$BaseWorkingDir+"PR0ABCD0009\"]]></EXP>
+					</PAR>
+					<PAR Name="Layout">
+						<EXP><![CDATA[$=$LAYOUT]]></EXP>
+					</PAR>
+					<PAR Name="Import">
+						<EXP><![CDATA[$=$IMPORT]]></EXP>
+					</PAR>
+					<PAR Name="Export">
+						<EXP><![CDATA[$=$EXPORT]]></EXP>
+					</PAR>
+					<PAR Name="DataImport" />
+					<PAR Name="DataExport" />
+				</SET_STRUCT>
+			</GROUP>
+		</GROUP>
+		<GROUP Id="RDK:134" Name="MASCHERA" SubType="Generic" Expanded="True">
+			<WHILELOOP Id="RDK:284" Expanded="True">
+				<VALUECONDITION Value="false">
+					<EXP><![CDATA[$=$ButtonPressed="FINISH"]]></EXP>
+				</VALUECONDITION>
+				<ACTION_CALL Id="RDK:137" Name="RDEngineering_RemoteSummaryGrid">
+					<PAR Name="RDLibraryName">
+						<EXP><![CDATA[$C$RDEngineering_UI]]></EXP>
+					</PAR>
+					<PAR Name="VarList">
+						<EXP><![CDATA[$=$AttivitàIspettore_List]]></EXP>
+					</PAR>
+					<PAR Name="Editable">
+						<EXP><![CDATA[$C$False]]></EXP>
+					</PAR>
+					<PAR Name="ProfileName" />
+					<PAR Name="Idx">
+						<EXP><![CDATA[$V$idx]]></EXP>
+					</PAR>
+					<PAR Name="RunTimeRemark" />
+					<PAR Name="WebResourcePath">
+						<EXP><![CDATA[$C$Modulblok]]></EXP>
+					</PAR>
+					<PAR Name="ImgTop" />
+					<PAR Name="ImgBottom" />
+					<PAR Name="ImgLeft" />
+					<PAR Name="ImgRight" />
+					<PAR Name="CSSStyle" />
+					<PAR Name="RDActionTimeOut" />
+					<PAR Name="CaptionsList" />
+					<PAR Name="HideColumns" />
+					<PAR Name="Header" />
+					<PAR Name="Footer" />
+					<PAR Name="ButtonsMode">
+						<EXP><![CDATA[$C$15]]></EXP>
+					</PAR>
+					<PAR Name="ButtonList" />
+					<PAR Name="ButtonImgs" />
+					<PAR Name="ButtonAction" />
+					<PAR Name="ButtonOptions" />
+					<PAR Name="ButtonDefs" />
+					<PAR Name="ButtonPressed">
+						<EXP><![CDATA[$V$ButtonPressed]]></EXP>
+					</PAR>
+					<PAR Name="HeaderData" />
+					<PAR Name="InputTree">
+						<EXP><![CDATA[$=$]]></EXP>
+					</PAR>
+					<PAR Name="FilterData" />
+					<PAR Name="Options">
+						<EXP><![CDATA[$C$(ODDBACKCOLOR=#CDCDCD)(NODELETE)(NOEDIT)(IMAGEFIELD=Layout,Import,Export)(IMAGECLICK=COMMIT,COMMIT,COMMIT)]]></EXP>
+					</PAR>
+				</ACTION_CALL>
+				<SELECTCASE Id="RDK:261" Expanded="True">
+					<EXP><![CDATA[$=$StrAfter(ButtonPressed, ",")]]></EXP>
+					<CASEGROUP Id="RDK:262" CaseType="0" Expanded="True">
+						<EXP><![CDATA[$C$Import]]></EXP>
+						<CALLFUNCTION Id="RDK:2342" Expanded="True">
+							<PAR Name="FuncName">
+								<EXP><![CDATA[$C$ImportData]]></EXP>
+							</PAR>
+							<PAR Name="InputExp">
+								<EXP><![CDATA[$=$idx]]></EXP>
+							</PAR>
+							<PAR Name="ResultRef">
+								<EXP><![CDATA[$V$error]]></EXP>
+							</PAR>
+							<PAR Name="Options" />
+						</CALLFUNCTION>
+						<GROUP Id="RDK:272" Name="Group" SubType="Generic" Expanded="True">
+							<VALUECONDITION Value="false">
+								<EXP><![CDATA[$=$error]]></EXP>
+							</VALUECONDITION>
+							<SET Id="RDK:2636" VarRef="AttivitàIspettore_List[idx].DataImport">
+								<EXP><![CDATA[$=$Now()]]></EXP>
+								<PAR Name="AdvancedOptions" />
+							</SET>
+						</GROUP>
+					</CASEGROUP>
+					<CASEGROUP Id="RDK:267" CaseType="0" Expanded="True">
+						<EXP><![CDATA[$C$Export]]></EXP>
+						<CALLFUNCTION Id="RDK:2343" Expanded="True">
+							<PAR Name="FuncName">
+								<EXP><![CDATA[$C$ExportData]]></EXP>
+							</PAR>
+							<PAR Name="InputExp">
+								<EXP><![CDATA[$=$idx]]></EXP>
+							</PAR>
+							<PAR Name="ResultRef">
+								<EXP><![CDATA[$V$error]]></EXP>
+							</PAR>
+							<PAR Name="Options" />
+						</CALLFUNCTION>
+						<GROUP Id="RDK:2623" Name="Group" SubType="Generic" Expanded="True">
+							<VALUECONDITION Value="false">
+								<EXP><![CDATA[$=$error]]></EXP>
+							</VALUECONDITION>
+							<SET Id="RDK:2640" VarRef="AttivitàIspettore_List[idx].DataExport">
+								<EXP><![CDATA[$=$Now()]]></EXP>
+								<PAR Name="AdvancedOptions" />
+							</SET>
+						</GROUP>
+					</CASEGROUP>
+					<CASEGROUP Id="RDK:269" CaseType="0" Expanded="True">
+						<EXP><![CDATA[$C$Layout]]></EXP>
+						<CALLFUNCTION Id="RDK:2344" Expanded="True">
+							<PAR Name="FuncName">
+								<EXP><![CDATA[$C$OpenLayout]]></EXP>
+							</PAR>
+							<PAR Name="InputExp">
+								<EXP><![CDATA[$=$idx]]></EXP>
+							</PAR>
+							<PAR Name="ResultRef">
+								<EXP><![CDATA[$V$error]]></EXP>
+							</PAR>
+							<PAR Name="Options" />
+						</CALLFUNCTION>
+						<GROUP Id="RDK:2633" Name="Group" SubType="Generic" Expanded="True">
+							<VALUECONDITION Value="true">
+								<EXP><![CDATA[$=$error]]></EXP>
+							</VALUECONDITION>
+							<ACTION_CALL Id="RDK:51036190" Name="RDEngineering_RemoteMsgBox" DesignTimeRemark="{Text}">
+								<PAR Name="RDLibraryName">
+									<EXP><![CDATA[$C$RDEngineering_UI]]></EXP>
+								</PAR>
+								<PAR Name="MsgText">
+									<EXP><![CDATA[$=$ErrorMessage]]></EXP>
+								</PAR>
+								<PAR Name="MsgFormat">
+									<EXP><![CDATA[$C$0]]></EXP>
+								</PAR>
+								<PAR Name="MsgStyle">
+									<EXP><![CDATA[$C$0]]></EXP>
+								</PAR>
+								<PAR Name="WaitForInput">
+									<EXP><![CDATA[$C$true]]></EXP>
+								</PAR>
+								<PAR Name="RunTimeRemark" />
+								<PAR Name="WebResourcePath" />
+								<PAR Name="ImgTop" />
+								<PAR Name="ImgBottom" />
+								<PAR Name="ImgLeft" />
+								<PAR Name="ImgRight" />
+								<PAR Name="CSSStyle" />
+								<PAR Name="RDActionTimeOut" />
+								<PAR Name="ButtonsMode">
+									<EXP><![CDATA[$C$0]]></EXP>
+								</PAR>
+								<PAR Name="ButtonList" />
+								<PAR Name="ButtonImgs" />
+								<PAR Name="ButtonAction" />
+								<PAR Name="ButtonOptions" />
+								<PAR Name="ButtonDefs" />
+								<PAR Name="ButtonPressed">
+									<EXP><![CDATA[$V$]]></EXP>
+								</PAR>
+								<PAR Name="HeaderData" />
+								<PAR Name="InputTree">
+									<EXP><![CDATA[$=$]]></EXP>
+								</PAR>
+								<PAR Name="Options" />
+							</ACTION_CALL>
+						</GROUP>
+					</CASEGROUP>
+				</SELECTCASE>
+			</WHILELOOP>
+		</GROUP>
+	</GROUP>
+	<EXTERNAL_DATA>
+		<PROFILES_DATA />
+		<BOM_DATA />
+	</EXTERNAL_DATA>
+</PROCESS>
