@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PROCESS Id="RDK:0001" Name="HomeIspettore" Expanded="True">
-	<PROCESSPROPERTY CrUser="nicholas.vittor [LAPT-IT07]" CrDate="2021-05-04T15:19:27" ModUser="nicholas.vittor [LAPT-IT07]" ModDate="2021-05-07T17:43:52" LanguageVersion="2011.1.1.0" />
+	<PROCESSPROPERTY CrUser="nicholas.vittor [LAPT-IT07]" CrDate="2021-05-04T15:19:27" ModUser="nicholas.vittor [LAPT-IT07]" ModDate="2021-05-11T11:03:15" LanguageVersion="2011.1.1.0" />
 	<GROUP Id="RDK:0002" Name="Declarations" SubType="Declarations" Expanded="True">
 		<GROUP Id="RDK:0003" Name="Types" SubType="TypeSet" IncludeDate="0" Expanded="True">
 			<TYPE Id="RDK:121" Name="UserType" SubType="structure" HasArrayType="True">
@@ -27,72 +27,6 @@
 				<FIELD Id="RDK:119" Name="languageID" Type="string" DesignTimeRemark="REQUIRED" />
 				<FIELD Id="RDK:120" Name="languageName" Type="string" />
 			</TYPE>
-			<GROUP Id="RDK:231" Name="ToolbarTypes" SubType="TypeSet" Include="Type_ToolbarTypes.rdx" IncludeDate="132646068434307066" Expanded="True">
-				<TYPE Id="RDK:246" Name="ButtonDefType" Expanded="True" SubType="structure" HasArrayType="True">
-					<TYPE_VALUES />
-					<FIELD Id="RDK:232" Name="ButtonText" Type="string" DesignTimeRemark="Label or Html content for this button" />
-					<FIELD Id="RDK:233" Name="ButtonValue" Type="string" DesignTimeRemark="String returned as ButtonPressed" />
-					<FIELD Id="RDK:235" Name="ButtonType" DesignTimeRemark="SIMPLE, IMAGE, SMART, HTML (empty=simple)">
-						<TYPE Id="RDK:235" IsInternal="True" DesignTimeRemark="SIMPLE, IMAGE, SMART, HTML (empty=simple)" Expanded="True" SubType="base" BaseType="string">
-							<UI_INPUT_TYPE TypeForm="Text" />
-							<UI_INPUT_VALIDATION ValidationType="none" />
-							<UI_INPUT_SUPPORT />
-							<TYPE_VALUES>
-								<EXP><![CDATA[$C$SIMPLE]]></EXP>
-								<EXP><![CDATA[$C$IMAGE]]></EXP>
-								<EXP><![CDATA[$C$SMART]]></EXP>
-								<EXP><![CDATA[$C$FAB]]></EXP>
-								<EXP><![CDATA[$C$HTML]]></EXP>
-							</TYPE_VALUES>
-						</TYPE>
-					</FIELD>
-					<FIELD Id="RDK:237" Name="ButtonAction" DesignTimeRemark="NONE, SUBMIT, VALIDATE, CANCEL (empty=validate)">
-						<TYPE Id="RDK:237" IsInternal="True" DesignTimeRemark="NONE, SUBMIT, VALIDATE, CANCEL (empty=validate)" Expanded="True" SubType="base" BaseType="string">
-							<UI_INPUT_TYPE TypeForm="Text" />
-							<UI_INPUT_VALIDATION ValidationType="none" />
-							<UI_INPUT_SUPPORT />
-							<TYPE_VALUES>
-								<EXP><![CDATA[$C$NONE]]></EXP>
-								<EXP><![CDATA[$C$SUBMIT]]></EXP>
-								<EXP><![CDATA[$C$VALIDATE]]></EXP>
-								<EXP><![CDATA[$C$CANCEL]]></EXP>
-								<EXP><![CDATA[$C$DISABLE]]></EXP>
-							</TYPE_VALUES>
-						</TYPE>
-					</FIELD>
-					<FIELD Id="RDK:239" Name="ButtonLocation" DesignTimeRemark="TOP, RIGHT, BOTTOM, LEFT, FAB (empty=bottom)">
-						<TYPE Id="RDK:239" IsInternal="True" DesignTimeRemark="TOP, RIGHT, BOTTOM, LEFT, FAB (empty=bottom)" Expanded="True" SubType="base" BaseType="string">
-							<UI_INPUT_TYPE TypeForm="Text" />
-							<UI_INPUT_VALIDATION ValidationType="none" />
-							<UI_INPUT_SUPPORT />
-							<TYPE_VALUES>
-								<EXP><![CDATA[$=$TOP]]></EXP>
-								<EXP><![CDATA[$C$RIGHT]]></EXP>
-								<EXP><![CDATA[$C$BOTTOM]]></EXP>
-								<EXP><![CDATA[$C$LEFT]]></EXP>
-								<EXP><![CDATA[$C$FAB]]></EXP>
-							</TYPE_VALUES>
-						</TYPE>
-					</FIELD>
-					<FIELD Id="RDK:241" Name="ButtonStyle" DesignTimeRemark="DISABLED, LOCKED, PRESSED, FOCUSED (empty=enabled)">
-						<TYPE Id="RDK:241" IsInternal="True" DesignTimeRemark="DISABLED, LOCKED, PRESSED, FOCUSED (empty=enabled)" Expanded="True" SubType="base" BaseType="string">
-							<UI_INPUT_TYPE TypeForm="Text" />
-							<UI_INPUT_VALIDATION ValidationType="none" />
-							<UI_INPUT_SUPPORT />
-							<TYPE_VALUES>
-								<EXP><![CDATA[$=$DISABLED]]></EXP>
-								<EXP><![CDATA[$C$LOCKED]]></EXP>
-								<EXP><![CDATA[$C$PRESSED]]></EXP>
-								<EXP><![CDATA[$C$FOCUSED]]></EXP>
-							</TYPE_VALUES>
-						</TYPE>
-					</FIELD>
-					<FIELD Id="RDK:242" Name="ButtonClass" Type="string" DesignTimeRemark="Extra CSS class for button rendering" />
-					<FIELD Id="RDK:243" Name="ButtonImage" Type="string" DesignTimeRemark="Image resource associated to button face" />
-					<FIELD Id="RDK:244" Name="ButtonTooltip" Type="string" DesignTimeRemark="Tooltip associated to button area" />
-					<FIELD Id="RDK:245" Name="ButtonOptions" Type="string" DesignTimeRemark="(BREAK) Split to new row, (GROUP=&lt;name&gt;) Start a new named group (GROUP=END) Close group" />
-				</TYPE>
-			</GROUP>
 			<TYPE Id="RDK:139" Name="AttivitàIspettoreType" Expanded="True" SubType="structure" HasArrayType="True">
 				<TYPE_VALUES />
 				<FIELD Id="RDK:141" Name="Progetto" Type="string" />
@@ -133,7 +67,6 @@
 				<VAR Id="RDK:254" Name="EXPORT" Type="string" />
 				<VAR Id="RDK:256" Name="LAYOUT" Type="string" />
 				<VAR Id="RDK:264" Name="ButtonPressed" Type="string" Expanded="True" />
-				<VAR Id="RDK:1494" Name="ButtonList" Type="ButtonDefType[]" />
 			</GROUP>
 			<VAR Id="RDK:265" Name="idx" Type="integer" Expanded="True" DesignTimeRemark="Generated by RD" />
 			<VAR Id="RDK:2614" Name="error" Type="boolean" Expanded="True" DesignTimeRemark="Generated by RD" />
