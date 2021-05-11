@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PROCESS Id="RDK:0001" Name="HomeIspettore" Expanded="True">
-	<PROCESSPROPERTY CrUser="nicholas.vittor [LAPT-IT07]" CrDate="2021-05-04T15:19:27" ModUser="nicholas.vittor [LAPT-IT07]" ModDate="2021-05-05T14:27:21" LanguageVersion="2011.1.1.0" />
+	<PROCESSPROPERTY CrUser="nicholas.vittor [LAPT-IT07]" CrDate="2021-05-04T15:19:27" ModUser="nicholas.vittor [LAPT-IT07]" ModDate="2021-05-07T17:43:52" LanguageVersion="2011.1.1.0" />
 	<GROUP Id="RDK:0002" Name="Declarations" SubType="Declarations" Expanded="True">
 		<GROUP Id="RDK:0003" Name="Types" SubType="TypeSet" IncludeDate="0" Expanded="True">
 			<TYPE Id="RDK:121" Name="UserType" SubType="structure" HasArrayType="True">
