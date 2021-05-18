@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PROCESS Id="RDK:0001" Name="HomeIspettore" Expanded="True">
-	<PROCESSPROPERTY CrUser="nicholas.vittor [LAPT-IT07]" CrDate="2021-05-04T15:19:27" ModUser="nicholas.vittor [LAPT-IT07]" ModDate="2021-05-11T11:03:15" LanguageVersion="2011.1.1.0" />
+	<PROCESSPROPERTY CrUser="nicholas.vittor [LAPT-IT07]" CrDate="2021-05-04T15:19:27" ModUser="nicholas.vittor [LAPT-IT07]" ModDate="2021-05-17T12:18:48" LanguageVersion="2011.1.1.0" />
 	<GROUP Id="RDK:0002" Name="Declarations" SubType="Declarations" Expanded="True">
 		<GROUP Id="RDK:0003" Name="Types" SubType="TypeSet" IncludeDate="0" Expanded="True">
 			<TYPE Id="RDK:121" Name="UserType" SubType="structure" HasArrayType="True">
@@ -233,60 +233,75 @@
 			</ACTION_CALL>
 		</GROUP>
 		<GROUP Id="RDK:122" Name="INIT" SubType="Generic" Expanded="True">
-			<ACTION_CALL Id="RDK:51036283" Name="RDEngineering_CopyFile" DesignTimeRemark="{Source File} --&gt; {Destination File}">
-				<PAR Name="RDLibraryName">
-					<EXP><![CDATA[$C$RDEngineering_MISC]]></EXP>
-				</PAR>
-				<PAR Name="FileName">
-					<EXP><![CDATA[$=$ProcPath()+"icons\Arrow24_down.png"]]></EXP>
-				</PAR>
-				<PAR Name="NewFileName">
-					<EXP><![CDATA[$=$WebRootPath()+"Modulblok\Arrow24_down.png"]]></EXP>
-				</PAR>
-				<PAR Name="AcceptWildcards" />
-				<PAR Name="Overwrite">
-					<EXP><![CDATA[$C$False]]></EXP>
-				</PAR>
-				<PAR Name="Options">
-					<EXP><![CDATA[$C$(NEWERFILESONLY)]]></EXP>
-				</PAR>
-			</ACTION_CALL>
-			<ACTION_CALL Id="RDK:51036285" Name="RDEngineering_CopyFile" DesignTimeRemark="{Source File} --&gt; {Destination File}">
-				<PAR Name="RDLibraryName">
-					<EXP><![CDATA[$C$RDEngineering_MISC]]></EXP>
-				</PAR>
-				<PAR Name="FileName">
-					<EXP><![CDATA[$=$ProcPath()+"icons\Arrow24_up.png"]]></EXP>
-				</PAR>
-				<PAR Name="NewFileName">
-					<EXP><![CDATA[$=$WebRootPath()+"Modulblok\Arrow24_up.png"]]></EXP>
-				</PAR>
-				<PAR Name="AcceptWildcards" />
-				<PAR Name="Overwrite">
-					<EXP><![CDATA[$C$False]]></EXP>
-				</PAR>
-				<PAR Name="Options">
-					<EXP><![CDATA[$C$(NEWERFILESONLY)]]></EXP>
-				</PAR>
-			</ACTION_CALL>
-			<ACTION_CALL Id="RDK:51036287" Name="RDEngineering_CopyFile" DesignTimeRemark="{Source File} --&gt; {Destination File}">
-				<PAR Name="RDLibraryName">
-					<EXP><![CDATA[$C$RDEngineering_MISC]]></EXP>
-				</PAR>
-				<PAR Name="FileName">
-					<EXP><![CDATA[$=$ProcPath()+"icons\Arrow24_right.png"]]></EXP>
-				</PAR>
-				<PAR Name="NewFileName">
-					<EXP><![CDATA[$=$WebRootPath()+"Modulblok\Arrow24_right.png"]]></EXP>
-				</PAR>
-				<PAR Name="AcceptWildcards" />
-				<PAR Name="Overwrite">
-					<EXP><![CDATA[$C$False]]></EXP>
-				</PAR>
-				<PAR Name="Options">
-					<EXP><![CDATA[$C$(NEWERFILESONLY)]]></EXP>
-				</PAR>
-			</ACTION_CALL>
+			<GROUP Id="RDK:51036292" Name="Group" SubType="Generic">
+				<VALUECONDITION Value="false">
+					<EXP><![CDATA[$=$FileExist(WebRootPath()+"Modulblok\Arrow24_down.png")]]></EXP>
+				</VALUECONDITION>
+				<ACTION_CALL Id="RDK:51036291" Name="RDEngineering_CopyFile" DesignTimeRemark="{Source File} --&gt; {Destination File}">
+					<PAR Name="RDLibraryName">
+						<EXP><![CDATA[$C$RDEngineering_MISC]]></EXP>
+					</PAR>
+					<PAR Name="FileName">
+						<EXP><![CDATA[$=$ProcPath()+"icons\Arrow24_down.png"]]></EXP>
+					</PAR>
+					<PAR Name="NewFileName">
+						<EXP><![CDATA[$=$WebRootPath()+"Modulblok\Arrow24_down.png"]]></EXP>
+					</PAR>
+					<PAR Name="AcceptWildcards" />
+					<PAR Name="Overwrite">
+						<EXP><![CDATA[$C$False]]></EXP>
+					</PAR>
+					<PAR Name="Options">
+						<EXP><![CDATA[$C$(NEWERFILESONLY)]]></EXP>
+					</PAR>
+				</ACTION_CALL>
+			</GROUP>
+			<GROUP Id="RDK:51036298" Name="Group" SubType="Generic">
+				<VALUECONDITION Value="false">
+					<EXP><![CDATA[$=$FileExist(WebRootPath()+"Modulblok\Arrow24_up.png")]]></EXP>
+				</VALUECONDITION>
+				<ACTION_CALL Id="RDK:51036297" Name="RDEngineering_CopyFile" DesignTimeRemark="{Source File} --&gt; {Destination File}">
+					<PAR Name="RDLibraryName">
+						<EXP><![CDATA[$C$RDEngineering_MISC]]></EXP>
+					</PAR>
+					<PAR Name="FileName">
+						<EXP><![CDATA[$=$ProcPath()+"icons\Arrow24_up.png"]]></EXP>
+					</PAR>
+					<PAR Name="NewFileName">
+						<EXP><![CDATA[$=$WebRootPath()+"Modulblok\Arrow24_up.png"]]></EXP>
+					</PAR>
+					<PAR Name="AcceptWildcards" />
+					<PAR Name="Overwrite">
+						<EXP><![CDATA[$C$False]]></EXP>
+					</PAR>
+					<PAR Name="Options">
+						<EXP><![CDATA[$C$(NEWERFILESONLY)]]></EXP>
+					</PAR>
+				</ACTION_CALL>
+			</GROUP>
+			<GROUP Id="RDK:51036304" Name="Group" SubType="Generic">
+				<VALUECONDITION Value="false">
+					<EXP><![CDATA[$=$FileExist(WebRootPath()+"Modulblok\Arrow24_right.png")]]></EXP>
+				</VALUECONDITION>
+				<ACTION_CALL Id="RDK:51036303" Name="RDEngineering_CopyFile" DesignTimeRemark="{Source File} --&gt; {Destination File}">
+					<PAR Name="RDLibraryName">
+						<EXP><![CDATA[$C$RDEngineering_MISC]]></EXP>
+					</PAR>
+					<PAR Name="FileName">
+						<EXP><![CDATA[$=$ProcPath()+"icons\Arrow24_right.png"]]></EXP>
+					</PAR>
+					<PAR Name="NewFileName">
+						<EXP><![CDATA[$=$WebRootPath()+"Modulblok\Arrow24_right.png"]]></EXP>
+					</PAR>
+					<PAR Name="AcceptWildcards" />
+					<PAR Name="Overwrite">
+						<EXP><![CDATA[$C$False]]></EXP>
+					</PAR>
+					<PAR Name="Options">
+						<EXP><![CDATA[$C$(NEWERFILESONLY)]]></EXP>
+					</PAR>
+				</ACTION_CALL>
+			</GROUP>
 			<SET Id="RDK:3673" VarRef="BaseWorkingDir">
 				<EXP><![CDATA[$C$C:\Users\nicholas.vittor\Desktop\RDX SERVICE\TEST\]]></EXP>
 				<PAR Name="AdvancedOptions" />
