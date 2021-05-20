@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PROCESS Id="RDK:0001" Name="HomeIspettore" Expanded="True">
-	<PROCESSPROPERTY CrUser="nicholas.vittor [LAPT-IT07]" CrDate="2021-05-04T15:19:27" ModUser="nicholas.vittor [LAPT-IT07]" ModDate="2021-05-17T12:18:48" LanguageVersion="2011.1.1.0" />
+	<PROCESSPROPERTY CrUser="nicholas.vittor [LAPT-IT07]" CrDate="2021-05-04T15:19:27" ModUser="nicholas.vittor [LAPT-IT07]" ModDate="2021-05-18T17:31:23" LanguageVersion="2011.1.1.0" />
 	<GROUP Id="RDK:0002" Name="Declarations" SubType="Declarations" Expanded="True">
 		<GROUP Id="RDK:0003" Name="Types" SubType="TypeSet" IncludeDate="0" Expanded="True">
 			<TYPE Id="RDK:121" Name="UserType" SubType="structure" HasArrayType="True">
@@ -233,7 +233,7 @@
 			</ACTION_CALL>
 		</GROUP>
 		<GROUP Id="RDK:122" Name="INIT" SubType="Generic" Expanded="True">
-			<GROUP Id="RDK:51036292" Name="Group" SubType="Generic">
+			<GROUP Id="RDK:51036292" Name="Group" SubType="Generic" Expanded="True">
 				<VALUECONDITION Value="false">
 					<EXP><![CDATA[$=$FileExist(WebRootPath()+"Modulblok\Arrow24_down.png")]]></EXP>
 				</VALUECONDITION>
