@@ -1,0 +1,1725 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PROCESS Id="RDK:0001" Name="NuovaPrezzatura" Expanded="True">
+	<PROCESSPROPERTY CrUser="nicholas.vittor [LAPT-IT07]" CrDate="2021-05-21T17:30:00" ModUser="nicholas.vittor [LAPT-IT07]" ModDate="2021-05-25T11:36:55" LanguageVersion="2011.1.1.0" />
+	<GROUP Id="RDK:0002" Name="Declarations" SubType="Declarations" Expanded="True">
+		<GROUP Id="RDK:0003" Name="Types" SubType="TypeSet" IncludeDate="0" Expanded="True">
+			<TYPE Id="RDK:22" Name="PrezzoServiceType" Expanded="True" SubType="structure">
+				<TYPE_VALUES />
+				<FIELD Id="RDK:23" Name="PeriodicitàVisita" Type="integer" />
+				<FIELD Id="RDK:25" Name="Città" Type="string" />
+				<FIELD Id="RDK:27" Name="Indirizzo" Type="string" />
+				<FIELD Id="RDK:114" Name="KmViaggio" Type="double" />
+				<FIELD Id="RDK:29" Name="Estero" Type="boolean" />
+				<FIELD Id="RDK:31" Name="NumeroRepartiDistanti" Type="integer" />
+				<FIELD Id="RDK:33" Name="NomiReparti" Type="string" />
+				<FIELD Id="RDK:35" Name="PrimaVisita" Type="boolean" />
+				<FIELD Id="RDK:37" Name="NumeroSpalle" Type="integer" />
+				<FIELD Id="RDK:39" Name="NumeroCorridoi" Type="integer" />
+				<FIELD Id="RDK:41" Name="AltezzaMassima" Type="integer" />
+				<FIELD Id="RDK:43" Name="LavoroInQuota" Type="boolean" />
+				<FIELD Id="RDK:45" Name="NumeroSpalleAlte" Type="integer" />
+				<FIELD Id="RDK:47" Name="NumeroCorridoiConSpalleAlte" Type="integer" />
+				<FIELD Id="RDK:6147" Name="NumeroCorridoiConSpalleMoltoAlte" Type="integer" />
+				<FIELD Id="RDK:49" Name="CellaFrigo" Type="boolean" />
+				<FIELD Id="RDK:51" Name="NumeroSpalleFrigoBasse" Type="integer" />
+				<FIELD Id="RDK:4274" Name="NumeroSpalleFrigoAlte" Type="integer" />
+				<FIELD Id="RDK:6235" Name="NumeroCorridoiFrigoBassi" Type="integer" />
+				<FIELD Id="RDK:6237" Name="NumeroCorridoiFrigoAlti" Type="integer" />
+				<FIELD Id="RDK:6239" Name="NumeroCorridoiFrigoMoltoAlti" Type="integer" />
+				<FIELD Id="RDK:53" Name="Automatico" Type="boolean" />
+				<FIELD Id="RDK:55" Name="Sismoresistente" Type="boolean" />
+				<FIELD Id="RDK:57" Name="DocumentazionePresente" Type="boolean" />
+				<FIELD Id="RDK:59" Name="RepartoProduzione" Type="string" />
+				<FIELD Id="RDK:5352" Name="SpalleProduzione" Type="integer" />
+				<FIELD Id="RDK:6260" Name="CorridoiProduzione" Type="integer" />
+				<FIELD Id="RDK:61" Name="PiùLivelli" Type="boolean" />
+				<FIELD Id="RDK:63" Name="SpalleSuPiùLivelli" Type="integer" />
+				<FIELD Id="RDK:6291" Name="CorridoiSuPiùLivelli" Type="integer" />
+				<FIELD Id="RDK:65" Name="NumeroLivelli" Type="integer" />
+				<FIELD Id="RDK:5299" Name="Soppalco" Type="boolean" />
+				<FIELD Id="RDK:5301" Name="SpalleSoppalco" Type="integer" />
+				<FIELD Id="RDK:6278" Name="CorridoiSoppalco" Type="integer" />
+				<FIELD Id="RDK:67" Name="TipoMappatura" Type="string" />
+				<FIELD Id="RDK:69" Name="ControlloSingolo" Type="boolean" />
+				<FIELD Id="RDK:4633" Name="NumeroControlli" Type="integer" />
+				<FIELD Id="RDK:71" Name="Validazione" Type="boolean" />
+				<FIELD Id="RDK:73" Name="NumeroRepartiValidazione" Type="integer" />
+				<FIELD Id="RDK:75" Name="DichiarazioneDiPortata" Type="boolean" />
+				<FIELD Id="RDK:77" Name="NumeroTipiScaffaliPerPortata" Type="integer" />
+				<FIELD Id="RDK:79" Name="ContrattoTriennale" Type="boolean" />
+				<FIELD Id="RDK:2539" Name="TipoContratto" Type="string" />
+				<FIELD Id="RDK:1768" Name="DurataVisitaCalcSpalle" Type="double" />
+				<FIELD Id="RDK:3992" Name="DurataVisitaCalCorridoi" Type="double" />
+				<FIELD Id="RDK:3994" Name="DurataVisita" Type="double" />
+				<FIELD Id="RDK:1771" Name="PrezzoVisita" Type="double" />
+				<FIELD Id="RDK:1773" Name="PrezzoMappatura" Type="double" />
+				<FIELD Id="RDK:1775" Name="PrezzoTrasferta" Type="double" />
+				<FIELD Id="RDK:1777" Name="PrezzoViaggio" Type="double" />
+				<FIELD Id="RDK:2984" Name="SpeseExtra" Type="double" />
+				<FIELD Id="RDK:2987" Name="PrezzoFinale" Type="double" />
+			</TYPE>
+		</GROUP>
+		<GROUP Id="RDK:0004" Name="Parameters" SubType="ParameterDefs" Expanded="True" />
+		<GROUP Id="RDK:0005" Name="Global Variables" SubType="VarSet" IncludeDate="0">
+			<VAR Id="RDK:119" Name="PrezzoService" Type="PrezzoServiceType" Expanded="True" />
+			<VAR Id="RDK:121" Name="ButtonPressed" Type="string" Expanded="True" />
+			<VAR Id="RDK:1025" Name="RespNOMINATIM" Type="string" Expanded="True" />
+			<VAR Id="RDK:1356" Name="Latitude" Type="double" Expanded="True" />
+			<VAR Id="RDK:1359" Name="Longitude" Type="double" Expanded="True" />
+			<VAR Id="RDK:1362" Name="RespOSRM" Type="string" Expanded="True" />
+			<VAR Id="RDK:1780" Name="ShowRes" Type="boolean">
+				<SET Id="RDK:1781" VarRef="Me">
+					<EXP><![CDATA[$C$False]]></EXP>
+					<PAR Name="AdvancedOptions" />
+				</SET>
+			</VAR>
+			<VAR Id="RDK:4282" Name="SpalleDaCalcolare" Type="integer" Expanded="True" />
+			<VAR Id="RDK:5268" Name="MaxSpalleBasseGG" Type="double" Expanded="True" />
+			<VAR Id="RDK:5272" Name="MaxSpalleAlteGG" Type="double" />
+			<VAR Id="RDK:6151" Name="MaxCorridoiTerraGG" Type="double" Expanded="True" />
+			<VAR Id="RDK:5270" Name="MaxCorridoiAltiGG" Type="double" />
+			<VAR Id="RDK:6153" Name="MaxCorridoiMoltoAltiGG" Type="double" />
+			<VAR Id="RDK:6227" Name="CorridoiDaCalcolare" Type="integer" Expanded="True" DesignTimeRemark="Generated by RD" />
+		</GROUP>
+		<GROUP Id="RDK:0006" Name="Profiles" SubType="ProfileSet" Expanded="True">
+			<PROFILE Id="RDK:82" Name="PrezzoServiceProfile" TypeName="PrezzoServiceType" Expanded="True" />
+		</GROUP>
+		<GROUP Id="RDK:0007" Name="Functions" SubType="FunctionSet" IncludeDate="0" Expanded="True">
+			<FUNCTION Id="RDK:2989" Name="SetPrezzoTotale" Expanded="True">
+				<SET Id="RDK:2990" VarRef="PrezzoService.PrezzoFinale">
+					<EXP><![CDATA[$=$PrezzoService.PrezzoVisita+PrezzoService.PrezzoMappatura+PrezzoService.PrezzoTrasferta+PrezzoService.PrezzoViaggio+PrezzoService.SpeseExtra]]></EXP>
+					<PAR Name="AdvancedOptions" />
+				</SET>
+			</FUNCTION>
+		</GROUP>
+	</GROUP>
+	<GROUP Id="RDK:0008" Name="Main Group" SubType="Generic" Expanded="True">
+		<GROUP Id="RDK:12" Name="INIT" SubType="Generic" Expanded="True" />
+		<GROUP Id="RDK:16" Name="MAIN" SubType="Generic" Expanded="True">
+			<WHILELOOP Id="RDK:330" Expanded="True">
+				<VALUECONDITION Value="false">
+					<EXP><![CDATA[$=$ButtonPressed="BACK"]]></EXP>
+				</VALUECONDITION>
+				<ACTION_CALL Id="RDK:120" Name="RDEngineering_RemoteGetInput" DesignTimeRemark="{VarName}">
+					<PAR Name="RDLibraryName">
+						<EXP><![CDATA[$C$RDEngineering_UI]]></EXP>
+					</PAR>
+					<PAR Name="InputVar">
+						<EXP><![CDATA[$=$PrezzoService]]></EXP>
+					</PAR>
+					<PAR Name="ProfileName">
+						<EXP><![CDATA[$C$PrezzoServiceProfile]]></EXP>
+					</PAR>
+					<PAR Name="RunTimeRemark" />
+					<PAR Name="WebResourcePath">
+						<EXP><![CDATA[$C$Modulblok]]></EXP>
+					</PAR>
+					<PAR Name="ImgTop" />
+					<PAR Name="ImgBottom" />
+					<PAR Name="ImgLeft" />
+					<PAR Name="ImgRight" />
+					<PAR Name="CSSStyle" />
+					<PAR Name="RDActionTimeOut" />
+					<PAR Name="LayoutMode">
+						<EXP><![CDATA[$C$1]]></EXP>
+					</PAR>
+					<PAR Name="ButtonsMode">
+						<EXP><![CDATA[$C$1]]></EXP>
+					</PAR>
+					<PAR Name="ButtonList" />
+					<PAR Name="ButtonImgs" />
+					<PAR Name="ButtonAction" />
+					<PAR Name="ButtonOptions" />
+					<PAR Name="ButtonDefs" />
+					<PAR Name="ButtonPressed">
+						<EXP><![CDATA[$V$ButtonPressed]]></EXP>
+					</PAR>
+					<PAR Name="HeaderData" />
+					<PAR Name="InputTree">
+						<EXP><![CDATA[$=$]]></EXP>
+					</PAR>
+					<PAR Name="Options">
+						<EXP><![CDATA[$C$(TOPBUTTONS)(SIDELABELS)]]></EXP>
+					</PAR>
+				</ACTION_CALL>
+				<SELECTCASE Id="RDK:440" Expanded="True">
+					<EXP><![CDATA[$=$ButtonPressed]]></EXP>
+					<CASEGROUP Id="RDK:445" CaseType="0" Expanded="True">
+						<EXP><![CDATA[$C$AUTOCOMMIT,Città]]></EXP>
+						<ACTION_CALL Id="RDK:1024" Name="RDEngineering_HttpWebCall">
+							<PAR Name="RDLibraryName">
+								<EXP><![CDATA[$C$RDEngineering_NETWORK]]></EXP>
+							</PAR>
+							<PAR Name="HttpUrl">
+								<EXP><![CDATA[$=$"https://nominatim.openstreetmap.org/search.php?q="+PrezzoService.Città+"&format=jsonv2"]]></EXP>
+							</PAR>
+							<PAR Name="ProtocolType">
+								<EXP><![CDATA[$C$1]]></EXP>
+							</PAR>
+							<PAR Name="ContentType">
+								<EXP><![CDATA[$C$4]]></EXP>
+							</PAR>
+							<PAR Name="ResultType">
+								<EXP><![CDATA[$C$0]]></EXP>
+							</PAR>
+							<PAR Name="PostData" />
+							<PAR Name="HeadersIn">
+								<EXP><![CDATA[$=$NewList("User-Agent: "+CreateGUID())]]></EXP>
+							</PAR>
+							<PAR Name="HeadersOut">
+								<EXP><![CDATA[$V$]]></EXP>
+							</PAR>
+							<PAR Name="OutHttpData">
+								<EXP><![CDATA[$V$RespNOMINATIM]]></EXP>
+							</PAR>
+							<PAR Name="OutFileData" />
+							<PAR Name="OutStatusCode">
+								<EXP><![CDATA[$V$]]></EXP>
+							</PAR>
+							<PAR Name="Options" />
+						</ACTION_CALL>
+						<GROUP Id="RDK:1026" Name="Group" SubType="Generic" Expanded="True">
+							<VALUECONDITION Value="true">
+								<EXP><![CDATA[$=$RespNOMINATIM<>""]]></EXP>
+							</VALUECONDITION>
+							<SET Id="RDK:1355" VarRef="Latitude">
+								<EXP><![CDATA[$=$StrToDbl(SplitStr(SplitStr(RespNOMINATIM, "lat"":""", "")[1], """", "")[0])]]></EXP>
+								<PAR Name="AdvancedOptions" />
+							</SET>
+							<SET Id="RDK:1358" VarRef="Longitude">
+								<EXP><![CDATA[$=$StrToDbl(SplitStr(SplitStr(RespNOMINATIM, "lon"":""", "")[1], """", "")[0])]]></EXP>
+								<PAR Name="AdvancedOptions" />
+							</SET>
+							<ACTION_CALL Id="RDK:1361" Name="RDEngineering_HttpWebCall">
+								<PAR Name="RDLibraryName">
+									<EXP><![CDATA[$C$RDEngineering_NETWORK]]></EXP>
+								</PAR>
+								<PAR Name="HttpUrl">
+									<EXP><![CDATA[$=$"http://router.project-osrm.org/route/v1/driving/13.194870,46.117620;"+DblToStr(Longitude)+","+DblToStr(Latitude)+"?overview=false"]]></EXP>
+								</PAR>
+								<PAR Name="ProtocolType">
+									<EXP><![CDATA[$C$1]]></EXP>
+								</PAR>
+								<PAR Name="ContentType">
+									<EXP><![CDATA[$C$4]]></EXP>
+								</PAR>
+								<PAR Name="ResultType">
+									<EXP><![CDATA[$C$0]]></EXP>
+								</PAR>
+								<PAR Name="PostData" />
+								<PAR Name="HeadersIn">
+									<EXP><![CDATA[$=$NewList("User-Agent: "+CreateGUID())]]></EXP>
+								</PAR>
+								<PAR Name="HeadersOut">
+									<EXP><![CDATA[$V$]]></EXP>
+								</PAR>
+								<PAR Name="OutHttpData">
+									<EXP><![CDATA[$V$RespOSRM]]></EXP>
+								</PAR>
+								<PAR Name="OutFileData" />
+								<PAR Name="OutStatusCode">
+									<EXP><![CDATA[$V$]]></EXP>
+								</PAR>
+								<PAR Name="Options" />
+							</ACTION_CALL>
+							<GROUP Id="RDK:1426" Name="Group" SubType="Generic" Expanded="True">
+								<VALUECONDITION Value="true">
+									<EXP><![CDATA[$=$RespOSRM<>""]]></EXP>
+								</VALUECONDITION>
+								<SET Id="RDK:1429" VarRef="PrezzoService.KmViaggio">
+									<EXP><![CDATA[$=$IntRound(StrToDbl(StrBefore(StrAfter(StrAfter(RespOSRM, "routes"), """distance"":"), ","))/1000)]]></EXP>
+									<PAR Name="AdvancedOptions" />
+								</SET>
+							</GROUP>
+						</GROUP>
+					</CASEGROUP>
+					<CASEGROUP Id="RDK:444" CaseType="0" Expanded="True">
+						<EXP><![CDATA[$C$AUTOCOMMIT,AltezzaMassima]]></EXP>
+						<SET Id="RDK:446" VarRef="PrezzoService.LavoroInQuota">
+							<EXP><![CDATA[$=$PrezzoService.AltezzaMassima>6500]]></EXP>
+							<PAR Name="AdvancedOptions" />
+						</SET>
+					</CASEGROUP>
+					<CASEGROUP Id="RDK:2992" CaseType="0" Expanded="True">
+						<EXP><![CDATA[$C$AUTOCOMMIT,PrezzoVisita]]></EXP>
+						<CALLFUNCTION Id="RDK:2993" Expanded="True">
+							<PAR Name="FuncName">
+								<EXP><![CDATA[$C$SetPrezzoTotale]]></EXP>
+							</PAR>
+							<PAR Name="InputExp" />
+							<PAR Name="ResultRef">
+								<EXP><![CDATA[$V$]]></EXP>
+							</PAR>
+							<PAR Name="Options" />
+						</CALLFUNCTION>
+					</CASEGROUP>
+					<CASEGROUP Id="RDK:2997" CaseType="0" Expanded="True">
+						<EXP><![CDATA[$C$AUTOCOMMIT,PrezzoMappatura]]></EXP>
+						<CALLFUNCTION Id="RDK:2996">
+							<PAR Name="FuncName">
+								<EXP><![CDATA[$C$SetPrezzoTotale]]></EXP>
+							</PAR>
+							<PAR Name="InputExp" />
+							<PAR Name="ResultRef">
+								<EXP><![CDATA[$V$]]></EXP>
+							</PAR>
+							<PAR Name="Options" />
+						</CALLFUNCTION>
+					</CASEGROUP>
+					<CASEGROUP Id="RDK:3001" CaseType="0" Expanded="True">
+						<EXP><![CDATA[$C$AUTOCOMMIT,PrezzoTrasferta]]></EXP>
+						<CALLFUNCTION Id="RDK:3000">
+							<PAR Name="FuncName">
+								<EXP><![CDATA[$C$SetPrezzoTotale]]></EXP>
+							</PAR>
+							<PAR Name="InputExp" />
+							<PAR Name="ResultRef">
+								<EXP><![CDATA[$V$]]></EXP>
+							</PAR>
+							<PAR Name="Options" />
+						</CALLFUNCTION>
+					</CASEGROUP>
+					<CASEGROUP Id="RDK:3462" CaseType="0" Expanded="True">
+						<EXP><![CDATA[$C$AUTOCOMMIT,PrezzoViaggio]]></EXP>
+						<CALLFUNCTION Id="RDK:3464">
+							<PAR Name="FuncName">
+								<EXP><![CDATA[$C$SetPrezzoTotale]]></EXP>
+							</PAR>
+							<PAR Name="InputExp" />
+							<PAR Name="ResultRef">
+								<EXP><![CDATA[$V$]]></EXP>
+							</PAR>
+							<PAR Name="Options" />
+						</CALLFUNCTION>
+					</CASEGROUP>
+					<CASEGROUP Id="RDK:3005" CaseType="0" Expanded="True">
+						<EXP><![CDATA[$C$AUTOCOMMIT,SpeseExtra]]></EXP>
+						<CALLFUNCTION Id="RDK:3004">
+							<PAR Name="FuncName">
+								<EXP><![CDATA[$C$SetPrezzoTotale]]></EXP>
+							</PAR>
+							<PAR Name="InputExp" />
+							<PAR Name="ResultRef">
+								<EXP><![CDATA[$V$]]></EXP>
+							</PAR>
+							<PAR Name="Options" />
+						</CALLFUNCTION>
+					</CASEGROUP>
+					<CASEGROUP Id="RDK:442" CaseType="0" Expanded="True">
+						<EXP><![CDATA[$C$OK]]></EXP>
+						<SET Id="RDK:2103" VarRef="ShowRes">
+							<EXP><![CDATA[$C$True]]></EXP>
+							<PAR Name="AdvancedOptions" />
+						</SET>
+						<SET Id="RDK:2541" VarRef="PrezzoService.TipoContratto" DesignTimeRemark="SE PRIMA VISTA &quot;S&quot;, SE NON IN QUOTA &quot;M&quot;, SE IN QUOTA &quot;L&quot;">
+							<EXP><![CDATA[$=$IIF(PrezzoService.PrimaVisita, "S - ", "")+IIF(PrezzoService.LavoroInQuota, "L", "M")]]></EXP>
+							<PAR Name="AdvancedOptions" />
+						</SET>
+						<GROUP Id="RDK:3985" Name="CALCOLO ORE" SubType="Generic" Expanded="True" Bookmarked="True">
+							<SET Id="RDK:3990" VarRef="PrezzoService.DurataVisitaCalcSpalle">
+								<EXP><![CDATA[$C$0]]></EXP>
+								<PAR Name="AdvancedOptions" />
+							</SET>
+							<SET Id="RDK:3998" VarRef="PrezzoService.DurataVisitaCalCorridoi">
+								<EXP><![CDATA[$C$0]]></EXP>
+								<PAR Name="AdvancedOptions" />
+							</SET>
+							<SET Id="RDK:4000" VarRef="PrezzoService.DurataVisita">
+								<EXP><![CDATA[$C$0]]></EXP>
+								<PAR Name="AdvancedOptions" />
+							</SET>
+							<GROUP Id="RDK:6178" Name="Spalle" SubType="Generic" Expanded="True">
+								<SET Id="RDK:5267" VarRef="MaxSpalleAlteGG">
+									<EXP><![CDATA[$C$700]]></EXP>
+									<PAR Name="AdvancedOptions" />
+								</SET>
+								<SET Id="RDK:5274" VarRef="MaxSpalleBasseGG">
+									<EXP><![CDATA[$C$480]]></EXP>
+									<PAR Name="AdvancedOptions" />
+								</SET>
+								<SET Id="RDK:4281" VarRef="SpalleDaCalcolare">
+									<EXP><![CDATA[$=$PrezzoService.NumeroSpalle]]></EXP>
+									<PAR Name="AdvancedOptions" />
+								</SET>
+							</GROUP>
+							<GROUP Id="RDK:6182" Name="Corridoi" SubType="Generic" Expanded="True">
+								<SET Id="RDK:6150" VarRef="MaxCorridoiTerraGG">
+									<EXP><![CDATA[$C$32]]></EXP>
+									<PAR Name="AdvancedOptions" />
+								</SET>
+								<SET Id="RDK:6155" VarRef="MaxCorridoiAltiGG">
+									<EXP><![CDATA[$C$22]]></EXP>
+									<PAR Name="AdvancedOptions" />
+								</SET>
+								<SET Id="RDK:6157" VarRef="MaxCorridoiMoltoAltiGG">
+									<EXP><![CDATA[$C$16]]></EXP>
+									<PAR Name="AdvancedOptions" />
+								</SET>
+								<SET Id="RDK:6226" VarRef="CorridoiDaCalcolare">
+									<EXP><![CDATA[$=$PrezzoService.NumeroCorridoi]]></EXP>
+									<PAR Name="AdvancedOptions" />
+								</SET>
+							</GROUP>
+							<GROUP Id="RDK:5911" Name="PRIMA VISITA" SubType="Generic" Expanded="True" Bookmarked="True">
+								<VALUECONDITION Value="true">
+									<EXP><![CDATA[$=$PrezzoService.PrimaVisita]]></EXP>
+								</VALUECONDITION>
+								<GROUP Id="RDK:6186" Name="Spalle" SubType="Generic" Expanded="True">
+									<SET Id="RDK:5909" VarRef="MaxSpalleAlteGG">
+										<EXP><![CDATA[$=$MaxSpalleAlteGG*0.9]]></EXP>
+										<PAR Name="AdvancedOptions" />
+									</SET>
+									<SET Id="RDK:5910" VarRef="MaxSpalleBasseGG">
+										<EXP><![CDATA[$=$MaxSpalleBasseGG*0.9]]></EXP>
+										<PAR Name="AdvancedOptions" />
+									</SET>
+								</GROUP>
+								<GROUP Id="RDK:6190" Name="Corridoi" SubType="Generic" Expanded="True">
+									<SET Id="RDK:6159" VarRef="MaxCorridoiTerraGG">
+										<EXP><![CDATA[$=$MaxCorridoiTerraGG*0.9]]></EXP>
+										<PAR Name="AdvancedOptions" />
+									</SET>
+									<SET Id="RDK:6161" VarRef="MaxCorridoiAltiGG">
+										<EXP><![CDATA[$=$MaxCorridoiAltiGG*0.9]]></EXP>
+										<PAR Name="AdvancedOptions" />
+									</SET>
+									<SET Id="RDK:6163" VarRef="MaxCorridoiMoltoAltiGG">
+										<EXP><![CDATA[$=$MaxCorridoiMoltoAltiGG*0.9]]></EXP>
+										<PAR Name="AdvancedOptions" />
+									</SET>
+								</GROUP>
+							</GROUP>
+							<GROUP Id="RDK:5275" Name="ANTISISMICO" SubType="Generic" Expanded="True" Bookmarked="True">
+								<VALUECONDITION Value="true">
+									<EXP><![CDATA[$=$PrezzoService.Sismoresistente]]></EXP>
+								</VALUECONDITION>
+								<GROUP Id="RDK:6197" Name="Spalle" SubType="Generic" Expanded="True">
+									<SET Id="RDK:5281" VarRef="MaxSpalleAlteGG">
+										<EXP><![CDATA[$=$MaxSpalleAlteGG*0.9]]></EXP>
+										<PAR Name="AdvancedOptions" />
+									</SET>
+									<SET Id="RDK:5283" VarRef="MaxSpalleBasseGG">
+										<EXP><![CDATA[$=$MaxSpalleBasseGG*0.9]]></EXP>
+										<PAR Name="AdvancedOptions" />
+									</SET>
+								</GROUP>
+								<GROUP Id="RDK:6203" Name="Corridoi" SubType="Generic" Expanded="True">
+									<SET Id="RDK:6165" VarRef="MaxCorridoiTerraGG">
+										<EXP><![CDATA[$=$MaxCorridoiTerraGG*0.9]]></EXP>
+										<PAR Name="AdvancedOptions" />
+									</SET>
+									<SET Id="RDK:6171" VarRef="MaxCorridoiAltiGG">
+										<EXP><![CDATA[$=$MaxCorridoiAltiGG*0.9]]></EXP>
+										<PAR Name="AdvancedOptions" />
+									</SET>
+									<SET Id="RDK:6169" VarRef="MaxCorridoiMoltoAltiGG">
+										<EXP><![CDATA[$=$MaxCorridoiMoltoAltiGG*0.9]]></EXP>
+										<PAR Name="AdvancedOptions" />
+									</SET>
+								</GROUP>
+							</GROUP>
+							<GROUP Id="RDK:5293" Name="AUTOMATICO" SubType="Generic" Expanded="True" Bookmarked="True">
+								<VALUECONDITION Value="true">
+									<EXP><![CDATA[$=$PrezzoService.Automatico]]></EXP>
+								</VALUECONDITION>
+								<GROUP Id="RDK:6209" Name="Spalle" SubType="Generic" Expanded="True">
+									<SET Id="RDK:5291" VarRef="MaxSpalleAlteGG">
+										<EXP><![CDATA[$=$MaxSpalleAlteGG*0.85]]></EXP>
+										<PAR Name="AdvancedOptions" />
+									</SET>
+									<SET Id="RDK:5292" VarRef="MaxSpalleBasseGG">
+										<EXP><![CDATA[$=$MaxSpalleBasseGG*0.85]]></EXP>
+										<PAR Name="AdvancedOptions" />
+									</SET>
+								</GROUP>
+								<GROUP Id="RDK:6213" Name="Corridoi" SubType="Generic" Expanded="True">
+									<SET Id="RDK:6173" VarRef="MaxCorridoiTerraGG">
+										<EXP><![CDATA[$=$MaxCorridoiTerraGG*0.85]]></EXP>
+										<PAR Name="AdvancedOptions" />
+									</SET>
+									<SET Id="RDK:6175" VarRef="MaxCorridoiAltiGG">
+										<EXP><![CDATA[$=$MaxCorridoiAltiGG*0.85]]></EXP>
+										<PAR Name="AdvancedOptions" />
+									</SET>
+									<SET Id="RDK:6177" VarRef="MaxCorridoiMoltoAltiGG">
+										<EXP><![CDATA[$=$MaxCorridoiMoltoAltiGG*0.85]]></EXP>
+										<PAR Name="AdvancedOptions" />
+									</SET>
+								</GROUP>
+							</GROUP>
+							<GROUP Id="RDK:3987" Name="CELLA FRIGO" SubType="Generic" Expanded="True" Bookmarked="True">
+								<VALUECONDITION Value="true">
+									<EXP><![CDATA[$=$PrezzoService.CellaFrigo]]></EXP>
+								</VALUECONDITION>
+								<GROUP Id="RDK:6223" Name="Spalle" SubType="Generic" Expanded="True">
+									<SET Id="RDK:4006" VarRef="PrezzoService.DurataVisitaCalcSpalle">
+										<EXP><![CDATA[$=$(PrezzoService.NumeroSpalleFrigoBasse/(MaxSpalleAlteGG/8)) + (PrezzoService.NumeroSpalleFrigoAlte/(MaxSpalleAlteGG*0.8/8))]]></EXP>
+										<PAR Name="AdvancedOptions" />
+									</SET>
+									<SET Id="RDK:4283" VarRef="SpalleDaCalcolare">
+										<EXP><![CDATA[$=$SpalleDaCalcolare-PrezzoService.NumeroSpalleFrigoBasse-PrezzoService.NumeroSpalleFrigoAlte]]></EXP>
+										<PAR Name="AdvancedOptions" />
+									</SET>
+								</GROUP>
+								<GROUP Id="RDK:6219" Name="Corridoi" SubType="Generic" Expanded="True">
+									<SET Id="RDK:6231" VarRef="PrezzoService.DurataVisitaCalCorridoi">
+										<EXP><![CDATA[$=$(PrezzoService.NumeroCorridoiFrigoBassi/(MaxCorridoiAltiGG/8)) + (PrezzoService.NumeroCorridoiFrigoAlti/(MaxCorridoiMoltoAltiGG/8)) + (PrezzoService.NumeroCorridoiFrigoMoltoAlti/(MaxCorridoiMoltoAltiGG*0.8/8)) ]]></EXP>
+										<PAR Name="AdvancedOptions" />
+									</SET>
+									<SET Id="RDK:6233" VarRef="CorridoiDaCalcolare">
+										<EXP><![CDATA[$=$CorridoiDaCalcolare-PrezzoService.NumeroCorridoiFrigoBassi-PrezzoService.NumeroCorridoiFrigoAlti-PrezzoService.NumeroCorridoiFrigoMoltoAlti]]></EXP>
+										<PAR Name="AdvancedOptions" />
+									</SET>
+								</GROUP>
+							</GROUP>
+							<GROUP Id="RDK:5328" Name="PRODUZIONE" SubType="Generic" Expanded="True" Bookmarked="True">
+								<VALUECONDITION Value="true">
+									<EXP><![CDATA[$=$PrezzoService.RepartoProduzione="Si"]]></EXP>
+								</VALUECONDITION>
+								<GROUP Id="RDK:6247" Name="Spalle" SubType="Generic" Expanded="True">
+									<SET Id="RDK:5348" VarRef="PrezzoService.DurataVisitaCalcSpalle">
+										<EXP><![CDATA[$=$PrezzoService.DurataVisitaCalcSpalle+(PrezzoService.SpalleProduzione/((MaxSpalleBasseGG*0.95)/8))]]></EXP>
+										<PAR Name="AdvancedOptions" />
+									</SET>
+									<SET Id="RDK:5350" VarRef="SpalleDaCalcolare">
+										<EXP><![CDATA[$=$SpalleDaCalcolare-PrezzoService.SpalleProduzione]]></EXP>
+										<PAR Name="AdvancedOptions" />
+									</SET>
+								</GROUP>
+								<GROUP Id="RDK:6251" Name="Corridoi" SubType="Generic" Expanded="True">
+									<SET Id="RDK:6256" VarRef="PrezzoService.DurataVisitaCalCorridoi">
+										<EXP><![CDATA[$=$PrezzoService.DurataVisitaCalCorridoi+(PrezzoService.SpalleProduzione/((MaxCorridoiTerraGG*0.95)/8))]]></EXP>
+										<PAR Name="AdvancedOptions" />
+									</SET>
+									<SET Id="RDK:6258" VarRef="CorridoiDaCalcolare">
+										<EXP><![CDATA[$=$CorridoiDaCalcolare-PrezzoService.CorridoiProduzione]]></EXP>
+										<PAR Name="AdvancedOptions" />
+									</SET>
+								</GROUP>
+							</GROUP>
+							<GROUP Id="RDK:5304" Name="SOPPALCO" SubType="Generic" Expanded="True" Bookmarked="True">
+								<VALUECONDITION Value="true">
+									<EXP><![CDATA[$=$PrezzoService.Soppalco]]></EXP>
+								</VALUECONDITION>
+								<GROUP Id="RDK:6266" Name="Spalle" SubType="Generic" Expanded="True">
+									<SET Id="RDK:5311" VarRef="PrezzoService.DurataVisitaCalcSpalle">
+										<EXP><![CDATA[$=$PrezzoService.DurataVisitaCalcSpalle+PrezzoService.SpalleSoppalco*4/(MaxSpalleBasseGG/8)]]></EXP>
+										<PAR Name="AdvancedOptions" />
+									</SET>
+									<SET Id="RDK:5313" VarRef="SpalleDaCalcolare">
+										<EXP><![CDATA[$=$SpalleDaCalcolare-PrezzoService.SpalleSoppalco]]></EXP>
+										<PAR Name="AdvancedOptions" />
+									</SET>
+								</GROUP>
+								<GROUP Id="RDK:6270" Name="Corridoi" SubType="Generic" Expanded="True">
+									<SET Id="RDK:6274" VarRef="PrezzoService.DurataVisitaCalCorridoi">
+										<EXP><![CDATA[$=$PrezzoService.DurataVisitaCalcSpalle+((PrezzoService.CorridoiSoppalco*4)/(MaxCorridoiTerraGG/8))]]></EXP>
+										<PAR Name="AdvancedOptions" />
+									</SET>
+									<SET Id="RDK:6276" VarRef="CorridoiDaCalcolare">
+										<EXP><![CDATA[$=$CorridoiDaCalcolare-PrezzoService.CorridoiSoppalco]]></EXP>
+										<PAR Name="AdvancedOptions" />
+									</SET>
+								</GROUP>
+							</GROUP>
+							<GROUP Id="RDK:5314" Name="LIVELLI" SubType="Generic" Expanded="True" Bookmarked="True">
+								<VALUECONDITION Value="true">
+									<EXP><![CDATA[$=$PrezzoService.PiùLivelli]]></EXP>
+								</VALUECONDITION>
+								<GROUP Id="RDK:6284" Name="Spalle" SubType="Generic" Expanded="True">
+									<SET Id="RDK:6295" VarRef="PrezzoService.DurataVisitaCalcSpalle">
+										<EXP><![CDATA[$=$PrezzoService.DurataVisitaCalcSpalle+(PrezzoService.SpalleSuPiùLivelli*1.5*PrezzoService.NumeroLivelli/(MaxSpalleBasseGG/8))]]></EXP>
+										<PAR Name="AdvancedOptions" />
+									</SET>
+									<SET Id="RDK:5320" VarRef="SpalleDaCalcolare">
+										<EXP><![CDATA[$=$SpalleDaCalcolare-PrezzoService.SpalleSuPiùLivelli]]></EXP>
+										<PAR Name="AdvancedOptions" />
+									</SET>
+								</GROUP>
+								<GROUP Id="RDK:6288" Name="Corridoi" SubType="Generic" Expanded="True">
+									<SET Id="RDK:5318" VarRef="PrezzoService.DurataVisitaCalCorridoi">
+										<EXP><![CDATA[$=$PrezzoService.DurataVisitaCalCorridoi+(PrezzoService.CorridoiSuPiùLivelli*1.5*PrezzoService.NumeroLivelli/(MaxCorridoiTerraGG/8))]]></EXP>
+										<PAR Name="AdvancedOptions" />
+									</SET>
+									<SET Id="RDK:6297" VarRef="CorridoiDaCalcolare">
+										<EXP><![CDATA[$=$CorridoiDaCalcolare-PrezzoService.CorridoiSuPiùLivelli]]></EXP>
+										<PAR Name="AdvancedOptions" />
+									</SET>
+								</GROUP>
+							</GROUP>
+							<GROUP Id="RDK:5899" Name="REPARTI DISTANTI" SubType="Generic" Expanded="True" Bookmarked="True">
+								<GROUP Id="RDK:6303" Name="Spalle" SubType="Generic" Expanded="True">
+									<SET Id="RDK:5904" VarRef="PrezzoService.DurataVisitaCalcSpalle">
+										<EXP><![CDATA[$=$PrezzoService.DurataVisitaCalcSpalle+(PrezzoService.NumeroRepartiDistanti*0.75)]]></EXP>
+										<PAR Name="AdvancedOptions" />
+									</SET>
+								</GROUP>
+								<GROUP Id="RDK:6307" Name="Corridoi" SubType="Generic" Expanded="True">
+									<SET Id="RDK:6311" VarRef="PrezzoService.DurataVisitaCalCorridoi">
+										<EXP><![CDATA[$=$PrezzoService.DurataVisitaCalCorridoi+(PrezzoService.NumeroRepartiDistanti*0.75)]]></EXP>
+										<PAR Name="AdvancedOptions" />
+									</SET>
+								</GROUP>
+							</GROUP>
+							<GROUP Id="RDK:6314" Name="IN QUOTA" SubType="Generic" Expanded="True" Bookmarked="True">
+								<VALUECONDITION Value="true">
+									<EXP><![CDATA[$=$PrezzoService.LavoroInQuota]]></EXP>
+								</VALUECONDITION>
+								<GROUP Id="RDK:6322" Name="Spalle" SubType="Generic" Expanded="True">
+									<SET Id="RDK:6332" VarRef="PrezzoService.DurataVisitaCalcSpalle">
+										<EXP><![CDATA[$=$PrezzoService.DurataVisitaCalcSpalle+(PrezzoService.NumeroSpalleAlte/(MaxSpalleAlteGG/8))]]></EXP>
+										<PAR Name="AdvancedOptions" />
+									</SET>
+									<SET Id="RDK:6334" VarRef="SpalleDaCalcolare">
+										<EXP><![CDATA[$=$SpalleDaCalcolare-PrezzoService.NumeroSpalleAlte]]></EXP>
+										<PAR Name="AdvancedOptions" />
+									</SET>
+								</GROUP>
+								<GROUP Id="RDK:6328" Name="Corridoi" SubType="Generic" Expanded="True">
+									<SET Id="RDK:6337" VarRef="PrezzoService.DurataVisitaCalCorridoi">
+										<EXP><![CDATA[$=$PrezzoService.DurataVisitaCalCorridoi+(PrezzoService.NumeroCorridoiConSpalleAlte/(MaxCorridoiAltiGG/8))+(PrezzoService.NumeroCorridoiConSpalleMoltoAlte/(MaxCorridoiMoltoAltiGG/8))]]></EXP>
+										<PAR Name="AdvancedOptions" />
+									</SET>
+									<SET Id="RDK:6339" VarRef="CorridoiDaCalcolare">
+										<EXP><![CDATA[$=$CorridoiDaCalcolare-PrezzoService.NumeroCorridoiConSpalleAlte-PrezzoService.NumeroCorridoiConSpalleMoltoAlte]]></EXP>
+										<PAR Name="AdvancedOptions" />
+									</SET>
+								</GROUP>
+							</GROUP>
+							<GROUP Id="RDK:6343" Name="RESTANTI A TERRA" SubType="Generic" Expanded="True" Bookmarked="True">
+								<GROUP Id="RDK:6349" Name="Spalle" SubType="Generic" Expanded="True">
+									<SET Id="RDK:6358" VarRef="PrezzoService.DurataVisitaCalcSpalle">
+										<EXP><![CDATA[$=$PrezzoService.DurataVisitaCalcSpalle+(SpalleDaCalcolare/(MaxSpalleBasseGG/8))]]></EXP>
+										<PAR Name="AdvancedOptions" />
+									</SET>
+								</GROUP>
+								<GROUP Id="RDK:6354" Name="Corridoi" SubType="Generic" Expanded="True">
+									<SET Id="RDK:6361" VarRef="PrezzoService.DurataVisitaCalCorridoi">
+										<EXP><![CDATA[$=$PrezzoService.DurataVisitaCalCorridoi+(CorridoiDaCalcolare/(MaxCorridoiTerraGG/8))]]></EXP>
+										<PAR Name="AdvancedOptions" />
+									</SET>
+								</GROUP>
+							</GROUP>
+						</GROUP>
+						<GROUP Id="RDK:6364" Name="CALCOLO TEMPO STIMATO" SubType="Generic" Expanded="True" Bookmarked="True">
+							<SET Id="RDK:6367" VarRef="PrezzoService.DurataVisita">
+								<EXP><![CDATA[$=$IIF(PrezzoService.DurataVisitaCalcSpalle>PrezzoService.DurataVisitaCalCorridoi, PrezzoService.DurataVisitaCalcSpalle, PrezzoService.DurataVisitaCalCorridoi)]]></EXP>
+								<PAR Name="AdvancedOptions" />
+							</SET>
+							<SET Id="RDK:6369" VarRef="PrezzoService.DurataVisita">
+								<EXP><![CDATA[$=$PrezzoService.DurataVisita+
+IIF(
+    (PrezzoService.DurataVisita-Floor(PrezzoService.DurataVisita/8)*8)<3, 
+    3-(PrezzoService.DurataVisita-Floor(PrezzoService.DurataVisita/8)*8),
+    IIF(
+        (PrezzoService.DurataVisita-Floor(PrezzoService.DurataVisita/8)*8)>6, 
+        8-(PrezzoService.DurataVisita-Floor(PrezzoService.DurataVisita/8)*8),
+        0)
+    )]]></EXP>
+								<PAR Name="AdvancedOptions" />
+							</SET>
+						</GROUP>
+						<GROUP Id="RDK:6372" Name="CALCOLO COSTO" SubType="Generic" Expanded="True" Bookmarked="True">
+							<IFTHENELSE Id="RDK:6374" Expanded="True">
+								<VALUECONDITION Value="true">
+									<EXP><![CDATA[$=$PrezzoService.ControlloSingolo]]></EXP>
+								</VALUECONDITION>
+								<GROUP Id="RDK:6375" SubType="Then" Expanded="True">
+									<SET Id="RDK:6382" VarRef="PrezzoService.PrezzoVisita">
+										<EXP><![CDATA[$=$PrezzoService.DurataVisita*100]]></EXP>
+										<PAR Name="AdvancedOptions" />
+									</SET>
+								</GROUP>
+								<GROUP Id="RDK:6376" SubType="Else" Expanded="True">
+									<SET Id="RDK:6384" VarRef="PrezzoService.PrezzoVisita">
+										<EXP><![CDATA[$=$PrezzoService.DurataVisita*100/PrezzoService.NumeroControlli]]></EXP>
+										<PAR Name="AdvancedOptions" />
+									</SET>
+								</GROUP>
+							</IFTHENELSE>
+						</GROUP>
+						<GROUP Id="RDK:4629" Name="CALCOLO VIAGGIO" SubType="Generic" Expanded="True" Bookmarked="True">
+							<VALUECONDITION Value="false">
+								<EXP><![CDATA[$=$PrezzoService.Estero]]></EXP>
+							</VALUECONDITION>
+							<SET Id="RDK:4631" VarRef="PrezzoService.PrezzoViaggio">
+								<EXP><![CDATA[$=$PrezzoService.KmViaggio*IIF(PrezzoService.ControlloSingolo, 1, PrezzoService.NumeroControlli)]]></EXP>
+								<PAR Name="AdvancedOptions" />
+							</SET>
+						</GROUP>
+						<GROUP Id="RDK:6390" Name="CALCOLO MAPPATURA" SubType="Generic" Expanded="True" Bookmarked="True">
+							<SET Id="RDK:6393" VarRef="PrezzoService.PrezzoMappatura">
+								<EXP><![CDATA[$=$IIF(
+    PrezzoService.PrimaVisita  And ( Not  PrezzoService.DocumentazionePresente), 
+    300, 
+    IIF( 
+        PrezzoService.PrimaVisita  And  PrezzoService.DocumentazionePresente,
+        200,
+        IIF( 
+            PrezzoService.ControlloSingolo,
+            100,
+            50
+        )   
+    )
+)
++ (PrezzoService.NumeroRepartiValidazione*500)+(PrezzoService.NumeroTipiScaffaliPerPortata*500)]]></EXP>
+								<PAR Name="AdvancedOptions" />
+							</SET>
+						</GROUP>
+						<GROUP Id="RDK:6396" Name="CALCOLO TRASFERTA" SubType="Generic" Expanded="True" Bookmarked="True">
+							<SET Id="RDK:6403" VarRef="PrezzoService.PrezzoTrasferta">
+								<EXP><![CDATA[$=$IIF(
+    PrezzoService.DurataVisita<=8,
+    80,
+    IIF(
+        PrezzoService.KmViaggio<150,
+        (120*Ceiling(PrezzoService.DurataVisita/8)),
+        (310*Ceiling(PrezzoService.DurataVisita/8))
+    )
+)]]></EXP>
+								<PAR Name="AdvancedOptions" />
+							</SET>
+						</GROUP>
+						<GROUP Id="RDK:6408" Name="CALCOLO PREZZO TOTALE" SubType="Generic" Expanded="True" Bookmarked="True">
+							<CALLFUNCTION Id="RDK:6405">
+								<PAR Name="FuncName">
+									<EXP><![CDATA[$C$SetPrezzoTotale]]></EXP>
+								</PAR>
+								<PAR Name="InputExp" />
+								<PAR Name="ResultRef">
+									<EXP><![CDATA[$V$]]></EXP>
+								</PAR>
+								<PAR Name="Options" />
+							</CALLFUNCTION>
+						</GROUP>
+					</CASEGROUP>
+				</SELECTCASE>
+			</WHILELOOP>
+		</GROUP>
+		<GROUP Id="RDK:20" Name="OUTPUT" SubType="Generic" />
+	</GROUP>
+	<EXTERNAL_DATA>
+		<PROFILES_DATA>
+			<RELPROFILE Id="RDK:83" TypeName="PrezzoServiceType" Expanded="True">
+				<PNODE NodeType="profile" ProfileName="PrezzoServiceProfile" />
+				<PNODE NodeType="field_variant" FieldName="PeriodicitàVisita" VariantName="Variant" />
+				<RP_INITIAL_VALUE />
+				<RP_SETFIELD_VALUE />
+				<RP_SETFIELD_FORCED />
+				<RP_SETOPTIONS>
+					<EXP><![CDATA[$C$(WIDTH=300)]]></EXP>
+				</RP_SETOPTIONS>
+				<UI_INPUT_TYPE TypeForm="Text" />
+				<UI_INPUT_VALIDATION ValidationType="none" />
+				<UI_INPUT_SUPPORT>
+					<PAR Name="InputPromptExp">
+						<EXP><![CDATA[$C$Periodicità Visita (Mesi)]]></EXP>
+					</PAR>
+					<PAR Name="InputImageExp" />
+					<PAR Name="InputTooltipExp" />
+					<PAR Name="InputStyleExp" />
+				</UI_INPUT_SUPPORT>
+			</RELPROFILE>
+			<RELPROFILE Id="RDK:84" TypeName="PrezzoServiceType" Expanded="True">
+				<PNODE NodeType="profile" ProfileName="PrezzoServiceProfile" />
+				<PNODE NodeType="field_variant" FieldName="Città" VariantName="Variant" />
+				<RP_INITIAL_VALUE />
+				<RP_SETFIELD_VALUE />
+				<RP_SETFIELD_FORCED />
+				<RP_SETOPTIONS>
+					<EXP><![CDATA[$C$(AUTOCOMMIT)(WIDTH=300)]]></EXP>
+				</RP_SETOPTIONS>
+				<UI_INPUT_TYPE TypeForm="Text" />
+				<UI_INPUT_VALIDATION ValidationType="none" />
+				<UI_INPUT_SUPPORT />
+			</RELPROFILE>
+			<RELPROFILE Id="RDK:85" TypeName="PrezzoServiceType" Expanded="True">
+				<PNODE NodeType="profile" ProfileName="PrezzoServiceProfile" />
+				<PNODE NodeType="field_variant" FieldName="Indirizzo" VariantName="Variant" />
+				<RP_INITIAL_VALUE />
+				<RP_SETFIELD_VALUE />
+				<RP_SETFIELD_FORCED />
+				<RP_SETOPTIONS>
+					<EXP><![CDATA[$C$(WIDTH=300)]]></EXP>
+				</RP_SETOPTIONS>
+				<UI_INPUT_TYPE TypeForm="Text" />
+				<UI_INPUT_VALIDATION ValidationType="none" />
+				<UI_INPUT_SUPPORT />
+			</RELPROFILE>
+			<RELPROFILE Id="RDK:115" TypeName="PrezzoServiceType" Expanded="True">
+				<PNODE NodeType="profile" ProfileName="PrezzoServiceProfile" />
+				<PNODE NodeType="field_variant" FieldName="KmViaggio" VariantName="Variant" />
+				<RP_INITIAL_VALUE />
+				<RP_SETFIELD_VALUE />
+				<RP_SETFIELD_FORCED />
+				<RP_SETOPTIONS>
+					<EXP><![CDATA[$C$(WIDTH=300)]]></EXP>
+				</RP_SETOPTIONS>
+				<UI_INPUT_TYPE TypeForm="Text" />
+				<UI_INPUT_VALIDATION ValidationType="none" />
+				<UI_INPUT_SUPPORT>
+					<PAR Name="InputPromptExp">
+						<EXP><![CDATA[$C$Km di Viaggio (sola andata)]]></EXP>
+					</PAR>
+					<PAR Name="InputImageExp" />
+					<PAR Name="InputTooltipExp" />
+					<PAR Name="InputStyleExp" />
+				</UI_INPUT_SUPPORT>
+			</RELPROFILE>
+			<RELPROFILE Id="RDK:86" TypeName="PrezzoServiceType" Expanded="True">
+				<PNODE NodeType="profile" ProfileName="PrezzoServiceProfile" />
+				<PNODE NodeType="field_variant" FieldName="Estero" VariantName="Variant" />
+				<RP_INITIAL_VALUE />
+				<RP_SETFIELD_VALUE />
+				<RP_SETFIELD_FORCED />
+				<RP_SETOPTIONS />
+				<UI_INPUT_TYPE TypeForm="Yes_No" />
+				<UI_INPUT_VALIDATION ValidationType="none" />
+				<UI_INPUT_SUPPORT />
+			</RELPROFILE>
+			<RELPROFILE Id="RDK:87" TypeName="PrezzoServiceType" Expanded="True">
+				<PNODE NodeType="profile" ProfileName="PrezzoServiceProfile" />
+				<PNODE NodeType="field_variant" FieldName="NumeroRepartiDistanti" VariantName="Variant" />
+				<RP_INITIAL_VALUE />
+				<RP_SETFIELD_VALUE />
+				<RP_SETFIELD_FORCED />
+				<RP_SETOPTIONS>
+					<EXP><![CDATA[$C$(WIDTH=300)]]></EXP>
+				</RP_SETOPTIONS>
+				<UI_INPUT_TYPE TypeForm="Text" />
+				<UI_INPUT_VALIDATION ValidationType="none" />
+				<UI_INPUT_SUPPORT>
+					<PAR Name="InputPromptExp">
+						<EXP><![CDATA[$C$Numero di Reparti con più di 200m di distanza]]></EXP>
+					</PAR>
+					<PAR Name="InputImageExp" />
+					<PAR Name="InputTooltipExp" />
+					<PAR Name="InputStyleExp" />
+				</UI_INPUT_SUPPORT>
+			</RELPROFILE>
+			<RELPROFILE Id="RDK:88" TypeName="PrezzoServiceType" Expanded="True">
+				<PNODE NodeType="profile" ProfileName="PrezzoServiceProfile" />
+				<PNODE NodeType="field_variant" FieldName="NomiReparti" VariantName="Variant" />
+				<RP_INITIAL_VALUE />
+				<RP_SETFIELD_VALUE />
+				<RP_SETFIELD_FORCED />
+				<RP_SETOPTIONS>
+					<EXP><![CDATA[$C$(WIDTH=300)]]></EXP>
+				</RP_SETOPTIONS>
+				<UI_INPUT_TYPE TypeForm="Text" />
+				<UI_INPUT_VALIDATION ValidationType="none" />
+				<UI_INPUT_SUPPORT>
+					<PAR Name="InputPromptExp">
+						<EXP><![CDATA[$C$Nomi Reparti (separati da ";")]]></EXP>
+					</PAR>
+					<PAR Name="InputImageExp" />
+					<PAR Name="InputTooltipExp" />
+					<PAR Name="InputStyleExp" />
+				</UI_INPUT_SUPPORT>
+			</RELPROFILE>
+			<RELPROFILE Id="RDK:89" TypeName="PrezzoServiceType" Expanded="True">
+				<PNODE NodeType="profile" ProfileName="PrezzoServiceProfile" />
+				<PNODE NodeType="field_variant" FieldName="PrimaVisita" VariantName="Variant" />
+				<RP_INITIAL_VALUE />
+				<RP_SETFIELD_VALUE />
+				<RP_SETFIELD_FORCED />
+				<RP_SETOPTIONS />
+				<UI_INPUT_TYPE TypeForm="Yes_No" />
+				<UI_INPUT_VALIDATION ValidationType="none" />
+				<UI_INPUT_SUPPORT>
+					<PAR Name="InputPromptExp">
+						<EXP><![CDATA[$C$Prima Visita]]></EXP>
+					</PAR>
+					<PAR Name="InputImageExp" />
+					<PAR Name="InputTooltipExp" />
+					<PAR Name="InputStyleExp" />
+				</UI_INPUT_SUPPORT>
+			</RELPROFILE>
+			<RELPROFILE Id="RDK:90" TypeName="PrezzoServiceType" Expanded="True">
+				<PNODE NodeType="profile" ProfileName="PrezzoServiceProfile" />
+				<PNODE NodeType="field_variant" FieldName="NumeroSpalle" VariantName="Variant" />
+				<RP_INITIAL_VALUE />
+				<RP_SETFIELD_VALUE />
+				<RP_SETFIELD_FORCED />
+				<RP_SETOPTIONS>
+					<EXP><![CDATA[$C$(WIDTH=300)]]></EXP>
+				</RP_SETOPTIONS>
+				<UI_INPUT_TYPE TypeForm="Text" />
+				<UI_INPUT_VALIDATION ValidationType="none" />
+				<UI_INPUT_SUPPORT>
+					<PAR Name="InputPromptExp">
+						<EXP><![CDATA[$C$Numero Spalle (Totali)]]></EXP>
+					</PAR>
+					<PAR Name="InputImageExp" />
+					<PAR Name="InputTooltipExp" />
+					<PAR Name="InputStyleExp" />
+				</UI_INPUT_SUPPORT>
+			</RELPROFILE>
+			<RELPROFILE Id="RDK:91" TypeName="PrezzoServiceType" Expanded="True">
+				<PNODE NodeType="profile" ProfileName="PrezzoServiceProfile" />
+				<PNODE NodeType="field_variant" FieldName="NumeroCorridoi" VariantName="Variant" />
+				<RP_INITIAL_VALUE />
+				<RP_SETFIELD_VALUE />
+				<RP_SETFIELD_FORCED />
+				<RP_SETOPTIONS>
+					<EXP><![CDATA[$C$(WIDTH=300)]]></EXP>
+				</RP_SETOPTIONS>
+				<UI_INPUT_TYPE TypeForm="Text" />
+				<UI_INPUT_VALIDATION ValidationType="none" />
+				<UI_INPUT_SUPPORT>
+					<PAR Name="InputPromptExp">
+						<EXP><![CDATA[$C$Numero Corridoi (Totali)]]></EXP>
+					</PAR>
+					<PAR Name="InputImageExp" />
+					<PAR Name="InputTooltipExp" />
+					<PAR Name="InputStyleExp" />
+				</UI_INPUT_SUPPORT>
+			</RELPROFILE>
+			<RELPROFILE Id="RDK:92" TypeName="PrezzoServiceType" Expanded="True">
+				<PNODE NodeType="profile" ProfileName="PrezzoServiceProfile" />
+				<PNODE NodeType="field_variant" FieldName="AltezzaMassima" VariantName="Variant" />
+				<RP_INITIAL_VALUE />
+				<RP_SETFIELD_VALUE />
+				<RP_SETFIELD_FORCED />
+				<RP_SETOPTIONS>
+					<EXP><![CDATA[$C$(AUTOCOMMIT)(WIDTH=300)]]></EXP>
+				</RP_SETOPTIONS>
+				<UI_INPUT_TYPE TypeForm="Text" />
+				<UI_INPUT_VALIDATION ValidationType="none" />
+				<UI_INPUT_SUPPORT>
+					<PAR Name="InputPromptExp">
+						<EXP><![CDATA[$C$Altezza Massima Ultimo Livello di Carico]]></EXP>
+					</PAR>
+					<PAR Name="InputImageExp" />
+					<PAR Name="InputTooltipExp" />
+					<PAR Name="InputStyleExp" />
+				</UI_INPUT_SUPPORT>
+			</RELPROFILE>
+			<RELPROFILE Id="RDK:93" TypeName="PrezzoServiceType" Expanded="True">
+				<PNODE NodeType="profile" ProfileName="PrezzoServiceProfile" />
+				<PNODE NodeType="field_variant" FieldName="LavoroInQuota" VariantName="Variant" />
+				<RP_INITIAL_VALUE />
+				<RP_SETFIELD_VALUE />
+				<RP_SETFIELD_FORCED />
+				<RP_SETOPTIONS>
+					<EXP><![CDATA[$C$(AUTOCOMMIT)]]></EXP>
+				</RP_SETOPTIONS>
+				<UI_INPUT_TYPE TypeForm="Yes_No" />
+				<UI_INPUT_VALIDATION ValidationType="none" />
+				<UI_INPUT_SUPPORT>
+					<PAR Name="InputPromptExp">
+						<EXP><![CDATA[$C$Lavoro In Quota]]></EXP>
+					</PAR>
+					<PAR Name="InputImageExp" />
+					<PAR Name="InputTooltipExp" />
+					<PAR Name="InputStyleExp" />
+				</UI_INPUT_SUPPORT>
+			</RELPROFILE>
+			<RELPROFILE Id="RDK:94" TypeName="PrezzoServiceType" Expanded="True">
+				<PNODE NodeType="profile" ProfileName="PrezzoServiceProfile" />
+				<PNODE NodeType="field_variant" FieldName="NumeroSpalleAlte" VariantName="Variant" />
+				<RP_INITIAL_VALUE />
+				<RP_SETFIELD_VALUE />
+				<RP_SETFIELD_FORCED />
+				<RP_SETOPTIONS>
+					<EXP><![CDATA[$C$(WIDTH=300)]]></EXP>
+				</RP_SETOPTIONS>
+				<UI_INPUT_TYPE Visible="$=$Me.LavoroInQuota" TypeForm="Text" />
+				<UI_INPUT_VALIDATION ValidationType="none" />
+				<UI_INPUT_SUPPORT>
+					<PAR Name="InputPromptExp">
+						<EXP><![CDATA[$C$Numero Spalle con H>6500 (No Cella Frigo, Soppalco e Più Livelli)]]></EXP>
+					</PAR>
+					<PAR Name="InputImageExp" />
+					<PAR Name="InputTooltipExp" />
+					<PAR Name="InputStyleExp" />
+				</UI_INPUT_SUPPORT>
+			</RELPROFILE>
+			<RELPROFILE Id="RDK:95" TypeName="PrezzoServiceType" Expanded="True">
+				<PNODE NodeType="profile" ProfileName="PrezzoServiceProfile" />
+				<PNODE NodeType="field_variant" FieldName="NumeroCorridoiConSpalleAlte" VariantName="Variant" />
+				<RP_INITIAL_VALUE />
+				<RP_SETFIELD_VALUE />
+				<RP_SETFIELD_FORCED />
+				<RP_SETOPTIONS>
+					<EXP><![CDATA[$C$(WIDTH=300)]]></EXP>
+				</RP_SETOPTIONS>
+				<UI_INPUT_TYPE Visible="$=$Me.LavoroInQuota" TypeForm="Text" />
+				<UI_INPUT_VALIDATION ValidationType="none" />
+				<UI_INPUT_SUPPORT>
+					<PAR Name="InputPromptExp">
+						<EXP><![CDATA[$C$Numero Corridioi con Spalle di 6500<H<=10000 (No Cella Frigo, Soppalco e Più Livelli)]]></EXP>
+					</PAR>
+					<PAR Name="InputImageExp" />
+					<PAR Name="InputTooltipExp" />
+					<PAR Name="InputStyleExp" />
+				</UI_INPUT_SUPPORT>
+			</RELPROFILE>
+			<RELPROFILE Id="RDK:6148" TypeName="PrezzoServiceType" Expanded="True">
+				<PNODE NodeType="profile" ProfileName="PrezzoServiceProfile" />
+				<PNODE NodeType="field_variant" FieldName="NumeroCorridoiConSpalleMoltoAlte" VariantName="Variant" />
+				<RP_INITIAL_VALUE />
+				<RP_SETFIELD_VALUE />
+				<RP_SETFIELD_FORCED />
+				<RP_SETOPTIONS>
+					<EXP><![CDATA[$C$(WIDTH=300)]]></EXP>
+				</RP_SETOPTIONS>
+				<UI_INPUT_TYPE Visible="$=$Me.LavoroInQuota" TypeForm="Text" />
+				<UI_INPUT_VALIDATION ValidationType="none" />
+				<UI_INPUT_SUPPORT>
+					<PAR Name="InputPromptExp">
+						<EXP><![CDATA[$C$Numero Corridioi con Spalle di H>10000 (No Cella Frigo, Soppalco e Più Livelli)]]></EXP>
+					</PAR>
+					<PAR Name="InputImageExp" />
+					<PAR Name="InputTooltipExp" />
+					<PAR Name="InputStyleExp" />
+				</UI_INPUT_SUPPORT>
+			</RELPROFILE>
+			<RELPROFILE Id="RDK:96" TypeName="PrezzoServiceType" Expanded="True">
+				<PNODE NodeType="profile" ProfileName="PrezzoServiceProfile" />
+				<PNODE NodeType="field_variant" FieldName="CellaFrigo" VariantName="Variant" />
+				<RP_INITIAL_VALUE />
+				<RP_SETFIELD_VALUE />
+				<RP_SETFIELD_FORCED />
+				<RP_SETOPTIONS>
+					<EXP><![CDATA[$C$(AUTOCOMMIT)]]></EXP>
+				</RP_SETOPTIONS>
+				<UI_INPUT_TYPE TypeForm="Yes_No" />
+				<UI_INPUT_VALIDATION ValidationType="none" />
+				<UI_INPUT_SUPPORT>
+					<PAR Name="InputPromptExp">
+						<EXP><![CDATA[$C$Lavoro in Cella Frigo]]></EXP>
+					</PAR>
+					<PAR Name="InputImageExp" />
+					<PAR Name="InputTooltipExp" />
+					<PAR Name="InputStyleExp" />
+				</UI_INPUT_SUPPORT>
+			</RELPROFILE>
+			<RELPROFILE Id="RDK:4275" TypeName="PrezzoServiceType" Expanded="True">
+				<PNODE NodeType="profile" ProfileName="PrezzoServiceProfile" />
+				<PNODE NodeType="field_variant" FieldName="NumeroSpalleFrigoBasse" VariantName="Variant" />
+				<RP_INITIAL_VALUE />
+				<RP_SETFIELD_VALUE />
+				<RP_SETFIELD_FORCED />
+				<RP_SETOPTIONS>
+					<EXP><![CDATA[$C$(WIDTH=300)]]></EXP>
+				</RP_SETOPTIONS>
+				<UI_INPUT_TYPE Visible="$=$Me.CellaFrigo" TypeForm="Text" />
+				<UI_INPUT_VALIDATION ValidationType="none" />
+				<UI_INPUT_SUPPORT>
+					<PAR Name="InputPromptExp">
+						<EXP><![CDATA[$C$Numero Spalle in Cella Frigo (H<=6500)]]></EXP>
+					</PAR>
+					<PAR Name="InputImageExp" />
+					<PAR Name="InputTooltipExp" />
+					<PAR Name="InputStyleExp" />
+				</UI_INPUT_SUPPORT>
+			</RELPROFILE>
+			<RELPROFILE Id="RDK:4276" TypeName="PrezzoServiceType" Expanded="True">
+				<PNODE NodeType="profile" ProfileName="PrezzoServiceProfile" />
+				<PNODE NodeType="field_variant" FieldName="NumeroSpalleFrigoAlte" VariantName="Variant" />
+				<RP_INITIAL_VALUE />
+				<RP_SETFIELD_VALUE />
+				<RP_SETFIELD_FORCED />
+				<RP_SETOPTIONS>
+					<EXP><![CDATA[$C$(WIDTH=300)]]></EXP>
+				</RP_SETOPTIONS>
+				<UI_INPUT_TYPE Visible="$=$Me.CellaFrigo" TypeForm="Text" />
+				<UI_INPUT_VALIDATION ValidationType="none" />
+				<UI_INPUT_SUPPORT>
+					<PAR Name="InputPromptExp">
+						<EXP><![CDATA[$C$Numero Spalle in Cella Frigo (H>6500)]]></EXP>
+					</PAR>
+					<PAR Name="InputImageExp" />
+					<PAR Name="InputTooltipExp" />
+					<PAR Name="InputStyleExp" />
+				</UI_INPUT_SUPPORT>
+			</RELPROFILE>
+			<RELPROFILE Id="RDK:6241" TypeName="PrezzoServiceType" Expanded="True">
+				<PNODE NodeType="profile" ProfileName="PrezzoServiceProfile" />
+				<PNODE NodeType="field_variant" FieldName="NumeroCorridoiFrigoBassi" VariantName="Variant" />
+				<RP_INITIAL_VALUE />
+				<RP_SETFIELD_VALUE />
+				<RP_SETFIELD_FORCED />
+				<RP_SETOPTIONS>
+					<EXP><![CDATA[$C$(WIDTH=300)]]></EXP>
+				</RP_SETOPTIONS>
+				<UI_INPUT_TYPE Visible="$=$Me.CellaFrigo" TypeForm="Text" />
+				<UI_INPUT_VALIDATION ValidationType="none" />
+				<UI_INPUT_SUPPORT>
+					<PAR Name="InputPromptExp">
+						<EXP><![CDATA[$C$Numero Corridoi in Cella Frigo (H<=6500)]]></EXP>
+					</PAR>
+					<PAR Name="InputImageExp" />
+					<PAR Name="InputTooltipExp" />
+					<PAR Name="InputStyleExp" />
+				</UI_INPUT_SUPPORT>
+			</RELPROFILE>
+			<RELPROFILE Id="RDK:6240" TypeName="PrezzoServiceType" Expanded="True">
+				<PNODE NodeType="profile" ProfileName="PrezzoServiceProfile" />
+				<PNODE NodeType="field_variant" FieldName="NumeroCorridoiFrigoAlti" VariantName="Variant" />
+				<RP_INITIAL_VALUE />
+				<RP_SETFIELD_VALUE />
+				<RP_SETFIELD_FORCED />
+				<RP_SETOPTIONS>
+					<EXP><![CDATA[$C$(WIDTH=300)]]></EXP>
+				</RP_SETOPTIONS>
+				<UI_INPUT_TYPE Visible="$=$Me.CellaFrigo" TypeForm="Text" />
+				<UI_INPUT_VALIDATION ValidationType="none" />
+				<UI_INPUT_SUPPORT>
+					<PAR Name="InputPromptExp">
+						<EXP><![CDATA[$C$Numero Corridoi in Cella Frigo (6500<H<=10000)]]></EXP>
+					</PAR>
+					<PAR Name="InputImageExp" />
+					<PAR Name="InputTooltipExp" />
+					<PAR Name="InputStyleExp" />
+				</UI_INPUT_SUPPORT>
+			</RELPROFILE>
+			<RELPROFILE Id="RDK:6242" TypeName="PrezzoServiceType" Expanded="True">
+				<PNODE NodeType="profile" ProfileName="PrezzoServiceProfile" />
+				<PNODE NodeType="field_variant" FieldName="NumeroCorridoiFrigoMoltoAlti" VariantName="Variant" />
+				<RP_INITIAL_VALUE />
+				<RP_SETFIELD_VALUE />
+				<RP_SETFIELD_FORCED />
+				<RP_SETOPTIONS>
+					<EXP><![CDATA[$C$(WIDTH=300)]]></EXP>
+				</RP_SETOPTIONS>
+				<UI_INPUT_TYPE Visible="$=$Me.CellaFrigo" TypeForm="Text" />
+				<UI_INPUT_VALIDATION ValidationType="none" />
+				<UI_INPUT_SUPPORT>
+					<PAR Name="InputPromptExp">
+						<EXP><![CDATA[$C$Numero Corridoi in Cella Frigo (H>10000)]]></EXP>
+					</PAR>
+					<PAR Name="InputImageExp" />
+					<PAR Name="InputTooltipExp" />
+					<PAR Name="InputStyleExp" />
+				</UI_INPUT_SUPPORT>
+			</RELPROFILE>
+			<RELPROFILE Id="RDK:98" TypeName="PrezzoServiceType" Expanded="True">
+				<PNODE NodeType="profile" ProfileName="PrezzoServiceProfile" />
+				<PNODE NodeType="field_variant" FieldName="Automatico" VariantName="Variant" />
+				<RP_INITIAL_VALUE />
+				<RP_SETFIELD_VALUE />
+				<RP_SETFIELD_FORCED />
+				<RP_SETOPTIONS />
+				<UI_INPUT_TYPE TypeForm="Yes_No" />
+				<UI_INPUT_VALIDATION ValidationType="none" />
+				<UI_INPUT_SUPPORT />
+			</RELPROFILE>
+			<RELPROFILE Id="RDK:99" TypeName="PrezzoServiceType" Expanded="True">
+				<PNODE NodeType="profile" ProfileName="PrezzoServiceProfile" />
+				<PNODE NodeType="field_variant" FieldName="Sismoresistente" VariantName="Variant" />
+				<RP_INITIAL_VALUE />
+				<RP_SETFIELD_VALUE />
+				<RP_SETFIELD_FORCED />
+				<RP_SETOPTIONS />
+				<UI_INPUT_TYPE TypeForm="Yes_No" />
+				<UI_INPUT_VALIDATION ValidationType="none" />
+				<UI_INPUT_SUPPORT />
+			</RELPROFILE>
+			<RELPROFILE Id="RDK:100" TypeName="PrezzoServiceType" Expanded="True">
+				<PNODE NodeType="profile" ProfileName="PrezzoServiceProfile" />
+				<PNODE NodeType="field_variant" FieldName="DocumentazionePresente" VariantName="Variant" />
+				<RP_INITIAL_VALUE />
+				<RP_SETFIELD_VALUE />
+				<RP_SETFIELD_FORCED />
+				<RP_SETOPTIONS />
+				<UI_INPUT_TYPE TypeForm="Yes_No" />
+				<UI_INPUT_VALIDATION ValidationType="none" />
+				<UI_INPUT_SUPPORT>
+					<PAR Name="InputPromptExp">
+						<EXP><![CDATA[$C$Documentazione Presente]]></EXP>
+					</PAR>
+					<PAR Name="InputImageExp" />
+					<PAR Name="InputTooltipExp" />
+					<PAR Name="InputStyleExp" />
+				</UI_INPUT_SUPPORT>
+			</RELPROFILE>
+			<RELPROFILE Id="RDK:101" TypeName="PrezzoServiceType" Expanded="True">
+				<PNODE NodeType="profile" ProfileName="PrezzoServiceProfile" />
+				<PNODE NodeType="field_variant" FieldName="RepartoProduzione" VariantName="Variant" />
+				<RP_INITIAL_VALUE />
+				<RP_SETFIELD_VALUE />
+				<RP_SETFIELD_FORCED />
+				<RP_SETOPTIONS>
+					<EXP><![CDATA[$C$(AUTOCOMMIT)]]></EXP>
+				</RP_SETOPTIONS>
+				<UI_INPUT_TYPE TypeForm="RadioButtons" />
+				<UI_INPUT_VALIDATION ValidationType="none" />
+				<UI_INPUT_SUPPORT>
+					<PAR Name="InputPromptExp">
+						<EXP><![CDATA[$C$Reparto in Produzione]]></EXP>
+					</PAR>
+					<PAR Name="InputImageExp" />
+					<PAR Name="InputTooltipExp" />
+					<PAR Name="InputStyleExp" />
+				</UI_INPUT_SUPPORT>
+			</RELPROFILE>
+			<RELPROFILE Id="RDK:5354" TypeName="PrezzoServiceType" Expanded="True">
+				<PNODE NodeType="profile" ProfileName="PrezzoServiceProfile" />
+				<PNODE NodeType="field_variant" FieldName="SpalleProduzione" VariantName="Variant" />
+				<RP_INITIAL_VALUE />
+				<RP_SETFIELD_VALUE />
+				<RP_SETFIELD_FORCED />
+				<RP_SETOPTIONS>
+					<EXP><![CDATA[$C$(WIDTH=300)]]></EXP>
+				</RP_SETOPTIONS>
+				<UI_INPUT_TYPE Visible="$=$Me.RepartoProduzione=&quot;Si&quot;" TypeForm="Text" />
+				<UI_INPUT_VALIDATION ValidationType="none" />
+				<UI_INPUT_SUPPORT>
+					<PAR Name="InputPromptExp">
+						<EXP><![CDATA[$C$Numero Spalle in Reparto Produzione]]></EXP>
+					</PAR>
+					<PAR Name="InputImageExp" />
+					<PAR Name="InputTooltipExp" />
+					<PAR Name="InputStyleExp" />
+				</UI_INPUT_SUPPORT>
+			</RELPROFILE>
+			<RELPROFILE Id="RDK:6261" TypeName="PrezzoServiceType" Expanded="True">
+				<PNODE NodeType="profile" ProfileName="PrezzoServiceProfile" />
+				<PNODE NodeType="field_variant" FieldName="CorridoiProduzione" VariantName="Variant" />
+				<RP_INITIAL_VALUE />
+				<RP_SETFIELD_VALUE />
+				<RP_SETFIELD_FORCED />
+				<RP_SETOPTIONS>
+					<EXP><![CDATA[$C$(WIDTH=300)]]></EXP>
+				</RP_SETOPTIONS>
+				<UI_INPUT_TYPE Visible="$=$Me.RepartoProduzione=&quot;Si&quot;" TypeForm="Text" />
+				<UI_INPUT_VALIDATION ValidationType="none" />
+				<UI_INPUT_SUPPORT>
+					<PAR Name="InputPromptExp">
+						<EXP><![CDATA[$C$Numero Corridoi in Reparto Produzione]]></EXP>
+					</PAR>
+					<PAR Name="InputImageExp" />
+					<PAR Name="InputTooltipExp" />
+					<PAR Name="InputStyleExp" />
+				</UI_INPUT_SUPPORT>
+			</RELPROFILE>
+			<RELPROFILE Id="RDK:102" TypeName="PrezzoServiceType" Expanded="True">
+				<PNODE NodeType="profile" ProfileName="PrezzoServiceProfile" />
+				<PNODE NodeType="field_variant" FieldName="PiùLivelli" VariantName="Variant" />
+				<RP_INITIAL_VALUE />
+				<RP_SETFIELD_VALUE />
+				<RP_SETFIELD_FORCED />
+				<RP_SETOPTIONS>
+					<EXP><![CDATA[$C$(AUTOCOMMIT)]]></EXP>
+				</RP_SETOPTIONS>
+				<UI_INPUT_TYPE TypeForm="Yes_No" />
+				<UI_INPUT_VALIDATION ValidationType="none" />
+				<UI_INPUT_SUPPORT>
+					<PAR Name="InputPromptExp">
+						<EXP><![CDATA[$C$Reparto su più Livelli]]></EXP>
+					</PAR>
+					<PAR Name="InputImageExp" />
+					<PAR Name="InputTooltipExp" />
+					<PAR Name="InputStyleExp" />
+				</UI_INPUT_SUPPORT>
+			</RELPROFILE>
+			<RELPROFILE Id="RDK:103" TypeName="PrezzoServiceType" Expanded="True">
+				<PNODE NodeType="profile" ProfileName="PrezzoServiceProfile" />
+				<PNODE NodeType="field_variant" FieldName="SpalleSuPiùLivelli" VariantName="Variant" />
+				<RP_INITIAL_VALUE />
+				<RP_SETFIELD_VALUE />
+				<RP_SETFIELD_FORCED />
+				<RP_SETOPTIONS>
+					<EXP><![CDATA[$C$(WIDTH=300)]]></EXP>
+				</RP_SETOPTIONS>
+				<UI_INPUT_TYPE Visible="$=$Me.PiùLivelli" TypeForm="Text" />
+				<UI_INPUT_VALIDATION ValidationType="none" />
+				<UI_INPUT_SUPPORT>
+					<PAR Name="InputPromptExp">
+						<EXP><![CDATA[$C$Numero Spalle su più Livelli]]></EXP>
+					</PAR>
+					<PAR Name="InputImageExp" />
+					<PAR Name="InputTooltipExp" />
+					<PAR Name="InputStyleExp" />
+				</UI_INPUT_SUPPORT>
+			</RELPROFILE>
+			<RELPROFILE Id="RDK:6292" TypeName="PrezzoServiceType" Expanded="True">
+				<PNODE NodeType="profile" ProfileName="PrezzoServiceProfile" />
+				<PNODE NodeType="field_variant" FieldName="CorridoiSuPiùLivelli" VariantName="Variant" />
+				<RP_INITIAL_VALUE />
+				<RP_SETFIELD_VALUE />
+				<RP_SETFIELD_FORCED />
+				<RP_SETOPTIONS>
+					<EXP><![CDATA[$C$(WIDTH=300)]]></EXP>
+				</RP_SETOPTIONS>
+				<UI_INPUT_TYPE Visible="$=$Me.PiùLivelli" TypeForm="Text" />
+				<UI_INPUT_VALIDATION ValidationType="none" />
+				<UI_INPUT_SUPPORT>
+					<PAR Name="InputPromptExp">
+						<EXP><![CDATA[$C$Numero Corridoi su più Livelli]]></EXP>
+					</PAR>
+					<PAR Name="InputImageExp" />
+					<PAR Name="InputTooltipExp" />
+					<PAR Name="InputStyleExp" />
+				</UI_INPUT_SUPPORT>
+			</RELPROFILE>
+			<RELPROFILE Id="RDK:104" TypeName="PrezzoServiceType" Expanded="True">
+				<PNODE NodeType="profile" ProfileName="PrezzoServiceProfile" />
+				<PNODE NodeType="field_variant" FieldName="NumeroLivelli" VariantName="Variant" />
+				<RP_INITIAL_VALUE />
+				<RP_SETFIELD_VALUE />
+				<RP_SETFIELD_FORCED />
+				<RP_SETOPTIONS>
+					<EXP><![CDATA[$C$(WIDTH=300)]]></EXP>
+				</RP_SETOPTIONS>
+				<UI_INPUT_TYPE Visible="$=$Me.PiùLivelli" TypeForm="Text" />
+				<UI_INPUT_VALIDATION ValidationType="none" />
+				<UI_INPUT_SUPPORT>
+					<PAR Name="InputPromptExp">
+						<EXP><![CDATA[$C$Numero Livelli]]></EXP>
+					</PAR>
+					<PAR Name="InputImageExp" />
+					<PAR Name="InputTooltipExp" />
+					<PAR Name="InputStyleExp" />
+				</UI_INPUT_SUPPORT>
+			</RELPROFILE>
+			<RELPROFILE Id="RDK:5302" TypeName="PrezzoServiceType" Expanded="True">
+				<PNODE NodeType="profile" ProfileName="PrezzoServiceProfile" />
+				<PNODE NodeType="field_variant" FieldName="Soppalco" VariantName="Variant" />
+				<RP_INITIAL_VALUE />
+				<RP_SETFIELD_VALUE />
+				<RP_SETFIELD_FORCED />
+				<RP_SETOPTIONS>
+					<EXP><![CDATA[$C$(AUTOCOMMIT)]]></EXP>
+				</RP_SETOPTIONS>
+				<UI_INPUT_TYPE TypeForm="Yes_No" />
+				<UI_INPUT_VALIDATION ValidationType="none" />
+				<UI_INPUT_SUPPORT />
+			</RELPROFILE>
+			<RELPROFILE Id="RDK:5303" TypeName="PrezzoServiceType" Expanded="True">
+				<PNODE NodeType="profile" ProfileName="PrezzoServiceProfile" />
+				<PNODE NodeType="field_variant" FieldName="SpalleSoppalco" VariantName="Variant" />
+				<RP_INITIAL_VALUE />
+				<RP_SETFIELD_VALUE />
+				<RP_SETFIELD_FORCED />
+				<RP_SETOPTIONS>
+					<EXP><![CDATA[$C$(WIDTH=300)]]></EXP>
+				</RP_SETOPTIONS>
+				<UI_INPUT_TYPE Visible="$=$Me.Soppalco" TypeForm="Text" />
+				<UI_INPUT_VALIDATION ValidationType="none" />
+				<UI_INPUT_SUPPORT>
+					<PAR Name="InputPromptExp">
+						<EXP><![CDATA[$C$Spalle Soppalco]]></EXP>
+					</PAR>
+					<PAR Name="InputImageExp" />
+					<PAR Name="InputTooltipExp" />
+					<PAR Name="InputStyleExp" />
+				</UI_INPUT_SUPPORT>
+			</RELPROFILE>
+			<RELPROFILE Id="RDK:6279" TypeName="PrezzoServiceType" Expanded="True">
+				<PNODE NodeType="profile" ProfileName="PrezzoServiceProfile" />
+				<PNODE NodeType="field_variant" FieldName="CorridoiSoppalco" VariantName="Variant" />
+				<RP_INITIAL_VALUE />
+				<RP_SETFIELD_VALUE />
+				<RP_SETFIELD_FORCED />
+				<RP_SETOPTIONS>
+					<EXP><![CDATA[$C$(WIDTH=300)]]></EXP>
+				</RP_SETOPTIONS>
+				<UI_INPUT_TYPE Visible="$=$Me.Soppalco" TypeForm="Text" />
+				<UI_INPUT_VALIDATION ValidationType="none" />
+				<UI_INPUT_SUPPORT>
+					<PAR Name="InputPromptExp">
+						<EXP><![CDATA[$C$Numero Corridoi nel Soppalco]]></EXP>
+					</PAR>
+					<PAR Name="InputImageExp" />
+					<PAR Name="InputTooltipExp" />
+					<PAR Name="InputStyleExp" />
+				</UI_INPUT_SUPPORT>
+			</RELPROFILE>
+			<RELPROFILE Id="RDK:105" TypeName="PrezzoServiceType" Expanded="True">
+				<PNODE NodeType="profile" ProfileName="PrezzoServiceProfile" />
+				<PNODE NodeType="field_variant" FieldName="TipoMappatura" VariantName="Variant" />
+				<RP_INITIAL_VALUE />
+				<RP_SETFIELD_VALUE />
+				<RP_SETFIELD_FORCED />
+				<RP_SETOPTIONS>
+					<EXP><![CDATA[$C$(WIDTH=300)]]></EXP>
+				</RP_SETOPTIONS>
+				<UI_INPUT_TYPE TypeForm="Text" />
+				<UI_INPUT_VALIDATION ValidationType="none" />
+				<UI_INPUT_SUPPORT>
+					<PAR Name="InputPromptExp">
+						<EXP><![CDATA[$C$Tipo Mappatura]]></EXP>
+					</PAR>
+					<PAR Name="InputImageExp" />
+					<PAR Name="InputTooltipExp" />
+					<PAR Name="InputStyleExp" />
+				</UI_INPUT_SUPPORT>
+			</RELPROFILE>
+			<RELPROFILE Id="RDK:106" TypeName="PrezzoServiceType" Expanded="True">
+				<PNODE NodeType="profile" ProfileName="PrezzoServiceProfile" />
+				<PNODE NodeType="field_variant" FieldName="ControlloSingolo" VariantName="Variant" />
+				<RP_INITIAL_VALUE />
+				<RP_SETFIELD_VALUE />
+				<RP_SETFIELD_FORCED />
+				<RP_SETOPTIONS>
+					<EXP><![CDATA[$C$(AUTOCOMMIT)]]></EXP>
+				</RP_SETOPTIONS>
+				<UI_INPUT_TYPE TypeForm="Yes_No" />
+				<UI_INPUT_VALIDATION ValidationType="none" />
+				<UI_INPUT_SUPPORT>
+					<PAR Name="InputPromptExp">
+						<EXP><![CDATA[$C$Controllo in Unica Soluzione]]></EXP>
+					</PAR>
+					<PAR Name="InputImageExp" />
+					<PAR Name="InputTooltipExp" />
+					<PAR Name="InputStyleExp" />
+				</UI_INPUT_SUPPORT>
+			</RELPROFILE>
+			<RELPROFILE Id="RDK:4634" TypeName="PrezzoServiceType" Expanded="True">
+				<PNODE NodeType="profile" ProfileName="PrezzoServiceProfile" />
+				<PNODE NodeType="field_variant" FieldName="NumeroControlli" VariantName="Variant" />
+				<RP_INITIAL_VALUE />
+				<RP_SETFIELD_VALUE />
+				<RP_SETFIELD_FORCED />
+				<RP_SETOPTIONS>
+					<EXP><![CDATA[$C$(WIDTH=300)]]></EXP>
+				</RP_SETOPTIONS>
+				<UI_INPUT_TYPE Visible="$=$Not Me.ControlloSingolo" TypeForm="Text" />
+				<UI_INPUT_VALIDATION ValidationType="none" />
+				<UI_INPUT_SUPPORT>
+					<PAR Name="InputPromptExp">
+						<EXP><![CDATA[$C$Numero Controlli]]></EXP>
+					</PAR>
+					<PAR Name="InputImageExp" />
+					<PAR Name="InputTooltipExp" />
+					<PAR Name="InputStyleExp" />
+				</UI_INPUT_SUPPORT>
+			</RELPROFILE>
+			<RELPROFILE Id="RDK:107" TypeName="PrezzoServiceType" Expanded="True">
+				<PNODE NodeType="profile" ProfileName="PrezzoServiceProfile" />
+				<PNODE NodeType="field_variant" FieldName="Validazione" VariantName="Variant" />
+				<RP_INITIAL_VALUE />
+				<RP_SETFIELD_VALUE />
+				<RP_SETFIELD_FORCED />
+				<RP_SETOPTIONS>
+					<EXP><![CDATA[$C$(AUTOCOMMIT)]]></EXP>
+				</RP_SETOPTIONS>
+				<UI_INPUT_TYPE TypeForm="Yes_No" />
+				<UI_INPUT_VALIDATION ValidationType="none" />
+				<UI_INPUT_SUPPORT>
+					<PAR Name="InputPromptExp">
+						<EXP><![CDATA[$C$Necessaria Validazione d'Uso]]></EXP>
+					</PAR>
+					<PAR Name="InputImageExp" />
+					<PAR Name="InputTooltipExp" />
+					<PAR Name="InputStyleExp" />
+				</UI_INPUT_SUPPORT>
+			</RELPROFILE>
+			<RELPROFILE Id="RDK:108" TypeName="PrezzoServiceType" Expanded="True">
+				<PNODE NodeType="profile" ProfileName="PrezzoServiceProfile" />
+				<PNODE NodeType="field_variant" FieldName="NumeroRepartiValidazione" VariantName="Variant" />
+				<RP_INITIAL_VALUE />
+				<RP_SETFIELD_VALUE />
+				<RP_SETFIELD_FORCED />
+				<RP_SETOPTIONS>
+					<EXP><![CDATA[$C$(WIDTH=300)]]></EXP>
+				</RP_SETOPTIONS>
+				<UI_INPUT_TYPE Visible="$=$Me.Validazione" TypeForm="Text" />
+				<UI_INPUT_VALIDATION ValidationType="none" />
+				<UI_INPUT_SUPPORT>
+					<PAR Name="InputPromptExp">
+						<EXP><![CDATA[$C$Numero Reparti in cui è necessaria la Validazione]]></EXP>
+					</PAR>
+					<PAR Name="InputImageExp" />
+					<PAR Name="InputTooltipExp" />
+					<PAR Name="InputStyleExp" />
+				</UI_INPUT_SUPPORT>
+			</RELPROFILE>
+			<RELPROFILE Id="RDK:109" TypeName="PrezzoServiceType" Expanded="True">
+				<PNODE NodeType="profile" ProfileName="PrezzoServiceProfile" />
+				<PNODE NodeType="field_variant" FieldName="DichiarazioneDiPortata" VariantName="Variant" />
+				<RP_INITIAL_VALUE />
+				<RP_SETFIELD_VALUE />
+				<RP_SETFIELD_FORCED />
+				<RP_SETOPTIONS>
+					<EXP><![CDATA[$C$(AUTOCOMMIT)]]></EXP>
+				</RP_SETOPTIONS>
+				<UI_INPUT_TYPE TypeForm="Yes_No" />
+				<UI_INPUT_VALIDATION ValidationType="none" />
+				<UI_INPUT_SUPPORT>
+					<PAR Name="InputPromptExp">
+						<EXP><![CDATA[$C$Dichiarazione Di Portata]]></EXP>
+					</PAR>
+					<PAR Name="InputImageExp" />
+					<PAR Name="InputTooltipExp" />
+					<PAR Name="InputStyleExp" />
+				</UI_INPUT_SUPPORT>
+			</RELPROFILE>
+			<RELPROFILE Id="RDK:110" TypeName="PrezzoServiceType" Expanded="True">
+				<PNODE NodeType="profile" ProfileName="PrezzoServiceProfile" />
+				<PNODE NodeType="field_variant" FieldName="NumeroTipiScaffaliPerPortata" VariantName="Variant" />
+				<RP_INITIAL_VALUE />
+				<RP_SETFIELD_VALUE />
+				<RP_SETFIELD_FORCED />
+				<RP_SETOPTIONS>
+					<EXP><![CDATA[$C$(WIDTH=300)]]></EXP>
+				</RP_SETOPTIONS>
+				<UI_INPUT_TYPE Visible="$=$Me.DichiarazioneDiPortata" TypeForm="Text" />
+				<UI_INPUT_VALIDATION ValidationType="none" />
+				<UI_INPUT_SUPPORT>
+					<PAR Name="InputPromptExp">
+						<EXP><![CDATA[$C$Numero Tipologie di Scaffali per Dichiarazione di Portata]]></EXP>
+					</PAR>
+					<PAR Name="InputImageExp" />
+					<PAR Name="InputTooltipExp" />
+					<PAR Name="InputStyleExp" />
+				</UI_INPUT_SUPPORT>
+			</RELPROFILE>
+			<RELPROFILE Id="RDK:111" TypeName="PrezzoServiceType" Expanded="True">
+				<PNODE NodeType="profile" ProfileName="PrezzoServiceProfile" />
+				<PNODE NodeType="field_variant" FieldName="ContrattoTriennale" VariantName="Variant" />
+				<RP_INITIAL_VALUE />
+				<RP_SETFIELD_VALUE />
+				<RP_SETFIELD_FORCED />
+				<RP_SETOPTIONS />
+				<UI_INPUT_TYPE TypeForm="Yes_No" />
+				<UI_INPUT_VALIDATION ValidationType="none" />
+				<UI_INPUT_SUPPORT>
+					<PAR Name="InputPromptExp">
+						<EXP><![CDATA[$C$Contratto Triennale]]></EXP>
+					</PAR>
+					<PAR Name="InputImageExp" />
+					<PAR Name="InputTooltipExp" />
+					<PAR Name="InputStyleExp" />
+				</UI_INPUT_SUPPORT>
+			</RELPROFILE>
+			<RELPROFILE Id="RDK:2540" TypeName="PrezzoServiceType" Expanded="True">
+				<PNODE NodeType="profile" ProfileName="PrezzoServiceProfile" />
+				<PNODE NodeType="field_variant" FieldName="TipoContratto" VariantName="Variant" />
+				<RP_INITIAL_VALUE />
+				<RP_SETFIELD_VALUE />
+				<RP_SETFIELD_FORCED />
+				<RP_SETOPTIONS>
+					<EXP><![CDATA[$C$(CTLSTYLE=color:red;font-weight:bold)(LBLSTYLE=color:red;font-weight:bold)(WIDTH=300)]]></EXP>
+				</RP_SETOPTIONS>
+				<UI_INPUT_TYPE Visible="$=$ShowRes" TypeForm="Text" />
+				<UI_INPUT_VALIDATION ValidationType="none" />
+				<UI_INPUT_SUPPORT>
+					<PAR Name="InputPromptExp">
+						<EXP><![CDATA[$C$Tipo Contratto]]></EXP>
+					</PAR>
+					<PAR Name="InputImageExp" />
+					<PAR Name="InputTooltipExp" />
+					<PAR Name="InputStyleExp" />
+				</UI_INPUT_SUPPORT>
+			</RELPROFILE>
+			<RELPROFILE Id="RDK:3995" TypeName="PrezzoServiceType" Expanded="True">
+				<PNODE NodeType="profile" ProfileName="PrezzoServiceProfile" />
+				<PNODE NodeType="field_variant" FieldName="DurataVisitaCalcSpalle" VariantName="Variant" />
+				<RP_INITIAL_VALUE />
+				<RP_SETFIELD_VALUE />
+				<RP_SETFIELD_FORCED />
+				<RP_SETOPTIONS>
+					<EXP><![CDATA[$C$(CTLSTYLE=color:red;font-weight:bold)(LBLSTYLE=color:red;font-weight:bold)(WIDTH=300)]]></EXP>
+				</RP_SETOPTIONS>
+				<UI_INPUT_TYPE Visible="$=$ShowRes" TypeForm="Text" />
+				<UI_INPUT_VALIDATION ValidationType="none" />
+				<UI_INPUT_SUPPORT>
+					<PAR Name="InputPromptExp">
+						<EXP><![CDATA[$C$Durata Visita Calcolata sulla base delle Spalle]]></EXP>
+					</PAR>
+					<PAR Name="InputImageExp" />
+					<PAR Name="InputTooltipExp" />
+					<PAR Name="InputStyleExp" />
+				</UI_INPUT_SUPPORT>
+			</RELPROFILE>
+			<RELPROFILE Id="RDK:3996" TypeName="PrezzoServiceType" Expanded="True">
+				<PNODE NodeType="profile" ProfileName="PrezzoServiceProfile" />
+				<PNODE NodeType="field_variant" FieldName="DurataVisitaCalCorridoi" VariantName="Variant" />
+				<RP_INITIAL_VALUE />
+				<RP_SETFIELD_VALUE />
+				<RP_SETFIELD_FORCED />
+				<RP_SETOPTIONS>
+					<EXP><![CDATA[$C$(CTLSTYLE=color:red;font-weight:bold)(LBLSTYLE=color:red;font-weight:bold)(WIDTH=300)]]></EXP>
+				</RP_SETOPTIONS>
+				<UI_INPUT_TYPE Visible="$=$ShowRes" TypeForm="Text" />
+				<UI_INPUT_VALIDATION ValidationType="none" />
+				<UI_INPUT_SUPPORT>
+					<PAR Name="InputPromptExp">
+						<EXP><![CDATA[$C$Durata Visita Calcolata sulla base dei Corridoi]]></EXP>
+					</PAR>
+					<PAR Name="InputImageExp" />
+					<PAR Name="InputTooltipExp" />
+					<PAR Name="InputStyleExp" />
+				</UI_INPUT_SUPPORT>
+			</RELPROFILE>
+			<RELPROFILE Id="RDK:1782" TypeName="PrezzoServiceType" Expanded="True">
+				<PNODE NodeType="profile" ProfileName="PrezzoServiceProfile" />
+				<PNODE NodeType="field_variant" FieldName="DurataVisita" VariantName="Variant" />
+				<RP_INITIAL_VALUE />
+				<RP_SETFIELD_VALUE />
+				<RP_SETFIELD_FORCED />
+				<RP_SETOPTIONS>
+					<EXP><![CDATA[$C$(AUTOCOMMIT)(CTLSTYLE=color:red;font-weight:bold)(LBLSTYLE=color:red;font-weight:bold)(WIDTH=300)]]></EXP>
+				</RP_SETOPTIONS>
+				<UI_INPUT_TYPE Visible="$=$ShowRes" TypeForm="Text" />
+				<UI_INPUT_VALIDATION ValidationType="none" />
+				<UI_INPUT_SUPPORT>
+					<PAR Name="InputPromptExp">
+						<EXP><![CDATA[$C$Durata Visita (Ore)]]></EXP>
+					</PAR>
+					<PAR Name="InputImageExp" />
+					<PAR Name="InputTooltipExp" />
+					<PAR Name="InputStyleExp" />
+				</UI_INPUT_SUPPORT>
+			</RELPROFILE>
+			<RELPROFILE Id="RDK:1784" TypeName="PrezzoServiceType" Expanded="True">
+				<PNODE NodeType="profile" ProfileName="PrezzoServiceProfile" />
+				<PNODE NodeType="field_variant" FieldName="PrezzoVisita" VariantName="Variant" />
+				<RP_INITIAL_VALUE />
+				<RP_SETFIELD_VALUE />
+				<RP_SETFIELD_FORCED />
+				<RP_SETOPTIONS>
+					<EXP><![CDATA[$C$(CTLSTYLE=color:red;font-weight:bold)(LBLSTYLE=color:red;font-weight:bold)(WIDTH=300)(AUTOCOMMIT)]]></EXP>
+				</RP_SETOPTIONS>
+				<UI_INPUT_TYPE Visible="$=$ShowRes" TypeForm="Text" />
+				<UI_INPUT_VALIDATION ValidationType="none" />
+				<UI_INPUT_SUPPORT>
+					<PAR Name="InputPromptExp">
+						<EXP><![CDATA[$C$Prezzo Visita (Singola nel caso di più Controlli) (€)]]></EXP>
+					</PAR>
+					<PAR Name="InputImageExp" />
+					<PAR Name="InputTooltipExp" />
+					<PAR Name="InputStyleExp" />
+				</UI_INPUT_SUPPORT>
+			</RELPROFILE>
+			<RELPROFILE Id="RDK:1785" TypeName="PrezzoServiceType" Expanded="True">
+				<PNODE NodeType="profile" ProfileName="PrezzoServiceProfile" />
+				<PNODE NodeType="field_variant" FieldName="PrezzoMappatura" VariantName="Variant" />
+				<RP_INITIAL_VALUE />
+				<RP_SETFIELD_VALUE />
+				<RP_SETFIELD_FORCED />
+				<RP_SETOPTIONS>
+					<EXP><![CDATA[$C$(CTLSTYLE=color:red;font-weight:bold)(LBLSTYLE=color:red;font-weight:bold)(WIDTH=300)(AUTOCOMMIT)]]></EXP>
+				</RP_SETOPTIONS>
+				<UI_INPUT_TYPE Visible="$=$ShowRes" TypeForm="Text" />
+				<UI_INPUT_VALIDATION ValidationType="none" />
+				<UI_INPUT_SUPPORT>
+					<PAR Name="InputPromptExp">
+						<EXP><![CDATA[$C$Prezzo Mappatura e Documenti (€)]]></EXP>
+					</PAR>
+					<PAR Name="InputImageExp" />
+					<PAR Name="InputTooltipExp" />
+					<PAR Name="InputStyleExp" />
+				</UI_INPUT_SUPPORT>
+			</RELPROFILE>
+			<RELPROFILE Id="RDK:1786" TypeName="PrezzoServiceType" Expanded="True">
+				<PNODE NodeType="profile" ProfileName="PrezzoServiceProfile" />
+				<PNODE NodeType="field_variant" FieldName="PrezzoTrasferta" VariantName="Variant" />
+				<RP_INITIAL_VALUE />
+				<RP_SETFIELD_VALUE />
+				<RP_SETFIELD_FORCED />
+				<RP_SETOPTIONS>
+					<EXP><![CDATA[$C$(CTLSTYLE=color:red;font-weight:bold)(LBLSTYLE=color:red;font-weight:bold)(WIDTH=300)(AUTOCOMMIT)]]></EXP>
+				</RP_SETOPTIONS>
+				<UI_INPUT_TYPE Visible="$=$ShowRes" TypeForm="Text" />
+				<UI_INPUT_VALIDATION ValidationType="none" />
+				<UI_INPUT_SUPPORT>
+					<PAR Name="InputPromptExp">
+						<EXP><![CDATA[$C$Prezzo Trasferta (€)]]></EXP>
+					</PAR>
+					<PAR Name="InputImageExp" />
+					<PAR Name="InputTooltipExp" />
+					<PAR Name="InputStyleExp" />
+				</UI_INPUT_SUPPORT>
+			</RELPROFILE>
+			<RELPROFILE Id="RDK:1787" TypeName="PrezzoServiceType" Expanded="True">
+				<PNODE NodeType="profile" ProfileName="PrezzoServiceProfile" />
+				<PNODE NodeType="field_variant" FieldName="PrezzoViaggio" VariantName="Variant" />
+				<RP_INITIAL_VALUE />
+				<RP_SETFIELD_VALUE />
+				<RP_SETFIELD_FORCED />
+				<RP_SETOPTIONS>
+					<EXP><![CDATA[$C$(CTLSTYLE=color:red;font-weight:bold)(LBLSTYLE=color:red;font-weight:bold)(WIDTH=300)(AUTOCOMMIT)]]></EXP>
+				</RP_SETOPTIONS>
+				<UI_INPUT_TYPE Visible="$=$ShowRes" TypeForm="Text" />
+				<UI_INPUT_VALIDATION ValidationType="none" />
+				<UI_INPUT_SUPPORT>
+					<PAR Name="InputPromptExp">
+						<EXP><![CDATA[$C$Prezzo Viaggio (€)]]></EXP>
+					</PAR>
+					<PAR Name="InputImageExp" />
+					<PAR Name="InputTooltipExp" />
+					<PAR Name="InputStyleExp" />
+				</UI_INPUT_SUPPORT>
+			</RELPROFILE>
+			<RELPROFILE Id="RDK:2985" TypeName="PrezzoServiceType" Expanded="True">
+				<PNODE NodeType="profile" ProfileName="PrezzoServiceProfile" />
+				<PNODE NodeType="field_variant" FieldName="SpeseExtra" VariantName="Variant" />
+				<RP_INITIAL_VALUE />
+				<RP_SETFIELD_VALUE />
+				<RP_SETFIELD_FORCED />
+				<RP_SETOPTIONS>
+					<EXP><![CDATA[$C$(CTLSTYLE=color:red;font-weight:bold)(LBLSTYLE=color:red;font-weight:bold)(WIDTH=300)(AUTOCOMMIT)]]></EXP>
+				</RP_SETOPTIONS>
+				<UI_INPUT_TYPE Visible="$=$ShowRes" TypeForm="Text" />
+				<UI_INPUT_VALIDATION ValidationType="none" />
+				<UI_INPUT_SUPPORT>
+					<PAR Name="InputPromptExp">
+						<EXP><![CDATA[$C$Spese Extra]]></EXP>
+					</PAR>
+					<PAR Name="InputImageExp" />
+					<PAR Name="InputTooltipExp" />
+					<PAR Name="InputStyleExp" />
+				</UI_INPUT_SUPPORT>
+			</RELPROFILE>
+			<RELPROFILE Id="RDK:2988" TypeName="PrezzoServiceType" Expanded="True">
+				<PNODE NodeType="profile" ProfileName="PrezzoServiceProfile" />
+				<PNODE NodeType="field_variant" FieldName="PrezzoFinale" VariantName="Variant" />
+				<RP_INITIAL_VALUE />
+				<RP_SETFIELD_VALUE />
+				<RP_SETFIELD_FORCED />
+				<RP_SETOPTIONS>
+					<EXP><![CDATA[$C$(CTLSTYLE=color:red;font-weight:bold)(LBLSTYLE=color:red;font-weight:bold)(WIDTH=300)]]></EXP>
+				</RP_SETOPTIONS>
+				<UI_INPUT_TYPE Visible="$=$ShowRes" TypeForm="Text" />
+				<UI_INPUT_VALIDATION ValidationType="none" />
+				<UI_INPUT_SUPPORT>
+					<PAR Name="InputPromptExp">
+						<EXP><![CDATA[$C$Prezzo Finale]]></EXP>
+					</PAR>
+					<PAR Name="InputImageExp" />
+					<PAR Name="InputTooltipExp" />
+					<PAR Name="InputStyleExp" />
+				</UI_INPUT_SUPPORT>
+			</RELPROFILE>
+			<RELPROFILE Id="RDK:761" TypeName="PrezzoServiceType" Expanded="True">
+				<PNODE NodeType="field_variant" FieldName="RepartoProduzione" VariantName="Variant" />
+				<PNODE NodeType="value_exp" FieldName="RepartoProduzione" VariantName="Variant">
+					<EXP><![CDATA[$C$Si]]></EXP>
+				</PNODE>
+				<RP_INITIAL_VALUE />
+				<RP_SETFIELD_VALUE />
+				<RP_SETFIELD_FORCED />
+				<RP_SETOPTIONS />
+				<UI_INPUT_SUPPORT />
+			</RELPROFILE>
+			<RELPROFILE Id="RDK:762" TypeName="PrezzoServiceType" Expanded="True">
+				<PNODE NodeType="field_variant" FieldName="RepartoProduzione" VariantName="Variant" />
+				<PNODE NodeType="value_exp" FieldName="RepartoProduzione" VariantName="Variant">
+					<EXP><![CDATA[$C$No]]></EXP>
+				</PNODE>
+				<RP_INITIAL_VALUE />
+				<RP_SETFIELD_VALUE />
+				<RP_SETFIELD_FORCED />
+				<RP_SETOPTIONS />
+				<UI_INPUT_SUPPORT />
+			</RELPROFILE>
+			<RELPROFILE Id="RDK:763" TypeName="PrezzoServiceType" Expanded="True">
+				<PNODE NodeType="field_variant" FieldName="RepartoProduzione" VariantName="Variant" />
+				<PNODE NodeType="value_exp" FieldName="RepartoProduzione" VariantName="Variant">
+					<EXP><![CDATA[$C$Non So]]></EXP>
+				</PNODE>
+				<RP_INITIAL_VALUE />
+				<RP_SETFIELD_VALUE />
+				<RP_SETFIELD_FORCED />
+				<RP_SETOPTIONS />
+				<UI_INPUT_SUPPORT />
+			</RELPROFILE>
+		</PROFILES_DATA>
+		<BOM_DATA />
+	</EXTERNAL_DATA>
+</PROCESS>
